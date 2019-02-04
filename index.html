@@ -105,7 +105,9 @@
 		}
 
 		#content-panel {
-			display: none;
+			display: block;
+			margin: 0;
+			height: 100%;
 		}
 
 		#bio-icons i {
@@ -215,6 +217,20 @@
 		}
 		#left {
 			text-align: center;
+			visibility: hidden;
+		}
+		#side-menu {
+			padding: 3% 4%;
+			margin: 0;
+		}
+		.bordered-panel {
+			border: 1px solid rgba(34, 36, 38, 0.15);
+		}
+		.avatar {
+			width: 100%;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		@media screen and (max-width: 999px) {
 			#mypic {
@@ -232,9 +248,9 @@
 </head>
 <body>
 	<div class="container">
-		<div id="side-menu" style="padding: 3% 4%; margin: 0; border: 1px solid rgba(34, 36, 38, 0.15)">
-			<div id="left" style="visibility: hidden;">
-				<div style="width: 100%; margin-top: 20px; margin-left: auto; margin-right: auto;">
+		<div class="bordered-panel" id="side-menu">
+			<div id="left">
+				<div class="avatar">
 					<img id="mypic" src="assets/300x300.png" />
 				</div>
 				<h1 class="ui header raleway">
@@ -265,8 +281,8 @@
 			</div>
 		</div><!-- end of #side-menu -->
 
-		<div id="content" style="border: 1px solid rgba(34, 36, 38, 0.15)">
-			<div id="content-panel" style="display: block; margin: 0; height: 100%;">
+		<div class="bordered-panel" id="content">
+			<div id="content-panel" style="">
 				<div class="ui basic segment" style="padding: 0;">
 
 					<div class="section">
