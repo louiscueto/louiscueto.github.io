@@ -110,6 +110,7 @@
 		}
 
 		#bio-icons i {
+			color: rgba(0, 0, 0, 0.87);
 			cursor: pointer;
 			opacity: 0.5 !important;
 			border: 1.5px solid black;
@@ -169,11 +170,21 @@
 			border: 0 !important;
 			outline: none;
 			border-radius: 0 !important;
-			border-bottom: 2px solid darkgrey !important;
+			border-bottom: 3px solid darkgrey !important;
 		}
 		input:focus, textarea:focus {
-			border-bottom: 2px solid #222 !important;
-			border-bottom: 2px solid #36bed9 !important;
+			border-bottom: 3px solid #222 !important;
+			/*border-bottom: 3px solid #36bed9 !important;*/
+		}
+		#submitmsg {
+			border-radius: 0;
+			border: 2px solid #222 !important;
+			font-weight: bold;
+			outline: none;
+		}
+		#submitmsg:hover {
+			color: white !important;
+			background-color: #222 !important;
 		}
 
 		#skills .column .ui.segment {
@@ -200,16 +211,7 @@
 		#contact-fb:hover, #contact-ig:hover {
 			opacity: 1;
 		}
-
-		#submitmsg {
-			border-radius: 0;
-			border: 2px solid black;
-			font-weight: bold;
-		}
-		#submitmsg:hover {
-			color: white !important;
-			background-color: black !important;
-		}
+		
 	</style>
 </head>
 <body>
@@ -252,10 +254,10 @@
 				</div>
 
 				<div class="ui stackable four column grid" id="bio-icons" style="margin-top: 20px;">
-					<div class="column"><i class="large circular facebook icon"></i></div>
-					<div class="column"><i class="large circular instagram icon"></i></div>
-					<div class="column"><i class="large circular linkedin icon"></i></div>
-					<div class="column"><i class="large circular steam icon"></i></div>
+					<div class="column"><a href="#"><i class="large circular facebook icon"></i></a></div>
+					<div class="column"><a href="#"><i class="large circular instagram icon"></i></a></div>
+					<div class="column"><a href="#"><i class="large circular linkedin icon"></i></a></div>
+					<div class="column"><a href="#"><i class="large circular github icon"></i></a></div>
 					<!-- <div class="item"><i class="large circular playstation icon"></i></div> -->
 					<!-- <div class="column"><i class="large circular spotify icon"></i></div> -->
 				</div>
@@ -301,7 +303,7 @@
 								<ul>
 									<li>HTML5</li>
 									<li>CSS3 (Semantic UI, Bootstrap 3 & 4, Bulma)</li>
-									<li>JavaScript (jQuery, React, React Native)</li>
+									<li>JavaScript (jQuery, React, React Native, Node)</li>
 								</ul>
 							</div>
 							<div class="column">
