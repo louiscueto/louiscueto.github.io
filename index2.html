@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SITE</title>
+
+	<!-- <script type="text/javascript" src="jquery.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="semantic-ui/semantic.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+
+	<style type="text/css">
+
+		.staat {
+			font-family: 'Staatliches', cursive !important;
+		}
+		.abril {
+			font-family: 'Abril Fatface', cursive !important;
+		}
+		.raleway {
+			font-family: 'Raleway', sans-serif !important;
+		}
+		.overpass {
+			font-family: 'Overpass', sans-serif !important;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+		* {
+			transition: all 0.3s ease-in-out !important;
+			box-sizing: border-box;
+		}
+		*:not(i) {
+			
+			/*font-family: 'Raleway', sans-serif !important;*/
+			font-family: 'Overpass', sans-serif !important;
+		}
+
+		.container {
+			width: 100%;
+			height: 100%;
+		}
+
+		.side-menu {
+			width: 30%;
+			height: 100%;
+			/*background-color: lightgrey;*/
+			float: left;
+			overflow-y: auto;
+			/*padding: 10px;*/
+		}
+
+		#content {
+			width: 70%;
+			height: 100%;
+			/*background-color: #e5e5e5;*/
+			float: right;
+			overflow-y: auto;
+			overflow-x: hidden;
+			/*padding: 30px;*/
+		}
+
+		.menu {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.item {
+			padding: 10px 0;
+		}
+
+		a.item {
+			cursor: auto;
+			/*color: darkgrey;*/
+			font-weight: bold;
+		}
+
+		a.item span {
+
+			cursor: pointer;
+			color: darkgrey;
+			border-bottom: 2px solid transparent;
+		}
+
+		a.item span:hover {
+			color: steelblue;
+			border-bottom: 2px solid steelblue;
+		}
+
+		a.item.active span {
+			color: steelblue;
+			border-bottom: 2px solid steelblue;
+		}
+
+		#content-panel {
+			display: none;
+		}
+
+		#bio-icons i {
+			cursor: pointer;
+			opacity: 0.5 !important;
+			border: 1.5px solid black;
+		}
+
+		#bio-icons i:hover {
+			opacity: 1 !important;
+			transition: all 0.3s ease !important;
+			/*border: 1px solid red;*/
+		}
+
+		.segment {
+			border-radius: 0 !important;
+		}
+
+		.section {
+			padding: 8%;
+
+			visibility: hidden;
+		}
+
+		h1.strike {
+			overflow: hidden;
+			padding-top: 5%;
+			padding-bottom: 10%;
+		}
+		h1.strike:after {
+			background-color: darkgrey;
+			content: "";
+			display: inline-block;
+			height: 2px;
+			position: relative;
+			vertical-align: middle;
+			width: 100%;
+		}
+		h1.strike:after {
+			left: 0.5em;
+			margin-right: -50%;
+		}
+
+
+		.space {
+			padding: 5%;
+		}
+		.skillheader {
+			text-align: center !important; width: 100%;
+		}
+		input, textarea {
+			border: 0 !important;
+			outline: none;
+			border-radius: 0 !important;
+			border-bottom: 2px solid darkgrey !important;
+		}
+		input:focus, textarea:focus {
+			border-bottom: 2px solid #222 !important;
+		}
+
+		#skills .column .ui.segment {
+			cursor: pointer;
+			border-top: 3px solid rgba(34, 36, 38, 0.15);
+			padding: 5%;
+			/*1px solid rgba(34, 36, 38, 0.15)*/
+		}
+
+		#contact-fb {
+			background-color: #3b5998;
+		}
+		#contact-ig {			
+			background: radial-gradient(circle at -10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+		}
+		#contact-fb, #contact-ig {
+			cursor: pointer;
+			opacity: 0.8;
+			border-radius: 0;
+			border: none;
+			color: white;
+			width: 100%;
+		}
+		#contact-fb:hover, #contact-ig:hover {
+			opacity: 1;
+		}
+
+		#submitmsg {
+			border-radius: 0;
+			border: 2px solid black;
+			font-weight: bold;
+		}
+		#submitmsg:hover {
+			color: white !important;
+			background-color: black !important;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container" style="padding: 1%;">
+
+		<div class="side-menu ui segment" style="padding-right: 4%; padding-left: 4%; margin: 0;">
+			<div id="left" style="visibility: hidden;">
+				<div style="width: 50%; margin-top: 20px; margin-left: auto; margin-right: auto;">
+					<img src="300x300.png" style="width: 100%;" />
+				</div>
+				<h1 class="ui header raleway">
+					Juan Dela Cruz
+					<div class="sub header">
+						Web Developer
+					</div>
+				</h1>			
+				<div class="menu" style="text-align: right; display: none;">
+					<a class="item active" href="#" data-panel="home">
+						<span>Home</span>
+					</a>
+					<a class="item" href="#" data-panel="about">
+						<span>About</span>
+					</a>
+					<a class="item" href="#" data-panel="skills">
+						<span>Skills</span>
+					</a>
+					<a class="item" href="#" data-panel="experience">
+						<span>Experience</span>
+					</a>
+					<a class="item" href="#" data-panel="contact">
+						<span>Contact</span>
+					</a>
+				</div>
+
+				<div>
+					<!-- <p>Credibly embrace visionary internal or "organic" sources and business benefits. Collaboratively integrate efficient portals rather than customized customer service. Assertively deliver frictionless services via leveraged interfaces. Conveniently evisculate accurate sources and process-centric expertise.</p> -->
+					<!-- <p>Energistically fabricate customized imperatives through cooperative catalysts for change.</p> -->
+
+					<p>My career objective is to plant myself and grow in the field of Information Technology where I can learn more about my chosen profession, help in my field's growth, and apply my skills in programming and web development. I am a person who fully commits to given tasks and ensures deadlines are met without a decline in the quality of results.</p>
+				</div>
+
+				<div class="ui horizontal list" id="bio-icons" style="margin-top: 20px;">
+					<div class="item"><i class="large circular facebook icon"></i></div>
+					<div class="item"><i class="large circular instagram icon"></i></div>
+					<div class="item"><i class="large circular linkedin icon"></i></div>
+					<div class="item"><i class="large circular steam icon"></i></div>
+					<!-- <div class="item"><i class="large circular playstation icon"></i></div> -->
+					<div class="item"><i class="large circular spotify icon"></i></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="content" style="border: 1px solid rgba(34, 36, 38, 0.15)">
+
+			<div id="content-panel" style="display: block; margin: 0; height: 100%;">
+				<!-- <img src="300x300.png" style="width: 100%;" /> -->
+
+				<div class="ui basic segment" style="padding: 0;">
+
+					<div class="section">
+						<h1 class="strike">About Me</h1>
+						<div class="ui stackable grid">
+							<div class="eight wide column">
+								<div class="ui header">Professionally driven</div>
+								<p>Synergistically strategize customer directed resources rather than principle.</p>
+							</div>
+							<div class="eight wide column">
+								<div class="ui header">Seamlessly leverage</div>
+								<p>Quickly repurpose reliable customer service with orthogonal ideas. Competently.</p>
+							</div>
+							<div class="eight wide column">
+								<div class="ui header">Interactively incubate</div>
+								<p>Interactively myocardinate high standards in initiatives rather than next-generation.</p>
+							</div>
+							<div class="eight wide column">
+								<div class="ui header">Globally streamline</div>
+								<p>Dynamically initiate client-based convergence vis-a-vis performance based.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="section" id="skills">
+						<h1 class="strike">Skills</h1>
+						<div class="ui stackable centered grid">
+							<div class="eight wide column">
+								<div class="ui segment" id="html5">
+									<div class="ui icon header skillheader">
+										<i class="html5 icon"></i>
+									</div>
+									<p>Synergistically strategize customer directed resources rather than principle.</p>
+								</div>
+							</div>
+							<div class="eight wide column">
+								<div class="ui segment" id="css3">
+									<div class="ui icon header skillheader">
+										<i class="css3 alternate icon"></i>
+									</div>
+									<p>Quickly repurpose reliable customer service with orthogonal ideas. Competently.</p>
+								</div>
+							</div>
+							<div class="eight wide column">
+								<div class="ui segment" id="php">
+									<div class="ui icon header skillheader">
+										<i class="php icon"></i>
+									</div>
+									<p>Interactively myocardinate high standards in initiatives rather than next-generation.</p>
+								</div>
+							</div>
+							<div class="eight wide column">
+								<div class="ui segment" id="nodejs">
+									<div class="ui icon header skillheader">
+										<i class="node js icon"></i>
+									</div>
+									<p>Dynamically initiate client-based convergence vis-a-vis performance based.</p>
+								</div>
+							</div>
+							<div class="eight wide column">
+								<div class="ui segment" id="react">
+									<div class="ui icon header skillheader">
+										<i class="react icon"></i>
+									</div>
+									<p>Dynamically initiate client-based convergence vis-a-vis performance based.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="section">
+						<h1 class="strike">Experience</h1>
+						<div class="ui list">
+							<div class="item">
+								<div class="header">Professionally driven</div>
+								<p>Synergistically strategize customer directed resources rather than principle.</p>
+							</div>
+							<div class="item">
+								<div class="header">Seamlessly leverage</div>
+								<p>Quickly repurpose reliable customer service with orthogonal ideas. Competently.</p>
+							</div>
+							<div class="item">
+								<div class="header">Interactively incubate</div>
+								<p>Interactively myocardinate high standards in initiatives rather than next-generation.</p>
+							</div>
+							<div class="item">
+								<div class="header">Globally streamline</div>
+								<p>Dynamically initiate client-based convergence vis-a-vis performance based.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="section">
+						<h1 class="strike">Contact Information</h1>
+						<div class="ui stackable grid">
+							<div class="seven wide column">
+								<div class="ui padded basic segment">
+									<div class="ui relaxed list">
+										<div class="item">
+											<i class="large map marker alternate middle aligned icon"></i>
+											<div class="content" style="padding-left: 10px;">
+												<div class="header">Address</div>
+												<div class="description">1812 Franco St. Tondo, Manila</div>
+											</div>
+										</div>
+										<div class="item">
+											<i class="large mobile middle aligned icon"></i>
+											<div class="content" style="padding-left: 10px;">
+												<div class="header" >Mobile #</div>
+												<div class="description">0977 235 1505</div>
+											</div>
+										</div>
+										<div class="item">										
+											<i class="large mail outline middle aligned icon"></i>
+											<div class="content" style="padding-left: 10px;">
+												<div class="header">Email</div>
+												<div class="description"><a href="#">cuetolouis@yahoo.com</a><br><a href="#">cuetolouis322@gmail.com</a></div>
+											</div>
+										</div>
+										<div class="space"></div>
+										<div class="item">
+											<div class="header">Social Media</div>
+										</div>
+										<div class="item">										
+											<div class="ui label" id="contact-fb">
+												<i class="large facebook icon"></i>
+												Facebook
+											</div>										
+										</div>
+										<div class="item">
+											<div class="ui label" id="contact-ig">
+												<i class="large instagram icon"></i>
+												Instagram
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="nine wide column">
+								<div class="ui very padded segment">
+									<div class="ui header">Send me a message</div>
+									<form class="ui form">
+										<div class="equal width fields">
+											<div class="field">
+												<input type="text" placeholder="Your Name">
+											</div>
+											<div class="field">
+												<input type="text" placeholder="Email Address">
+											</div>
+										</div>
+										<div class="field">
+											<input type="text" placeholder="Subject">
+										</div>
+										<div class="field">
+											<textarea rows="4" placeholder="Message"></textarea>
+										</div>
+										<div class="field">
+											<button class="ui large basic black button" id="submitmsg">SUBMIT</button>
+										</div>							
+									</form>
+								</div>								
+							</div>
+						</div>
+
+						<div class="space"></div>
+
+						
+					</div>
+
+					
+				</div><!-- end of segment -->
+				
+			</div>
+
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			// console.log($(".section:first-child")[0]);
+			$(".section:first-child").addClass("scrolled").transition("fade left", 800);
+			$("#left").transition("fade left", 800);
+		});
+
+		$("#content").on("scroll", function(){
+			console.log($(this).scrollTop());
+			var scroll = $(this).scrollTop();
+			$(".section").each(function(){
+				console.log($(this).offset().top);
+
+				if ($(this).offset().top <= 200) {
+					// $(this).css("visibility", "visible");
+					if (!$(this).hasClass("scrolled")) {
+						$(this).addClass("scrolled");
+						$(this).transition("fade left", 800);
+					}
+				}
+			});
+			console.log(" ==== ");
+		});
+
+		$("#skills .column .ui.segment").hover(function(){
+			var color = "";
+			var $this = $(this);
+			if ($this.attr("id") == "html5") {
+				color = "#f16428";
+			} else if ($this.attr("id") == "css3") {
+				color = "#3595ce";
+			} else if ($this.attr("id") == "php") {
+				color = "#878db8";
+			} else if ($this.attr("id") == "nodejs") {
+				color = "#4f9941";
+			} else if ($this.attr("id") == "react") {
+				color = "#61dafb";
+			}
+			$this.css("border-top", "3px solid " + color);
+			$this.find("i").css("color", color);
+		}, function(){
+			var $this = $(this);
+			$this.css("border-top", "3px solid rgba(34, 36, 38, 0.15)");
+			$this.find("i").css("color", "");
+		});
+	</script>	
+</body>
+</html>
