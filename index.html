@@ -54,7 +54,7 @@
 			padding: 1% 8%;
 		}
 
-		.side-menu {
+		#side-menu {
 			width: 30%;
 			height: 100%;
 			/*background-color: lightgrey;*/
@@ -211,15 +211,32 @@
 			opacity: 1;
 		}
 		
+		#mypic {
+			border-radius: 50%;
+			width: 100%;
+		}
+		@media screen and (max-width: 999px) {
+			#mypic {
+				width: 50%;
+			}
+			#left {
+				text-align: center;
+			}
+			#side-menu, #content {
+				width: 100%; height: auto;
+			}
+			#contact-fb, #contact-ig {
+				width: 50%;
+			}
+		}
 	</style>
 </head>
 <body>
-
 	<div class="container">
-		<div class="side-menu ui segment" style="padding-right: 4%; padding-left: 4%; margin: 0;">
+		<div id="side-menu" style="padding: 3% 4%; margin: 0; border: 1px solid rgba(34, 36, 38, 0.15)">
 			<div id="left" style="visibility: hidden;">
 				<div style="width: 100%; margin-top: 20px; margin-left: auto; margin-right: auto;">
-					<img src="assets/300x300.png" style="width: 100%;" />
+					<img id="mypic" src="assets/300x300.png" />
 				</div>
 				<h1 class="ui header raleway">
 					Juan Dela Cruz
@@ -247,15 +264,17 @@
 					<!-- <div class="column"><i class="large circular spotify icon"></i></div> -->
 				</div>
 			</div>
-		</div><!-- end of .side-menu -->
+		</div><!-- end of #side-menu -->
 
 		<div id="content" style="border: 1px solid rgba(34, 36, 38, 0.15)">
 			<div id="content-panel" style="display: block; margin: 0; height: 100%;">
 				<div class="ui basic segment" style="padding: 0;">
+
 					<div class="section">
 						<div class="ui header strike">Profile</div>
 						<p>My career objective is to plant myself and grow in the field of Information Technology where I can learn more about my chosen profession, help in my field's growth, and apply my skills in programming. I am a person who fully commits to given tasks and ensures deadlines are met.</p>
 					</div>
+
 					<div class="section">
 						<div class="ui header strike">Education</div>
 						<div class="ui small header">
@@ -265,6 +284,7 @@
 							</div>
 						</div>	
 					</div>
+
 					<div class="section">
 						<div class="ui header strike">Experience</div>
 						<div class="ui small header">
@@ -291,9 +311,10 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="section">
 						<div class="ui header strike">Skills / Tools</div>
-						<div class="ui equal width stackable grid">
+						<div class="ui equal width stackable grid" style="margin-top: 10px;">
 							<div class="column">
 								<div class="ui small header">Front-End</div>
 								<ul>
@@ -310,8 +331,9 @@
 								</ul>
 							</div>
 						</div>
-						<p>Willing to adapt learn new technologies*</p>
+						<p>Willing to adapt and learn new technologies*</p>
 					</div>
+
 					<div class="section">
 						<div class="ui header strike">Portfolio</div>
 						<div class="ui equal width stackable grid">
@@ -326,6 +348,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="section">
 						<div class="ui header strike">Contact Information</div>
 						<div class="ui stackable grid" style="margin-top: 20px;">
@@ -396,7 +419,6 @@
 						</div>
 					</div>
 
-
 					
 				</div><!-- end of segment -->
 			</div><!-- end of #content-panel -->
@@ -412,44 +434,44 @@
 			$("#left").transition("fade left", 800);
 		});
 
-		$("#content").on("scroll", function(){
-			return false;
-			// console.log($(this).scrollTop());
-			var scroll = $(this).scrollTop();
-			$(".section").each(function(){
-				// console.log($(this).offset().top);
-				if ($(this).offset().top <= 200) {
-					// $(this).css("visibility", "visible");
-					if (!$(this).hasClass("scrolled")) {
-						$(this).addClass("scrolled");
-						$(this).transition("fade left", 800);
-					}
-				}
-			});
-			// console.log(" ==== ");
-		});
+		// $("#content").on("scroll", function(){
+		// 	return false;
+		// 	// console.log($(this).scrollTop());
+		// 	var scroll = $(this).scrollTop();
+		// 	$(".section").each(function(){
+		// 		// console.log($(this).offset().top);
+		// 		if ($(this).offset().top <= 200) {
+		// 			// $(this).css("visibility", "visible");
+		// 			if (!$(this).hasClass("scrolled")) {
+		// 				$(this).addClass("scrolled");
+		// 				$(this).transition("fade left", 800);
+		// 			}
+		// 		}
+		// 	});
+		// 	// console.log(" ==== ");
+		// });
 
-		$("#skills .column .ui.segment").hover(function(){
-			var color = "";
-			var $this = $(this);
-			if ($this.attr("id") == "html5") {
-				color = "#f16428";
-			} else if ($this.attr("id") == "css3") {
-				color = "#3595ce";
-			} else if ($this.attr("id") == "php") {
-				color = "#878db8";
-			} else if ($this.attr("id") == "nodejs") {
-				color = "#4f9941";
-			} else if ($this.attr("id") == "react") {
-				color = "#61dafb";
-			}
-			$this.css("border-top", "3px solid " + color);
-			$this.find("i").css("color", color);
-		}, function(){
-			var $this = $(this);
-			$this.css("border-top", "3px solid rgba(34, 36, 38, 0.15)");
-			$this.find("i").css("color", "");
-		});
+		// $("#skills .column .ui.segment").hover(function(){
+		// 	var color = "";
+		// 	var $this = $(this);
+		// 	if ($this.attr("id") == "html5") {
+		// 		color = "#f16428";
+		// 	} else if ($this.attr("id") == "css3") {
+		// 		color = "#3595ce";
+		// 	} else if ($this.attr("id") == "php") {
+		// 		color = "#878db8";
+		// 	} else if ($this.attr("id") == "nodejs") {
+		// 		color = "#4f9941";
+		// 	} else if ($this.attr("id") == "react") {
+		// 		color = "#61dafb";
+		// 	}
+		// 	$this.css("border-top", "3px solid " + color);
+		// 	$this.find("i").css("color", color);
+		// }, function(){
+		// 	var $this = $(this);
+		// 	$this.css("border-top", "3px solid rgba(34, 36, 38, 0.15)");
+		// 	$this.find("i").css("color", "");
+		// });
 	</script>	
 </body>
 </html>
