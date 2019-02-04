@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SITE</title>
+	<title>LOUIS</title>
 
-	<!-- <script type="text/javascript" src="jquery.js"></script> -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<!-- <script type="text/javascript" src="semantic-ui/semantic.js"></script> -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
-	<!-- <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.css"> -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+	<script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"> -->
 
 	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -43,7 +43,6 @@
 			box-sizing: border-box;
 		}
 		*:not(i) {
-			
 			/*font-family: 'Raleway', sans-serif !important;*/
 			font-family: 'Overpass', sans-serif !important;
 		}
@@ -129,7 +128,7 @@
 
 		.section {
 			/*padding: 8%;*/
-			padding: 5% 10%;
+			padding: 6% 8%;
 
 			visibility: hidden;
 		}
@@ -138,9 +137,9 @@
 			overflow: hidden;
 			padding-top: 15%;
 			padding-bottom: 15%;
-			text-align: center;
+			text-align: left;
 		}
-		.strike:before,
+		/*.strike:before,*/
 		.strike:after {
 			background-color: darkgrey;
 			background-color: #36bed9;
@@ -149,16 +148,16 @@
 			height: 2px;
 			position: relative;
 			vertical-align: middle;
-			width: 14%;
+			width: 10%;
 		}
 		.strike:after {
 			left: 0.5em;
 			margin-right: -50%;
 		}
-		.strike:before {
+		/*.strike:before {
 			right: 0.5em;
 			margin-left: -50%;
-		}
+		}*/
 
 		.space {
 			padding: 5%;
@@ -206,7 +205,7 @@
 			border-radius: 0;
 			border: none;
 			color: white;
-			width: 100%;
+			width: 80%;
 		}
 		#contact-fb:hover, #contact-ig:hover {
 			opacity: 1;
@@ -220,44 +219,30 @@
 		<div class="side-menu ui segment" style="padding-right: 4%; padding-left: 4%; margin: 0;">
 			<div id="left" style="visibility: hidden;">
 				<div style="width: 100%; margin-top: 20px; margin-left: auto; margin-right: auto;">
-					<img src="300x300.png" style="width: 100%;" />
+					<img src="assets/300x300.png" style="width: 100%;" />
 				</div>
 				<h1 class="ui header raleway">
 					Juan Dela Cruz
 					<div class="sub header">
 						Web Developer at Google
 					</div>
-				</h1>			
-				<div class="menu" style="text-align: right; display: none;">
-					<a class="item active" href="#" data-panel="home">
-						<span>Home</span>
-					</a>
-					<a class="item" href="#" data-panel="about">
-						<span>About</span>
-					</a>
-					<a class="item" href="#" data-panel="skills">
-						<span>Skills</span>
-					</a>
-					<a class="item" href="#" data-panel="experience">
-						<span>Experience</span>
-					</a>
-					<a class="item" href="#" data-panel="contact">
-						<span>Contact</span>
-					</a>
-				</div>
-
-				<div>
-					<!-- <p>Credibly embrace visionary internal or "organic" sources and business benefits. Collaboratively integrate efficient portals rather than customized customer service. Assertively deliver frictionless services via leveraged interfaces. Conveniently evisculate accurate sources and process-centric expertise.</p> -->
-					<!-- <p>Energistically fabricate customized imperatives through cooperative catalysts for change.</p> -->
-
+				</h1>
+				<!-- <div class="ui red segment"> -->
 					<p>On the quest to find the best samgyupsal and sisig joints.</p>
-				</div>
-
-				<div class="ui stackable four column grid" id="bio-icons" style="margin-top: 20px;">
-					<div class="column"><a href="#"><i class="large circular facebook icon"></i></a></div>
-					<div class="column"><a href="#"><i class="large circular instagram icon"></i></a></div>
-					<div class="column"><a href="#"><i class="large circular linkedin icon"></i></a></div>
-					<div class="column"><a href="#"><i class="large circular github icon"></i></a></div>
+				<!-- </div> -->
+				<div class="ui horizontal list" id="bio-icons" style="margin-top: 20px;">
+					<div class="item">
+						<a href="https://www.facebook.com/100000088387688" title="https://www.facebook.com/100000088387688" target="_blank">
+							<i class="large circular facebook icon"></i></a></div>
+					<div class="item">
+						<a href="https://www.instagram.com/cuetolouis" title="https://www.instagram.com/cuetolouis" target="_blank">
+							<i class="large circular instagram icon"></i></a></div>
+					<div class="item">
+						<a href="https://www.linkedin.com/in/louiscueto/" title="https://www.linkedin.com/in/louiscueto/" target="_blank">
+							<i class="large circular linkedin icon"></i></a></div>
+					<div class="item">
+						<a href="https://github.com/louiscueto" title="https://github.com/louiscueto" target="_blank">
+							<i class="large circular github icon"></i></a></div>
 					<!-- <div class="item"><i class="large circular playstation icon"></i></div> -->
 					<!-- <div class="column"><i class="large circular spotify icon"></i></div> -->
 				</div>
@@ -269,7 +254,7 @@
 				<div class="ui basic segment" style="padding: 0;">
 					<div class="section">
 						<div class="ui header strike">Profile</div>
-						<p>My career objective is to plant myself and grow in the field of Information Technology where I can learn more about my chosen profession, help in my field's growth, and apply my skills in programming and web development. I am a person who fully commits to given tasks and ensures deadlines are met.</p>
+						<p>My career objective is to plant myself and grow in the field of Information Technology where I can learn more about my chosen profession, help in my field's growth, and apply my skills in programming. I am a person who fully commits to given tasks and ensures deadlines are met.</p>
 					</div>
 					<div class="section">
 						<div class="ui header strike">Education</div>
@@ -283,15 +268,26 @@
 					<div class="section">
 						<div class="ui header strike">Experience</div>
 						<div class="ui small header">
-							Internship at UCPB GEN (June 2016 - February 2017)
+							Intern at UCPB GEN (June 2016 - February 2017)
 							<div class="sub header">
-								<p>Rendered 1040 hours as technical support and a software developer. Projects include a ticketing system and a CTPL Application.</p>
+								<p>Rendered 1040 hours as a technical support and software development intern. Projects and duties include:</p>
+								<ul>
+									<li>Provide technical support at the main office as well as other branches</li>
+									<li>Ticketing system</li>
+									<li>CTPL Application</li>
 							</div>
 						</div>
 						<div class="ui small header">
 							Web Developer at Google (September 2017 - Present)
 							<div class="sub header">
-								<p>Provide UI and code fixes to problems. Update old code.</p>
+								<p>I believe that I was an asset to the company by:</p>
+								<ul>
+									<li>Providing UI fixes and improvements</li>
+									<li>Correcting code errors</li>
+									<li>Updating old code and System UI</li>
+									<li>Created several file handling tools</li>
+									<li>Created a file deletion module in React Native</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -303,7 +299,7 @@
 								<ul>
 									<li>HTML5</li>
 									<li>CSS3 (Semantic UI, Bootstrap 3 & 4, Bulma)</li>
-									<li>JavaScript (jQuery, React, React Native, Node)</li>
+									<li>JavaScript (jQuery, React Native, Node)</li>
 								</ul>
 							</div>
 							<div class="column">
@@ -314,12 +310,27 @@
 								</ul>
 							</div>
 						</div>
+						<p>Willing to adapt learn new technologies*</p>
+					</div>
+					<div class="section">
+						<div class="ui header strike">Portfolio</div>
+						<div class="ui equal width stackable grid">
+							<div class="column">
+								<img src="assets/300x300.png" style="width: 100%;" />
+							</div>
+							<div class="column">
+								<img src="assets/300x300.png" style="width: 100%;" />
+							</div>
+							<div class="column">
+								<img src="assets/300x300.png" style="width: 100%;" />
+							</div>
+						</div>
 					</div>
 					<div class="section">
 						<div class="ui header strike">Contact Information</div>
 						<div class="ui stackable grid" style="margin-top: 20px;">
 							<div class="seven wide column">
-								<div class="ui relaxed list">
+								<div class="ui very relaxed list">
 									<div class="item">
 										<i class="large map marker alternate middle aligned icon"></i>
 										<div class="content" style="padding-left: 10px;">
@@ -341,25 +352,24 @@
 											<div class="description"><a href="#">cuetolouis@yahoo.com</a><br><a href="#">cuetolouis322@gmail.com</a></div>
 										</div>
 									</div>
-									<div class="space"></div>
+								</div>
+								<div class="space"></div>
+								<div class="ui relaxed list">
 									<div class="item">
-										<div class="header">Social Media</div>
-									</div>
-									<div class="item">										
 										<div class="ui label" id="contact-fb">
 											<i class="large facebook icon"></i>
-											Facebook
+											<span style="float: right;padding-top: 5px;">Facebook</span>
 										</div>										
 									</div>
 									<div class="item">
 										<div class="ui label" id="contact-ig">
 											<i class="large instagram icon"></i>
-											Instagram
+											<span style="float: right;padding-top: 5px;">Instagram</span>
 										</div>
 									</div>
 								</div>								
 							</div>
-							<div class="nine wide column">
+							<!-- <div class="ten wide column">
 								<div class="ui padded segment">
 									<div class="ui header">Send me a message</div>
 									<form class="ui form">
@@ -382,7 +392,7 @@
 										</div>							
 									</form>
 								</div>								
-							</div>
+							</div> -->
 						</div>
 					</div>
 
