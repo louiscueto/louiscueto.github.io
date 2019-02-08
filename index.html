@@ -240,11 +240,11 @@
 			.ui.small.header {
 				font-size: 2rem !important;
 			}
-			/*.ui.header > .sub.header {
-				font-size: 3rem !important;
-			}*/
-			p, .sub.header, li, i {
+			p, .sub.header, li, i, #contact-info *{
 				font-size: 1.8rem !important;
+			}
+			li {
+				padding-bottom: 15px !important;
 			}
 			.bordered-panel {
 				border: 0px solid rgba(34, 36, 38, 0.15);
@@ -383,7 +383,7 @@
 					<div class="section">
 						<div class="ui header strike">Contact Information</div>
 						<div class="ui stackable grid" style="margin-top: 20px;">
-							<div class="seven wide column">
+							<div class="seven wide column" id="contact-info">
 								<div class="ui very relaxed list">
 									<div class="item">
 										<i class="large map marker alternate middle aligned icon"></i>
