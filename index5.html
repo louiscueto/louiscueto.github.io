@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOUIS</title>
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.css">
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/loader.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/transition.min.css">
+	<script type="text/javascript" src="assets/semantic-ui/components/transition.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+
+		.poppins {
+			font-family: 'Poppins', sans-serif;
+		}
+		.raleway {
+			font-family: 'Raleway', sans-serif;
+		}
+		body {
+			position: relative;
+		}
+		html, body {
+			width: 100%; height: 100%; margin: 0;
+		}
+		* {
+			box-sizing: border-box;
+		}
+
+		.blackbg {
+			background-color: #1a1b1c;
+			background-color: #121314;
+		}
+
+		.blackbg-2 {
+			background-color: #1a1b1c;
+			/*background-color: #121314;*/
+		}
+		
+		.fullscreen {
+			width: 100%;
+			height: 100%;
+		}
+
+		#sidebar {
+			position: fixed;
+
+			position: absolute;
+			top: 0;
+			left: -150px;
+			opacity: 0;
+
+			z-index: 99;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			font-size: 90%;			
+			height: 100%;
+			padding: 15px 20px 15px 15px;
+			border-right: 2.5px solid transparent;
+
+			transition: 0.8s left, opacity ease;
+			/*transition: 0.2s opacity ease;*/
+		}
+
+		.sidebar-item {
+			/*flex: 1;*/
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			text-align: center;
+		}
+
+		.sidebar-icon {
+			font-size: 110% !important;
+			/*margin: auto !important;*/
+			padding-bottom: 10px !important;
+			cursor: pointer;
+
+			transition: 0.3s color ease;
+		}
+
+		.sidebar-icon:hover {
+			color: salmon !important;
+		}
+
+		#logo {
+			color: salmon;
+			font-size: 250% !important;
+			margin: 10px auto auto !important;
+		}
+		#sc-icons {
+			justify-content: flex-end;
+		}
+
+		#sc-icons i {
+			opacity: 0.8;
+			margin: 0 auto 10px !important;
+		}
+
+		.sidebar-nav {
+			font-weight: bolder;
+			padding: 10px;
+			cursor: pointer;
+			/*font-size: 100%;*/
+			opacity: 0.8;
+			color: whitesmoke;
+			border-bottom: 2px solid white;
+			transition: 0.2s all ease;
+		}
+
+		.sidebar-nav:hover, .sidebar-nav.active {
+			opacity: 1;
+			color: salmon;
+			border-bottom: 2px solid salmon;
+		}
+
+		.sidebar-nav-2 {
+			font-weight: bolder;
+			color: whitesmoke;
+			padding: 10px;
+			cursor: pointer;
+			transition: 0.3s all ease;
+		}
+		.sidebar-nav-2:hover, .sidebar-nav-2.active {
+			background-color: salmon;
+		}
+
+		.whitesmoke {
+			color: whitesmoke;
+		}
+
+		.col-flex-1 {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.col-flex-2 {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+
+		.col-flex-3 {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.panels {
+			position: absolute;
+			opacity: 0;
+			top: -100px;
+			z-index: 1;
+		}
+		.panels.active {
+			z-index: 9;
+		}
+
+		.nomargin {
+			margin: 0;
+		}
+
+		.row-flex {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.row-flex {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+
+		.row-flex > div {
+			width: 100%;
+			height: 100%;
+			padding-top: 15%;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		var animating = false;
+		var duration = 500;
+
+		$.fn.extend({
+			hidepanel: function(callback){
+				$(".panels.active").removeClass("active").animate({top: "-100px", opacity: 0}, duration-100, callback);
+			},
+			showpanel: function () {
+				$(this).addClass("active").animate({top: 0, opacity: 1}, duration, function(){
+					animating = false;
+				});
+			}
+		})
+
+		function togglepanels () {
+			if (!animating) {
+				animating = true;
+				var id = $(".sidebar-nav.active").data("panel");
+				if ($(".panels.active").length) {
+					$(".panels.active").hidepanel(function(){
+						$("#"+id).showpanel();
+					});
+				} else {
+					$("#"+id).showpanel();
+				}
+			}
+		}
+
+		$(document).ready(function() {
+
+			setTimeout(function() {
+
+				$("#loader").fadeOut("slow", function() {
+
+					$(".panels").css({"padding-left": $("#sidebar").outerWidth() + 50});
+
+					$("#sidebar").css({left: 0, opacity: 1})
+					togglepanels();
+
+					$(".sidebar-nav").on("click", function(){
+						console.log(!$(this).hasClass("active") && animating == false);
+						if (!$(this).hasClass("active") && animating == false) {
+							$(".sidebar-nav").removeClass("active");
+							$(this).addClass("active");
+							togglepanels();
+						}						
+					});
+				});
+
+			}, 150);
+		});
+	</script>
+</head>
+<body class="blackbg">
+
+	<div class="ui active dimmer" id="loader">
+		<div class="ui loader"></div>
+	</div>
+
+	<div class="blackbg-2" id="sidebar">
+		<div class="sidebar-item" >
+			<i class="inverted save icon" id="logo"></i>
+		</div>
+
+		<div class="sidebar-item raleway">
+			<a class="sidebar-nav active" data-panel="home">Home</a>
+			<a class="sidebar-nav" data-panel="about">About</a>
+			<a class="sidebar-nav" data-panel="experience">Exp</a>
+			<a class="sidebar-nav" data-panel="work">My Work</a>
+			<a class="sidebar-nav" data-panel="contact">Contact</a>
+		</div>
+
+		<!-- <div class="sidebar-item raleway">
+			<a class="sidebar-nav-2 active"><span>Home</span></a>
+			<a class="sidebar-nav-2"><span>About</span></a>
+			<a class="sidebar-nav-2"><span>Exp</span></a>
+			<a class="sidebar-nav-2"><span>My</span> Work</a>
+			<a class="sidebar-nav-2"><span>Contact</span></a>
+		</div> -->
+
+		<div class="sidebar-item" id="sc-icons">
+			<i class="sidebar-icon inverted facebook icon"></i>
+			<i class="sidebar-icon inverted instagram icon"></i>
+			<i class="sidebar-icon inverted linkedin icon"></i>
+			<i class="sidebar-icon inverted google icon"></i>
+		</div>
+	</div>
+
+	<!-- <div class="panels blackbg fullscreen col-flex-3 panel" id="home"> -->
+	<div class="panels blackbg fullscreen row-flex panel" id="home">
+		<div>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header</h1>
+		</div>
+		<div>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header</h1>
+		</div>
+	</div>
+
+	<div class="panels blackbg fullscreen col-flex-3 panel" id="about">
+		<div>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - About</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - About</h1>
+		</div>
+	</div>
+
+	<div class="panels blackbg fullscreen col-flex-3 panel" id="experience">
+		<div>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Exp</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Exp</h1>
+		</div>
+	</div>
+
+	<div class="panels blackbg fullscreen col-flex-3 panel" id="work">
+		<div>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Portfolio</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Portfolio</h1>
+		</div>
+	</div>
+
+	<div class="panels blackbg fullscreen col-flex-3 panel" id="contact">
+		<div>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Contact</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Contact</h1>
+		</div>
+	</div>
+
+
+</body>
+</html>
