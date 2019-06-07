@@ -12,9 +12,23 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 	<style type="text/css">
 
+		.oswald {
+			font-family: 'Oswald', sans-serif;
+		}
+
+		.anton {
+			font-family: 'Anton', sans-serif;
+		}
+
+		.ubuntu {
+			font-family: 'Ubuntu', sans-serif;
+		}
 		.poppins {
 			font-family: 'Poppins', sans-serif;
 		}
@@ -32,7 +46,7 @@
 		}
 
 		.blackbg {
-			background-color: #1a1b1c;
+			/*background-color: #1a1b1c;*/
 			background-color: #121314;
 		}
 
@@ -44,6 +58,7 @@
 		.fullscreen {
 			width: 100%;
 			height: 100%;
+			overflow-y: auto;
 		}
 
 		#sidebar {
@@ -62,11 +77,11 @@
 
 			font-size: 90%;			
 			height: 100%;
-			padding: 15px 20px 15px 15px;
-			border-right: 2.5px solid transparent;
+			padding: 15px 15px 15px 15px;
+			padding: 10px;
+			padding: 10px 0;
 
 			transition: 0.8s left, opacity ease;
-			/*transition: 0.2s opacity ease;*/
 		}
 
 		.sidebar-item {
@@ -91,7 +106,6 @@
 		}
 
 		#logo {
-			color: salmon;
 			font-size: 250% !important;
 			margin: 10px auto auto !important;
 		}
@@ -108,15 +122,13 @@
 			font-weight: bolder;
 			padding: 10px;
 			cursor: pointer;
-			/*font-size: 100%;*/
-			opacity: 0.8;
+			font-size: 85%;
 			color: whitesmoke;
 			border-bottom: 2px solid white;
 			transition: 0.2s all ease;
 		}
 
 		.sidebar-nav:hover, .sidebar-nav.active {
-			opacity: 1;
 			color: salmon;
 			border-bottom: 2px solid salmon;
 		}
@@ -153,14 +165,19 @@
 			justify-content: center;
 		}
 
-		.panels {
+		.panel {
+			/*padding-right: 30px;*/
 			position: absolute;
 			opacity: 0;
 			top: -100px;
 			z-index: 1;
 		}
-		.panels.active {
+		.panel.active {
 			z-index: 9;
+		}
+
+		.panel-header {
+			font-size: 6.5vw; line-height: 0.9;
 		}
 
 		.nomargin {
@@ -178,36 +195,80 @@
 			justify-content: space-evenly;
 		}
 
-		.row-flex > div {
-			width: 100%;
-			height: 100%;
-			padding-top: 15%;
+		#loader-text {
+			font-size: 3vw;
+			color: whitesmoke;
+		}
+		.ui.loader:before, .ui.loader:after {
+			/*left: 40% !important;*/
 		}
 
+		img {
+			opacity: 0;
+		}
+
+		#footer {
+			position: absolute;
+			bottom: 20px; right: 0;
+			padding-right: 10px;
+			opacity: 0;
+			z-index: 99;
+			width: 100%;
+
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.footer-item {
+			background-color: black;
+			/*background-color: #1a1b1c;*/
+			background-color: #121314;
+			padding: 3px 5px;
+		}
+
+		.primary {
+			color: salmon;
+		}
+		.secondary {
+			color: #1FBED6;
+		}
+		.tertiary {
+			color: #97C30A;
+		}
+		
 	</style>
 
 	<script type="text/javascript">
+
+
+		$(window).on("resize", function(){
+			console.log($(window).height());
+			$(".panel").height($(window).height());
+		}).trigger("resize");
 
 		var animating = false;
 		var duration = 500;
 
 		$.fn.extend({
-			hidepanel: function(callback){
-				$(".panels.active").removeClass("active").animate({top: "-100px", opacity: 0}, duration-100, callback);
+			hidepanel: function(callback){		
+				$(this).find("img").css({opacity: 0})		
+				$(".panel.active").removeClass("active").animate({top: "-100px", opacity: 0}, duration-100, callback);
 			},
 			showpanel: function () {
+				
 				$(this).addClass("active").animate({top: 0, opacity: 1}, duration, function(){
+					$(this).find("img").animate({opacity: 0.04}, duration);
 					animating = false;
 				});
 			}
 		})
 
-		function togglepanels () {
+		function togglepanel () {
 			if (!animating) {
 				animating = true;
 				var id = $(".sidebar-nav.active").data("panel");
-				if ($(".panels.active").length) {
-					$(".panels.active").hidepanel(function(){
+				if ($(".panel.active").length) {
+					$(".panel.active").hidepanel(function(){						
 						$("#"+id).showpanel();
 					});
 				} else {
@@ -216,56 +277,76 @@
 			}
 		}
 
-		$(document).ready(function() {
+		Number.prototype.pad = function (){
+			var num = this.valueOf()
+			return num > 9 ? num : "0" + num;
+ 		}
 
-			setTimeout(function() {
 
-				$("#loader").fadeOut("slow", function() {
+		// var interval = 0;
+		$(window).on("load", function(){
+		// 	var load = 0;
+		// 	interval = setInterval(function(){
+		// 		if (load > 100) {
+		// 			clearInterval(interval);
 
-					$(".panels").css({"padding-left": $("#sidebar").outerWidth() + 50});
+					setTimeout(function() {
 
-					$("#sidebar").css({left: 0, opacity: 1})
-					togglepanels();
+							$("#loader").fadeOut("fast", function() {
 
-					$(".sidebar-nav").on("click", function(){
-						console.log(!$(this).hasClass("active") && animating == false);
-						if (!$(this).hasClass("active") && animating == false) {
-							$(".sidebar-nav").removeClass("active");
-							$(this).addClass("active");
-							togglepanels();
-						}						
-					});
-				});
+								$(".panel, #footer").css({"padding-left": $("#sidebar").outerWidth() + 50});
 
-			}, 150);
+								$("#footer").animate({opacity: 1});
+								$("#sidebar").css({left: 0, opacity: 1})
+								togglepanel();
+								$(".sidebar-nav").on("click", function(){
+									console.log(!$(this).hasClass("active") && animating == false);
+									if (!$(this).hasClass("active") && animating == false) {
+										$(".sidebar-nav").removeClass("active");
+										$(this).addClass("active");
+										togglepanel();
+									}						
+								});
+
+							});
+
+					}, 200);
+
+		// 		} else {
+		// 			$("#loader-text").html(load.pad());
+		// 			load++
+		// 		}		
+		// 	}, 10);
+
 		});
+
 	</script>
 </head>
 <body class="blackbg">
 
-	<div class="ui active dimmer" id="loader">
-		<div class="ui loader"></div>
+	<div class="ui active dimmer" id="loader" style="text-align: center;">
+		<div class="ui massive text loader poppins" id="loader-text"></div>
 	</div>
 
 	<div class="blackbg-2" id="sidebar">
-		<div class="sidebar-item" >
-			<i class="inverted save icon" id="logo"></i>
+		<div class="sidebar-item">
+			<i class="inverted save icon secondary" id="logo"></i>
 		</div>
 
 		<div class="sidebar-item raleway">
 			<a class="sidebar-nav active" data-panel="home">Home</a>
 			<a class="sidebar-nav" data-panel="about">About</a>
-			<a class="sidebar-nav" data-panel="experience">Exp</a>
+			<a class="sidebar-nav" data-panel="experience">Experience</a>
 			<a class="sidebar-nav" data-panel="work">My Work</a>
 			<a class="sidebar-nav" data-panel="contact">Contact</a>
 		</div>
 
 		<!-- <div class="sidebar-item raleway">
-			<a class="sidebar-nav-2 active"><span>Home</span></a>
-			<a class="sidebar-nav-2"><span>About</span></a>
-			<a class="sidebar-nav-2"><span>Exp</span></a>
-			<a class="sidebar-nav-2"><span>My</span> Work</a>
-			<a class="sidebar-nav-2"><span>Contact</span></a>
+			<a class="sidebar-nav-2 active" data-panel="home">Home</a>
+			<a class="sidebar-nav-2" data-panel="about">About</a>
+			<a class="sidebar-nav-2" data-panel="experience">Experience</a>
+			<a class="sidebar-nav-2" data-panel="work">My Work</a>
+			<a class="sidebar-nav-2" data-panel="contact">Contact</a>
 		</div> -->
 
 		<div class="sidebar-item" id="sc-icons">
@@ -276,46 +357,73 @@
 		</div>
 	</div>
 
-	<!-- <div class="panels blackbg fullscreen col-flex-3 panel" id="home"> -->
-	<div class="panels blackbg fullscreen row-flex panel" id="home">
-		<div>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header</h1>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header</h1>
-		</div>
-		<div>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header</h1>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header</h1>
+
+	<div class="panel blackbg fullscreen row-flex" id="home">
+		<div class="fullscreen col-flex-3" style="padding: 0 30px">
+			<h1 class="whitesmoke nomargin oswald panel-header">
+				Hola,<br>
+				mi nombre es<br>
+				<span class="primary">Juan dela Cruz</span>
+			</h1>
+			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw; font-weight: normal">
+				<span class="secondary">Web Developer</span> @ Google
+			</h1>
+			<p class="whitesmoke poppins">On the quest to find the best samgyupsal, shawarma, and sisig joints.</p>
 		</div>
 	</div>
 
-	<div class="panels blackbg fullscreen col-flex-3 panel" id="about">
-		<div>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - About</h1>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - About</h1>
+	<div class="panel blackbg fullscreen row-flex" id="about">
+		<div class="fullscreen col-flex-3" style="padding: 0 30px">
+			<h1 class="primary nomargin oswald panel-header">
+				About mi
+			</h1>
+			<br>
+			<h2 class="nomargin poppins secondary">Profile</h2>
+			<p class="whitesmoke nomargin poppins">&mdash; My career objective is to plant myself and grow in the field of Information Technology where I can learn more about my chosen profession, help in my field's growth, and apply my skills in programming. I am a person who fully commits to given tasks and ensures deadlines are met. In my spare time I like to browse, read about web design, and make web page templates.</p>
+			<h2 class="nomargin poppins secondary">Education</h2>
+			<p class="whitesmoke nomargin poppins">&mdash; I graduated from FEU - Institute of Technology with a BSIT w/ specialization in Web and Mobile Applications Degree (2012 - 2017)</p>
 		</div>
+		<div class="fullscreen col-flex-3" style="position: relative;">
+			<img src="assets/me.jpg" style="width: 100%; height: auto; opacity: 0;">
+		</div>
+
 	</div>
 
-	<div class="panels blackbg fullscreen col-flex-3 panel" id="experience">
+	<div class="panel blackbg fullscreen col-flex-3" id="experience">
 		<div>
 			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Exp</h1>
 			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Exp</h1>
 		</div>
 	</div>
 
-	<div class="panels blackbg fullscreen col-flex-3 panel" id="work">
+	<div class="panel blackbg fullscreen col-flex-3" id="work">
 		<div>
 			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Portfolio</h1>
 			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Portfolio</h1>
 		</div>
 	</div>
 
-	<div class="panels blackbg fullscreen col-flex-3 panel" id="contact">
-		<div>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Contact</h1>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Contact</h1>
+	<div class="panel blackbg fullscreen row-flex" id="contact">
+		<div class="fullscreen col-flex-3" style="padding: 30px">
+			<h1 class="whitesmoke oswald panel-header" style="color: salmon;">
+				Contact mi
+			</h1>
+			<div classs="blackbg-2">
+				<p class="whitesmoke poppins">CONTACT</p>
+				<form>
+				</form>
+			</div>
+		</div>
+		<div class="fullscreen col-flex-3" style="padding: 30px">
 		</div>
 	</div>
 
 
+	<div class="whitesmoke poppins" id="footer">
+		<span class="footer-item" style="padding-left: 30px;">&copy; 2019 Louis Cueto</span>
+		<span class="footer-item">Created using <a href="https://semantic-ui.com/" target="_blank" style="color: salmon; text-decoration: none; cursor: pointer;">Semantic UI</a></span>
+	</div>
+
+	
 </body>
 </html>
