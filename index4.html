@@ -149,7 +149,7 @@
 		.panels {
 			position: absolute;
 			opacity: 0;
-			top: -100px;
+			top: -150px;
 			z-index: 1;
 
 		}
@@ -171,7 +171,7 @@
 
 		$.fn.extend({
 			hidepanel: function(callback){
-				$(".panels.active").removeClass("active").animate({top: "-100px", opacity: 0}, duration-100, callback);
+				$(".panels.active").removeClass("active").animate({top: "-150px", opacity: 0}, duration-100, callback);
 			},
 			showpanel: function () {
 				$(this).addClass("active").animate({top: 0, opacity: 1}, duration, function(){
