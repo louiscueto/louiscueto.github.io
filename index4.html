@@ -33,12 +33,6 @@
 
 		.blackbg {
 			background-color: #1a1b1c;
-			background-color: #121314;
-		}
-
-		.blackbg-2 {
-			background-color: #1a1b1c;
-			/*background-color: #121314;*/
 		}
 		
 		.fullscreen {
@@ -62,8 +56,8 @@
 
 			font-size: 90%;			
 			height: 100%;
-			padding: 15px 20px 15px 15px;
-			border-right: 2.5px solid transparent;
+			padding: 15px 10px 15px 10px;
+			border-right: 1.5px solid whitesmoke;
 
 			transition: 0.8s left, opacity ease;
 			/*transition: 0.2s opacity ease;*/
@@ -87,12 +81,11 @@
 		}
 
 		.sidebar-icon:hover {
-			color: salmon !important;
+			color: teal !important;
 		}
 
 		#logo {
-			color: salmon;
-			font-size: 250% !important;
+			font-size: 180% !important;
 			margin: 10px auto auto !important;
 		}
 		#sc-icons {
@@ -117,8 +110,8 @@
 
 		.sidebar-nav:hover, .sidebar-nav.active {
 			opacity: 1;
-			color: salmon;
-			border-bottom: 2px solid salmon;
+			color: teal;
+			border-bottom: 2px solid teal;
 		}
 
 		.sidebar-nav-2 {
@@ -129,7 +122,7 @@
 			transition: 0.3s all ease;
 		}
 		.sidebar-nav-2:hover, .sidebar-nav-2.active {
-			background-color: salmon;
+			background-color: teal;
 		}
 
 		.whitesmoke {
@@ -156,32 +149,17 @@
 		.panels {
 			position: absolute;
 			opacity: 0;
-			top: -100px;
+			top: -150px;
 			z-index: 1;
+
 		}
+
 		.panels.active {
 			z-index: 9;
 		}
 
 		.nomargin {
 			margin: 0;
-		}
-
-		.row-flex {
-			display: flex;
-			flex-direction: row;
-		}
-
-		.row-flex {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-		}
-
-		.row-flex > div {
-			width: 100%;
-			height: 100%;
-			padding-top: 15%;
 		}
 
 	</style>
@@ -193,7 +171,7 @@
 
 		$.fn.extend({
 			hidepanel: function(callback){
-				$(".panels.active").removeClass("active").animate({top: "-100px", opacity: 0}, duration-100, callback);
+				$(".panels.active").removeClass("active").animate({top: "-150px", opacity: 0}, duration-100, callback);
 			},
 			showpanel: function () {
 				$(this).addClass("active").animate({top: 0, opacity: 1}, duration, function(){
@@ -224,7 +202,8 @@
 
 					$(".panels").css({"padding-left": $("#sidebar").outerWidth() + 50});
 
-					$("#sidebar").css({left: 0, opacity: 1})
+					$("#sidebar").css({left: 0})
+					$("#sidebar").css({opacity: 1});
 					togglepanels();
 
 					$(".sidebar-nav").on("click", function(){
@@ -247,9 +226,9 @@
 		<div class="ui loader"></div>
 	</div>
 
-	<div class="blackbg-2" id="sidebar">
+	<div class="blackbg" id="sidebar">
 		<div class="sidebar-item" >
-			<i class="inverted save icon" id="logo"></i>
+			<i class="sidebar-icon inverted heart icon" id="logo"></i>
 		</div>
 
 		<div class="sidebar-item raleway">
@@ -276,12 +255,7 @@
 		</div>
 	</div>
 
-	<!-- <div class="panels blackbg fullscreen col-flex-3 panel" id="home"> -->
-	<div class="panels blackbg fullscreen row-flex panel" id="home">
-		<div>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header</h1>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header</h1>
-		</div>
+	<div class="panels blackbg fullscreen col-flex-3 panel" id="home">
 		<div>
 			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header</h1>
 			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header</h1>
