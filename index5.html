@@ -119,8 +119,13 @@
 			text-align: center;
 		}
 
+		i.icon {
+			font-size: 1.2vw !important;
+		}
 		.sidebar-icon {
-			font-size: 110% !important;
+			/*font-size: 110% !important;*/
+
+			/*font-size: 1.2vw;*/
 			/*margin: auto !important;*/
 			padding-bottom: 10px !important;
 			cursor: pointer;
@@ -147,37 +152,32 @@
 
 		.sidebar-nav {
 			font-weight: bolder;
-			padding: 10px;
+			padding: 20px 5px;
 			cursor: pointer;
+
 			font-size: 85%;
+			font-size: 1vw;
+
 			color: whitesmoke;
-			border-bottom: 2px solid white;
+			/*border-bottom: 1px solid transparent;*/
 			transition: 0.3s all ease;
+
+			/*transform: rotate(270deg);*/
 		}
 		.sidebar-nav:last-child {
 			border: none !important;
 		}
 
-		.sidebar-nav:hover, .sidebar-nav.active {
-			color: salmon;
-			/*border-bottom: 2px solid salmon;*/
+		.sidebar-nav:hover {
+			background-color: rgba(18, 19, 20, 0.4) !important;
+			color: darkgrey;
 		}
 
-		.sidebar-nav-2 {
-			font-weight: bolder;
-			color: whitesmoke;
-			padding: 10px;
-			cursor: pointer;
-			border-bottom: 1px solid whitesmoke;
-			transition: 0.3s all ease;
-		}
-		.sidebar-nav-2:hover, .sidebar-nav-2.active {
+		.sidebar-nav.active {
+			background-color: #121314 !important;
 			color: salmon;
 		}
 
-		.sidebar-nav-2:last-child {
-			border: none;
-		}
 
 		.whitesmoke {
 			color: whitesmoke;
@@ -193,13 +193,11 @@
 			flex-direction: column;
 			justify-content: space-around;
 		}
-
 		.col-flex-3 {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 		}
-
 		.col-flex-4 {
 			display: flex;
 			flex-direction: column;
@@ -456,6 +454,7 @@
 
 		#social {
 
+			font-size: 1vw;
 			transform: rotate(270deg);
 			margin-bottom: 30px;
 			padding-left: 45px;
@@ -558,21 +557,6 @@
 			}
 		}
 
-		function togglepanel2 () {
-			if (!animating) {
-				animating = true;
-				var id = $(".sidebar-nav-2.active").data("panel");
-				console.log(id);
-				if ($(".panel.active").length) {
-					$(".panel.active").hidepanel(function(){
-						$(".panel.active").css({height: "200%"});
-						$("#"+id).showpanel();
-					});
-				} else {
-					$("#"+id).showpanel();
-				}
-			}
-		}
 
 		Number.prototype.pad = function (){
 			var num = this.valueOf()
@@ -645,10 +629,6 @@
 </head>
 <body class="blackbg">
 
-	
-
-	<!-- <div class="raleway whitesmoke" id="nav-wheel">HOME</div> -->
-
 	<div class="ui active dimmer" id="loader" style="text-align: center;">
 		<div class="ui massive text loader poppins" id="loader-text"></div>
 	</div>
@@ -688,7 +668,8 @@
 	<div class="panel blackbg fullscreen row-flex" id="home">
 		
 
-		<div class="fullscreen col-flex-3" style="text-align: left; padding: 0 0 0 150px; position: relative;">
+		<div class="fullscreen col-flex-3" style="text-align: left; padding: 0 0 0 11%; position: relative;">
+
 			<div class="pattern" style="
 				width: 120px;
 				height: 200px;
@@ -718,7 +699,7 @@
 			<div class="pattern" style="
 				width: 100px;
 				height: 200px;
-				top: 12%; right: 7%;
+				top: 12%; right: 5%;
 				z-index: 2;
 			"></div>
 
