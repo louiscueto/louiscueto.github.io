@@ -84,6 +84,8 @@
 			/*overflow-y: auto;*/
 			overflow: hidden;
 			background-color: transparent;
+
+			position: relative;
 		}
 
 		#sidebar {
@@ -482,13 +484,24 @@
 		}
 
 
-		#pattern {
+		.pattern {
 			/*border: 1px solid white;*/
-			width: 120px;
-			height: 200px;
-			position: absolute; top: 18%; left: 7%;
-			z-index: 2;
+			position: absolute;
 			background-color: transparent;
+		}
+
+		.pattern {
+			transition: 0.3s all ease;
+		}
+
+		#about-image {
+			position: relative;
+			background-color: #121314;
+			background-image: url('assets/me.jpg');
+
+			background-repeat: no-repeat;
+
+			background-size: cover;
 		}
 	</style>
 
@@ -564,7 +577,7 @@
 
 		$(window).on("load", function(){
 
-			var svg = d3.select("#pattern")
+			var svg = d3.selectAll(".pattern")
 						.append("svg").attr("width", "100%")
 						.attr("height", "100%")
 						.style("position", "absolute")
@@ -669,12 +682,16 @@
 	<div class="panel blackbg fullscreen row-flex" id="home">
 		
 
-		<div class="fullscreen col-flex-3" style="text-align: left; padding: 0 0 0 150px; position: relative">
-			<div id="pattern">
-			</div>
+		<div class="fullscreen col-flex-3" style="text-align: left; padding: 0 0 0 150px; position: relative;">
+			<div class="pattern" style="
+				width: 120px;
+				height: 200px;
+				top: 18%; left: 7%;
+				z-index: 2;
+			"></div>
 
-			<div style="z-index: 5;">
-				<h1 class="whitesmoke nomargin poppins panel-header" style="line-height: 0.7; text-shadow: 3px 3px darkgrey;">
+			<div style="z-index: 3;">
+				<h1 class="whitesmoke nomargin poppins panel-header" style="line-height: 0.7; ">
 					Hola,<br>
 					mi nombre es<br>
 					<span class="primary">Juan dela Cruz</span>
@@ -690,77 +707,85 @@
 	</div>
 
 	<div class="panel blackbg fullscreen row-flex" id="about">
-		<div class="fullscreen col-flex-4" style="padding: 50px; text-align: left;">
-			<h1 class="primary nomargin poppins panel-header" style="font-size: 3.5vw;">
-				Get to know me
-			</h1>
+		<div class="fullscreen col-flex-3" style="padding: 50px; text-align: left; position: relative;">
 
-			<div style="padding: 10px 0;">
-				<!-- <h3 class="montserrat secondary" style="margin: 10px 0;">Profile</h3> -->
-				<p class="whitesmoke nomargin montserrat about-text">Louis's career objective is to plant myself and grow in the field of Information Technology where he can learn more and apply his skills in his chosen profession. He is a person who fully commits to given tasks and ensures deadlines are met.</p>
-			</div>
-			
-			<div class="about-text row-flex" style="padding: 10px 0;">
-				<!-- <h2 class="merriweather nomargin secondary" style="margin: 10px 0;">Education</h2> -->
-				<h2 class="nomargin montserrat secondary" style="width: 40%; opacity: 1; font-size: 1vw;">2012 - 2017</h2>
-				<div class="whitesmoke nomargin montserrat about-text" style="width: 100%;">				
-					<p class="nomargin">BS Information Technology with specialization in Web and Mobile Applications</p>
-					<p class="nomargin">FEU - Institute of Technology</p>
-					<p class="nomargin">Nicanor Reyes St., Sampaloc, Manila</p>
+			<div class="pattern" style="
+				width: 100px;
+				height: 200px;
+				top: 12%; right: 7%;
+				z-index: 2;
+			"></div>
+
+			<div style="z-index: 3;">
+
+				<h1 class="primary nomargin poppins panel-header" style="font-size: 3.5vw;">
+					Get to know me
+				</h1>
+
+				<div style="padding: 10px 0;">
+					<p class="whitesmoke nomargin montserrat about-text">A 22 yr old web developer, Louis's career objective is to plant himself and grow in the field of Information Technology where he can learn more and apply his skills in his chosen profession. He is a person who fully commits to given tasks and ensures deadlines are met.</p>
 				</div>
+				
+				<div class="about-text row-flex" style="padding: 10px 0;">
+					<h2 class="nomargin montserrat secondary" style="width: 40%; opacity: 1; font-size: 1vw;">2012 - 2017</h2>
+					<div class="whitesmoke nomargin montserrat about-text" style="width: 100%;">				
+						<p class="nomargin">BS Information Technology with specialization in Web and Mobile Applications</p>
+						<p class="nomargin">FEU - Institute of Technology</p>
+						<p class="nomargin">Nicanor Reyes St., Sampaloc, Manila</p>
+					</div>
+				</div>
+
+				<div class="about-text row-flex" style="padding: 10px 0;">
+					<h2 class="nomargin montserrat secondary" style="width: 40%; opacity: 1; font-size: 1vw;">2017 - Present</h2>
+					<p class="whitesmoke nomargin montserrat" style="width: 100%; ">Wev Developer at Google</p>
+				</div>
+
+				<div class="about-text secondary about-separator"></div>
+				
+				<div class="about-text whitesmoke montserrat">
+					<p class="secondary" style="font-weight: bold;">HTML 5</p>
+					<p class="row-flex-2">
+						<span class="secondary" style="font-weight: bold; width: 1%; white-space: nowrap;">CSS 3</span>
+						<span>
+							<span class="separator" style="font-size: 100%;">[</span>
+							Semantic UI
+							<span class="separator">//</span>
+							Bulma
+							<span class="separator">//</span>
+							Bootstrap
+							<span class="separator" style="font-size: 100%;">]</span>
+						</span>
+					</p>
+					<p class="row-flex-2">
+						<span class="secondary" style="font-weight: bold; width: 1%;">JS</span>
+						<span>
+							<span class="separator" style="font-size: 100%;">[</span>
+							jQuery
+							<span class="separator">//</span>
+							React JS
+							<span class="separator">//</span>
+							Node JS
+							<span class="separator" style="font-size: 100%;">]</span>
+						</span>
+					</p>
+					<p class="row-flex-2">
+						<span class="secondary" style="font-weight: bold; width: 1%;">PHP</span>
+						<span>
+							<span class="separator" style="font-size: 100%;">[</span>
+							CodeIgniter 3
+							<span class="separator" style="font-size: 100%;">]</span>
+						</span>
+					</p>
+					<p><span class="secondary" style="font-weight: bold;">MySQL</span></p>
+				</div>
+
 			</div>
-
-			<div class="about-text row-flex" style="padding: 10px 0;">
-				<h2 class="nomargin montserrat secondary" style="width: 40%; opacity: 1; font-size: 1vw;">2017 - Present</h2>
-				<p class="whitesmoke nomargin montserrat" style="width: 100%; ">Wev Developer at Google</p>
-			</div>
-
-			<!-- <div class="whitesmoke montserrat" style="padding: 10px 0;">
-				<p class="about-text nomargin">> On a quest to find the best samgyupsal, shawarma, and sisig joints.</p>
-				<p class="about-text nomargin">> Hoping for another season of Sherlock</p>
-			</div> -->
-
-			<div class="about-text secondary about-separator"></div>
 			
-			<div class="about-text whitesmoke montserrat">
-				<p class="secondary" style="font-weight: bold;">HTML 5</p>
-				<p class="row-flex-2">
-					<span class="secondary" style="font-weight: bold; width: 1%; white-space: nowrap;">CSS 3</span>
-					<span>
-						<span class="separator" style="font-size: 100%;">[</span>
-						Semantic UI
-						<span class="separator">//</span>
-						Bulma
-						<span class="separator">//</span>
-						Bootstrap
-						<span class="separator" style="font-size: 100%;">]</span>
-					</span>
-				</p>
-				<p class="row-flex-2">
-					<span class="secondary" style="font-weight: bold; width: 1%;">JS</span>
-					<span>
-						<span class="separator" style="font-size: 100%;">[</span>
-						jQuery
-						<span class="separator">//</span>
-						React JS
-						<span class="separator">//</span>
-						Node JS
-						<span class="separator" style="font-size: 100%;">]</span>
-					</span>
-				</p>
-				<p class="row-flex-2">
-					<span class="secondary" style="font-weight: bold; width: 1%;">PHP</span>
-					<span>
-						<span class="separator" style="font-size: 100%;">[</span>
-						CodeIgniter 3
-						<span class="separator" style="font-size: 100%;">]</span>
-					</span>
-				</p>
-				<p><span class="secondary" style="font-weight: bold;">MySQL</span></p>
-			</div>
+
 		</div>
-		<div class="fullscreen col-flex-3" style="position: relative;">
-			<img src="assets/me.jpg" style="width: 100%; height: 100%; opacity: 0;">
+		<div class="fullscreen col-flex-3" id="about-image" style="">
+			<div class="fullscreen" style="background-color: black; opacity: 0.9"></div>
+			<!-- <img src="assets/me.jpg" style="width: 100%; height: 100%; opacity: 0;"> -->
 		</div>
 
 	</div>
@@ -810,10 +835,16 @@
 			</form>
 		</div>
 		<div class="fullscreen blackbg-2 contact-1" style="padding: 30px; border: 1px solid transparent;">
-			<div class="whitesmoke fullscreen row-flex" style="">
+			<div class="whitesmoke fullscreen row-flex" style="position: relative;">
 				
+				<div class="pattern" style="
+					width: 80px;
+					height: 200px;
+					top: 20%; left: 5%;
+					z-index: 2;
+				"></div>
 
-				<div class="col-flex-3" style="width: 100%; border: 1px solid transparent;">
+				<div class="col-flex-3" style="width: 100%; border: 1px solid transparent; z-index: 3;">
 					<p class="whitesmoke poppins" style="font-size: 1.1vw;">
 						<i class="map alternate marker secondary icon"></i>Tondo, Manila, Philippines</p>
 					<p class="whitesmoke poppins" style="font-size: 1.1vw;">
@@ -825,54 +856,63 @@
 			</div>
 		</div>
 
-		<div class="fullscreen col-flex-3 contact-2" style="padding: 30px; width: 80%;">
+		<div class="fullscreen col-flex-3 contact-2" style="padding: 30px; width: 80%; position: relative;">
 
-			<div style="text-align: center;">
-				<h1 class="primary poppins panel-header" style="margin: 0 0 10px 0; font-size: 4vw;">
-					Get in touch, se&ntilde;or
-				</h1>
-			</div>
-			<form>
-				<div class="fields">
-					<div class="field">
-						<label class="whitesmoke raleway">Name</label>
-						<div class="input-container">
-							<input type="text" class="input blackbg-2 raleway" placeholder="Enter name here.." />
-							<div class="input-border onfocus"></div>
-							<div class="input-border"></div>							
-						</div>						
+			<div class="pattern" style="
+				width: 140px;
+				height: 200px;
+				top: 20%; left: 0;
+				z-index: 2;
+			"></div>
+
+			<div style="z-index: 5;">
+				<div style="text-align: center;">
+					<h1 class="primary poppins panel-header" style="margin: 0 0 10px 0; font-size: 4vw;">
+						Get in touch, se&ntilde;or
+					</h1>
+				</div>
+				<form>
+					<div class="fields">
+						<div class="field">
+							<label class="whitesmoke raleway">Name</label>
+							<div class="input-container">
+								<input type="text" class="input blackbg-2 raleway" placeholder="Enter name here.." />
+								<div class="input-border onfocus"></div>
+								<div class="input-border"></div>							
+							</div>						
+						</div>
+						<div class="field">
+							<label class="whitesmoke raleway">Email</label>
+							<div class="input-container">
+								<input type="text" class="input blackbg-2 raleway" placeholder="Enter email here.." />
+								<div class="input-border onfocus"></div>
+								<div class="input-border"></div>
+							</div>
+						</div>
 					</div>
 					<div class="field">
-						<label class="whitesmoke raleway">Email</label>
+						<label class="whitesmoke raleway">Message</label>
 						<div class="input-container">
-							<input type="text" class="input blackbg-2 raleway" placeholder="Enter email here.." />
+							<textarea class="input blackbg-2 raleway" rows="4" placeholder="Enter message here.."></textarea>
 							<div class="input-border onfocus"></div>
 							<div class="input-border"></div>
 						</div>
 					</div>
-				</div>
-				<div class="field">
-					<label class="whitesmoke raleway">Message</label>
-					<div class="input-container">
-						<textarea class="input blackbg-2 raleway" rows="4" placeholder="Enter message here.."></textarea>
-						<div class="input-border onfocus"></div>
-						<div class="input-border"></div>
+					<div class="field">
+						<button type="button" class="raleway form-button active">SUBMIT</button>
 					</div>
-				</div>
-				<div class="field">
-					<button type="button" class="raleway form-button active">SUBMIT</button>
-				</div>
-			</form>
-
-			<p class="whitesmoke poppins" style="font-size: 1.1vw;">
-				<span style="padding: 0 5px 0 0;">
-					<i class="map alternate marker secondary icon"></i>&nbsp; &nbsp; Manila, Philippines</span>
-				<span style="padding: 0 5px;">
-					<i class="mobile secondary icon"></i> &nbsp; 0977 235 1505</span>
-			</p>
-			<p class="nomargin whitesmoke poppins" style="font-size: 1.1vw;">
-				<i class="mail outline secondary icon"></i>&nbsp; &nbsp; cuetolouis@yahoo.com <span class="separator">//</span> cuetolouis322@gmail.com
-			</p>
+				</form>
+				<p class="whitesmoke poppins" style="font-size: 1.1vw;">
+					<span style="padding: 0 5px 0 0;">
+						<i class="map alternate marker secondary icon"></i>&nbsp; &nbsp; Manila, Philippines</span>
+					<span style="padding: 0 5px;">
+						<i class="mobile secondary icon"></i> &nbsp; 0977 235 1505</span>
+				</p>
+				<p class="nomargin whitesmoke poppins" style="font-size: 1.1vw;">
+					<i class="mail outline secondary icon"></i>&nbsp; &nbsp; cuetolouis@yahoo.com <span class="separator">//</span> cuetolouis322@gmail.com
+				</p>
+			</div>
+			
 
 		</div>
 	</div>
