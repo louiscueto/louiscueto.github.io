@@ -57,7 +57,7 @@ html, body {
 
 	position: absolute;
 	top: 0;
-	left: -150px;
+	left: -100px;
 	opacity: 0;
 
 	z-index: 99;
@@ -72,7 +72,7 @@ html, body {
 	padding: 10px;
 	padding: 10px 0;
 
-	transition: 0.8s left, opacity ease;
+	/*transition: 0.8s left, opacity ease;*/
 }
 
 .sidebar-item {
@@ -113,11 +113,12 @@ a.sidebar-icon {
 	font-size: 250% !important;
 	margin: 10px auto auto !important;
 }
+
 #sc-icons {
 	justify-content: flex-end;
 }
-
 #sc-icons i {
+	font-size: 1.2vw !important;
 	opacity: 0.8;
 	margin: 0 auto 10px !important;
 }
@@ -244,8 +245,8 @@ img {
 
 .footer-item {
 	/*background-color: black;*/
-	/*background-color: #1a1b1c;*/
-	background-color: #121314;
+	background-color: #1a1b1c;
+	/*background-color: #121314;*/
 	padding: 7px;
 
 	font-size: 80%;
@@ -470,7 +471,7 @@ img {
 }
 
 .togglemenu {
-
+	font-size: 1.5vw;
 	cursor: pointer;
 	color: whitesmoke;
 }
