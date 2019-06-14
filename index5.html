@@ -10,24 +10,20 @@
 	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/transition.min.css">
 	<script type="text/javascript" src="assets/semantic-ui/components/transition.min.js"></script>
 
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
 
 	<script type="text/javascript" src="assets/textures-master/dist/textures.js"></script>
 	<script type="text/javascript" src="assets/d3.js"></script>
 
-	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 
-	<!-- <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet"> -->
-
-
 	<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab&display=swap" rel="stylesheet">
 
 
 	<style type="text/css">
+		
 
 		.montserrat {
 			font-family: 'Montserrat', sans-serif;
@@ -54,516 +50,22 @@
 		.poppins {
 			font-family: 'Poppins', sans-serif;
 		}
-		
 
-		body {
-			position: relative;
-		}
-		html, body {
-			overflow: hidden;
-			background-color: #121314;
-			width: 100%; height: 100%; margin: 0;
-		}
-		* {
-			box-sizing: border-box;
-		}
-
-		.blackbg {
-			/*background-color: #1a1b1c;*/
-			background-color: #121314;
-		}
-
-		.blackbg-2 {
-			background-color: #1a1b1c !important;
-			/*background-color: #121314;*/
-		}
-		
-		.fullscreen {
-			width: 100%;
-			height: 100%;
-			/*overflow-y: auto;*/
-			overflow: hidden;
-			background-color: transparent;
-
-			position: relative;
-		}
-
-		#sidebar {
-			position: fixed;
-
-			position: absolute;
-			top: 0;
-			left: -150px;
-			opacity: 0;
-
-			z-index: 99;
-
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-
-			font-size: 90%;			
-			height: 100%;
-			padding: 15px 15px 15px 15px;
-			padding: 10px;
-			padding: 10px 0;
-
-			transition: 0.8s left, opacity ease;
-		}
-
-		.sidebar-item {
-			/*flex: 1;*/
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			text-align: center;
-		}
-
-		i.icon {
-			font-size: 1.2vw !important;
-		}
-		.sidebar-icon {
-			/*font-size: 110% !important;*/
-
-			/*font-size: 1.2vw;*/
-			/*margin: auto !important;*/
-			padding-bottom: 10px !important;
-			cursor: pointer;
-
-			transition: 0.3s color ease;
-		}
-
-		.sidebar-icon:hover {
-			/*color: salmon;*/
-		}
-
-		#logo {
-			font-size: 250% !important;
-			margin: 10px auto auto !important;
-		}
-		#sc-icons {
-			justify-content: flex-end;
-		}
-
-		#sc-icons i {
-			opacity: 0.8;
-			margin: 0 auto 10px !important;
-		}
-
-		.sidebar-nav {
-			/*font-weight: bolder;*/
-			padding: 15px 5px;
-			cursor: pointer;
-
-			font-size: 85%;
-			font-size: 1vw;
-
-			color: whitesmoke;
-			/*border-bottom: 1px solid transparent;*/
-			transition: 0.3s all ease;
-
-			/*transform: rotate(270deg);*/
-		}
-		.sidebar-nav:last-child {
-			border: none !important;
-		}
-
-		.sidebar-nav:hover {
-			background-color: rgba(18, 19, 20, 0.4) !important;
-			color: darkgrey;
-		}
-
-		.sidebar-nav.active {
-			background-color: #121314 !important;
-			color: salmon;
-		}
-
-
-		.whitesmoke {
-			color: whitesmoke;
-		}
-
-		.col-flex-1 {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-		.col-flex-2 {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-		}
-		.col-flex-3 {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-		.col-flex-4 {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-		}
-
-		.panel {
-			/*padding-right: 30px;*/
-			height: 120%;
-			position: absolute;
-			opacity: 0;
-			top: -100px;
-			z-index: 1;
-
-			background-color: transparent;
-		}
-		.panel.active {
-			z-index: 9;
-		}
-
-		.panel-header {
-			font-size: 6vw; line-height: 0.9;
-		}
-
-		.nomargin {
-			margin: 0;
-		}
-
-
-		.row-flex {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-		}
-
-		.row-flex-2 {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-
-		.row-flex-3 {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-		}
-
-		#loader-text {
-			font-size: 3vw;
-			color: whitesmoke;
-		}
-		.ui.loader:before, .ui.loader:after {
-			/*left: 40% !important;*/
-		}
-
-		img {
-			opacity: 0;
-		}
-
-		#footer {
-			position: absolute;
-			bottom: 20px; right: 0;
-			padding-right: 20px;
-			opacity: 0;
-			z-index: 99;
-			width: 100%;
-
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.footer-item {
-			/*background-color: black;*/
-			/*background-color: #1a1b1c;*/
-			/*background-color: #121314;*/
-			padding: 7px;
-
-			font-size: 80%;
-		}
-
-		.primary {
-			color: salmon;
-		}
-		.secondary {
-			color: #1FBED6;
-		}
-		.tertiary {
-			color: #97C30A;
-		}
-		.teal {
-			color: rgb(53, 189, 178);
-		}
-		.fields {
-			/*background-color: */
-			display: flex;
-			justify-content: space-around;
-		}
-		.field {
-			width: 100%;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			/*padding: 10px 10px 10px 0;*/
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-		}
-
-		.fields .field:first-child {
-			padding-right: 10px;
-		}
-
-		.input {
-			margin-top: 10px;
-			padding: 15px;
-			border: none;
-			border-bottom: none;
-
-			width: 100%;
-			outline: salmon;
-			color: whitesmoke;
-
-			/*opacity: 0.9;*/
-			transition: 0.3s opacity ease;
-		}
-
-		.input:focus {
-			/*opacity: 1;*/
-		}
-
-		.input-container {
-			position: relative;
-		}
-
-		.input-border {
-			position: absolute;
-			width: 100%;
-			border: 1px solid darkgrey;
-			z-index: 1;
-		}
-
-		.input-border.onfocus {
-			position: absolute;
-			width: 0;
-			border: 1px solid transparent;
-			z-index: 2;
-
-			transition: 0.52s width ease;
-		}
-
-		
-
-		.input:focus + .onfocus {
-			border: 1px solid salmon;
-			width: 100%;
-		}
-
-		.form-button {
-			border: 1px solid salmon;
-			background-color: transparent;
-			color: salmon;
-			padding: 1.1em 1.8em;
-
-
-			display: inline-block;
-			margin-left: auto;
-			font-weight: bolder;
-
-			cursor: pointer;
-			outline: none;
-
-			border-radius: 30px;
-
-			transition: all 0.3s ease;
-		}
-
-		#cta {
-			border: 2px solid #1FBED6;
-			/*border: 2px solid #1a1b1c;*/
-			background-color: transparent;
-			/*background-color: #1a1b1c;*/
-			color: white;
-			color: #1FBED6;
-			padding: 1em 1.7em;
-
-			font-weight: bolder;
-			cursor: pointer;
-			border-radius: 30px;
-
-			transition: all 0.1s ease;
-		}
-
-		#cta:hover {
-			color: black;
-			/*color: #1FBED6;*/
-			background-color: #1FBED6;
-			/*background-color: #1a1b1c;*/
-		}
-
-		.form-button:hover, .form-button.active {
-			color: white;
-			background-color: salmon;
-		}
-
-		.form-button.active:hover {
-			border: 1px solid black;
-		}
-
-		#palette {
-
-
-			position: absolute;
-			top: 20px; right: 20px;
-			display: flex;
-			justify-content: space-between;
-			z-index: 99;
-			padding: 5px;
-			/*background-color: #e5e5e5;*/
-
-			display: none;
-		}
-
-		#palette div {
-			padding: 15px;
-			background-color: currentColor;
-		}
-
-		#nav-wheel {
-			opacity: 0;
-			position: absolute;
-			top: 70px;
-			font-size: 3vw;
-			color: salmon;
-			/*transform: rotate(270deg);*/
-		}
-
-		#about-grid {
-			flex-direction: row wrap;
-			flex-wrap: wrap;
-		}
-
-		.separator {
-			opacity: 0.5; font-size: 80%; padding: 0 10px; color: whitesmoke !important;
-		}
-
-		.about-text {
-			opacity: 0.85; font-size: 1vw;
-		}
-
-		.about-separator {
-			width: 7%;
-			border: 1px solid currentColor;
-			margin: 20px 0;
-		}
-
-		#social {
-
-			font-size: 1vw;
-			transform: rotate(270deg);
-			margin-bottom: 30px;
-			padding-left: 45px;
-			opacity: 0.6;
-
-			position: relative;
-
-			z-index: 1;
-			overflow: hidden;
-			text-align: center;
-
-			/*border: 1px solid white;*/
-		}
-
-		#social:before {
-			position: absolute;
-			top: 51%;
-			overflow: hidden;
-			width: 50%;
-			height: 1px;
-			content: '\a0';
-
-			opacity: 0.6;
-			background-color: white;
-			margin-right: 50px;
-		}
-		#social:before {
-			margin-left: -50%;
-			text-align: right;
-		}
-
-
-		.pattern {
-			/*border: 1px solid white;*/
-			position: absolute;
-			background-color: transparent;
-		}
-
-		.pattern {
-			transition: 0.3s all ease;
-		}
-
-		#about-image {
-			position: relative;
-			background-color: #121314;
-			background-image: url('assets/me.jpg');
-
-			background-repeat: no-repeat;
-
-			background-size: cover;
-		}
 	</style>
 
 	<script type="text/javascript">
 
-		$(window).on("resize", function(){
-			console.log($(window).height());
-			$(".panel").height($(window).height());
-		}).trigger("resize");
 
 		var animating = false;
 		var duration = 500;
 
-		$.fn.extend({
-			hidepanel: function(callback) {	
-				$(this).find("img").css({opacity: 0})		
-				$(".panel.active").removeClass("active").animate({top: "-100px", opacity: 0, height: "120%"}, duration-100, callback);
-			},
-			showpanel: function () {
-				
-				$(this).css({});
-				$(this).addClass("active").animate({
-					top: 0,
-					opacity: 1,
-					height: $(window).height(),
-				}, duration, function(){
-
-					$(this).find("img").animate({opacity: 0.04}, duration);		
-
-					animating = false;			
-				});
-			}
-		})
-
-		function togglepanel () {
-			if (!animating) {
-				animating = true;
-				var id = $(".sidebar-nav.active").data("panel");
-				if ($(".panel.active").length) {
-
-					$(".panel.active").hidepanel(function(){
-						
-						$(".panel").css({height: "120%"});
-						$("#"+id).showpanel();
-
-					});
-				} else {
-					$("#"+id).showpanel();
-				}
-			}
-		}
-
-
-		Number.prototype.pad = function (){
-			var num = this.valueOf()
-			return num > 9 ? num : "0" + num;
- 		}
+		var footeroffset = 0;
+		var footer, sidebar;
 
 		$(window).on("load", function(){
+			console.log("window loaded");
+			footer = $("#footer");
+			sidebar = $("#sidebar");
 
 			var svg = d3.selectAll(".pattern")
 						.append("svg").attr("width", "100%")
@@ -595,16 +97,41 @@
 						} else {
 							$(".contact-2").show();
 						}
+						
 
-						$(".panel").css({"padding-left": $("#sidebar").outerWidth() + 0});
-						$("#footer").css({"padding-left": $("#sidebar").outerWidth() + 20});
+						$(".panel").css({"padding-left": sidebar.outerWidth() + 0});
+						footer.css({"padding-left": sidebar.outerWidth() + 20});
 
-						$("#footer").animate({opacity: 1});
+						footer.animate({opacity: 1});
+						sidebar.css({left: 0, opacity: 1})
 
-						$("#sidebar").css({left: 0, opacity: 1})
+						// console.log($("#hidemenu").offset());
+						// barleft = $("#hidemenu").offset().left;
+						$("#hidemenu").on("click", function(){
+
+							$(".panel").animate({"padding-left": 0});
+							footer.animate({"padding-left": 20});
+
+							var top = $(this).offset().top + 5;
+							var left = $(this).offset().left;
+
+							footeroffset = footer.offset();
+							sidebar.animate({left: "-150px", opacity: 0}, function(){
+								$("#showmenu").css({left: left, top: top});
+								$("#showmenu").animate({opacity: 1});
+							});
+						});
+
+						$("#showmenu").on("click", function(){
+							$(this).animate({opacity: 0}, 200, function(){
+								$(".panel").animate({"padding-left": sidebar.outerWidth() + 0});
+								footer.animate({"padding-left": sidebar.outerWidth() + 20});
+								sidebar.css({left: 0, opacity: 1})
+							});
+						});
 
 						if (!!location.hash) {
-							$(".sidebar-nav").removeClass("active");
+							$(".sidebar-nav.active").removeClass("active");
 							$(location.hash+"-nav").addClass("active");
 						}
 
@@ -612,7 +139,7 @@
 
 						$(".sidebar-nav").on("click", function(){
 							if (!$(this).hasClass("active") && animating == false) {
-								$(".sidebar-nav").removeClass("active");
+								$(".sidebar-nav.active").removeClass("active");
 								$(this).addClass("active");
 								location.hash = $(this).data("panel");
 								togglepanel();
@@ -624,6 +151,78 @@
 			}, 200);
 
 		});
+
+		$(window).on("resize", function(){
+			$(".panel").height($(window).height());
+		}).trigger("resize");
+
+		$.fn.extend({
+			hidepanel: function(callback) {	
+				$(this).find("img, .content").css({opacity: 0})		
+				$(".panel.active").removeClass("active").animate({top: "-100px", opacity: 0, height: "120%"}, duration-100, callback);
+			},
+			showpanel: function () {
+				
+				var $this = $(this);
+				$this.addClass("active").animate({
+					top: 0,
+					opacity: 1,
+					height: $(window).height(),
+				}, duration, function(){
+
+					if ($this.attr("id") == "work") {
+
+						var gridarr = [], elems = [], gridctr = 0, grid_interval;
+						while (gridarr.length < 6) {
+							var r = Math.floor(Math.random()*6);
+							if (gridarr.indexOf(r) === -1) {
+								elems.push($("#work .content")[r]);
+								gridarr.push(r);
+							}
+						}
+						
+						grid_interval = setInterval(function(){
+							if (gridctr >= gridarr.length) {
+								clearInterval(grid_interval);
+							} else {								
+								$(elems[gridctr]).animate({opacity: 1}, duration);
+							}
+							gridctr++;
+						}, 150);
+
+					} else {
+						$this.find("img").animate({opacity: 0.04}, duration);
+					}
+						
+
+					animating = false;			
+				});
+			}
+		})
+
+		function togglepanel () {
+			if (!animating) {
+				animating = true;
+				var id = $(".sidebar-nav.active").data("panel");
+				if ($(".panel.active").length) {
+
+					$(".panel.active").hidepanel(function(){
+						
+						$(".panel").css({height: "120%"});
+						$("#"+id).showpanel();
+
+					});
+				} else {
+					$("#"+id).showpanel();
+				}
+			}
+		}
+
+
+		Number.prototype.pad = function (){
+			var num = this.valueOf()
+			return num > 9 ? num : "0" + num;
+ 		}
 
 	</script>
 </head>
@@ -640,11 +239,16 @@
 		<!-- <div class="teal"></div> -->
 	</div>
 
+	<a class="raleway togglemenu" style="font-size: 150%;" id="showmenu">
+		<i class="fitted bars icon"></i>
+	</a>
+
+
 	<div class="blackbg-2" id="sidebar">
 		<div class="sidebar-item">
-			<span class="whitesmoke secondary raleway" style="font-size: 150%;">
-				<i class="bars icon"></i>
-			</span>
+			<a class="whitesmoke raleway togglemenu" style="font-size: 200%;" id="hidemenu">
+				<i class="fitted bars icon"></i>
+			</a>
 		</div>
 
 		<div class="sidebar-item raleway" style="text-transform: lowercase;">
@@ -657,10 +261,14 @@
 		<div class="sidebar-item secondary" id="sc-icons">
 			<span class="whitesmoke raleway" id="social"> &nbsp; social</span>
 			<br>
-			<i class="sidebar-icon facebook icon"></i>
-			<i class="sidebar-icon instagram icon"></i>
-			<i class="sidebar-icon linkedin icon"></i>
-			<i class="sidebar-icon google icon"></i>
+			<a class="sidebar-icon" href="https://www.facebook.com" target="_blank">
+				<i class="secondary facebook icon"></i></a>
+			<a class="sidebar-icon" href="https://www.instagram.com" target="_blank">
+				<i class="secondary instagram icon"></i></a>
+			<a class="sidebar-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank">
+				<i class="secondary linkedin icon"></i></a>
+			<a class="sidebar-icon" href="https://www.github.com/louiscueto" target="_blank">
+				<i class="secondary github icon"></i></a>
 		</div>
 	</div>
 
@@ -678,7 +286,7 @@
 			"></div>
 
 			<div style="z-index: 3;">
-				<h1 class="whitesmoke nomargin poppins panel-header" style="line-height: 0.7; ">
+				<h1 class="whitesmoke nomargin poppins panel-header" style="line-height: 0.7; letter-spacing: 2.5px;">
 					Hola,<br>
 					mi nombre es<br>
 					<span class="primary">Juan dela Cruz</span>
@@ -777,10 +385,54 @@
 
 	</div>
 
+
 	<div class="panel blackbg fullscreen col-flex-3" id="work">
-		<div class="fullscreen" style="padding: 50px;">
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 8vw; line-height: 1;">Header - Portfolio</h1>
-			<h1 class="whitesmoke poppins nomargin" style="font-size: 2.5vw;">Sub header - Portfolio</h1>
+		<div id="workgrid" class="fullscreen">
+			<div class="fullscreen grid">
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>						
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -887,7 +539,7 @@
 						</div>
 					</div>
 					<div class="field">
-						<button type="button" class="raleway form-button active">SUBMIT</button>
+						<button type="button" class="raleway form-button">SUBMIT</button>
 					</div>
 				</form>
 				<p class="whitesmoke poppins" style="font-size: 1.1vw;">
@@ -906,11 +558,22 @@
 	</div>
 
 	<div class="whitesmoke poppins" id="footer">
-		<span class="footer-item" style="">&copy; 2019 Louis Cueto</span>
+		<span class="footer-item" id="louis">&copy; 2019 Louis Cueto</span>
 		<span class="footer-item">
-			Icons: <a class="teal" href="https://semantic-ui.com/" target="_blank" style="text-decoration: none; cursor: pointer;">Semantic UI</a></span>
+			Icons from
+			<a class="teal" href="https://semantic-ui.com/" target="_blank"
+				style="text-decoration: none; cursor: pointer;">Semantic UI</a>
+		</span>
 	</div>
 
-	
+	<script type="text/javascript">
+
+		$("#work .content").each(function(){
+			var $this = $(this);
+			var bg = $this.data("bg");
+			$this.css({"background-image": 'url(' + bg + ')'});
+			console.log("img set");
+		})
+	</script>
 </body>
 </html>
