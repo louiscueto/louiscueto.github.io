@@ -92,22 +92,18 @@ a.sidebar-icon {
 	display: inline-block;
 	cursor: pointer;
 	text-decoration: none;
-}
 
-.sidebar-icon {
-	/*font-size: 110% !important;*/
-
-	/*font-size: 1.2vw;*/
-	/*margin: auto !important;*/
-	padding-bottom: 10px !important;
+	margin-bottom: 10px !important;
 	cursor: pointer;
 
 	transition: 0.3s color ease;
+
+	font-size: 1.2vw !important;
+	opacity: 0.8;
+	margin: 0 auto 10px !important;
+
 }
 
-.sidebar-icon:hover {
-	/*color: salmon;*/
-}
 
 #logo {
 	font-size: 250% !important;
@@ -115,12 +111,8 @@ a.sidebar-icon {
 }
 
 #sc-icons {
-	justify-content: flex-end;
-}
-#sc-icons i {
-	font-size: 1.2vw !important;
-	opacity: 0.8;
-	margin: 0 auto 10px !important;
+	/*justify-content: flex-start;*/
+	margin-bottom: 25px;
 }
 
 .sidebar-nav {
@@ -237,7 +229,7 @@ img {
 	padding-right: 20px;
 	opacity: 0;
 	z-index: 99;
-	width: 100%;
+	/*width: 100%;*/
 
 	display: flex;
 	justify-content: space-between;

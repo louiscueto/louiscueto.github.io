@@ -42,7 +42,7 @@ $(window).on("load", function(){
 				
 
 				$(".panel").css({"padding-left": sidebar.outerWidth() + 0});
-				footer.css({"padding-left": sidebar.outerWidth() + 20});
+				footer.css({"left": sidebar.outerWidth() + 20});
 
 				footer.animate({opacity: 1});
 				sidebar.animate({left: 0, opacity: 1}, 800)
@@ -72,7 +72,7 @@ $(window).on("load", function(){
 							
 						});	
 
-						footer.animate({"padding-left": sidebar.outerWidth() + 20});
+						footer.animate({"left": sidebar.outerWidth() + 20});
 							sidebar.animate({left: 0, opacity: 1})							
 					});
 				});
@@ -103,14 +103,33 @@ $(window).on("resize", function(){
 	$(".panel").height($(window).height());
 }).trigger("resize");
 
+
+
+var grid_interval = 0;
 $.fn.extend({
 	hidepanel: function(callback) {	
-		$(this).find("img, .content").css({opacity: 0})		
+		// console.log()
+		console.clear();
+		console.log($(this).attr("id"));
+		if ($(this).attr("id") == "work") {
+			console.log(grid_interval);
+			clearInterval(grid_interval);
+			console.log($(this).find(".content"));
+			$(".panel.active").find(".content").css({opacity: 0});
+		} else {
+			$(this).find("img").css({opacity: 0})
+		}
+				
 		$(".panel.active").removeClass("active").animate({top: "-100px", opacity: 0, height: "120%"}, duration-100, callback);
 	},
 	showpanel: function () {
 		
 		var $this = $(this);
+
+		if ($this.attr("id") == "work") {
+			$(this).find(".content").css({opacity: 0});
+		}
+
 		$this.addClass("active").animate({
 			top: 0,
 			opacity: 1,
@@ -119,7 +138,10 @@ $.fn.extend({
 
 			if ($this.attr("id") == "work") {
 
-				var gridarr = [], elems = [], gridctr = 0, grid_interval;
+				var gridctr = 0;
+				clearInterval(grid_interval);
+				gridarr = [];
+				elems = [];
 				while (gridarr.length < 6) {
 					var r = Math.floor(Math.random()*6);
 					if (gridarr.indexOf(r) === -1) {
@@ -135,7 +157,7 @@ $.fn.extend({
 						$(elems[gridctr]).animate({opacity: 1}, duration);
 					}
 					gridctr++;
-				}, 150);
+				}, 120);
 
 			} else {
 				$this.find("img").animate({opacity: 0.04}, duration);
@@ -169,4 +191,4 @@ function togglepanel () {
 Number.prototype.pad = function (){
 	var num = this.valueOf()
 	return num > 9 ? num : "0" + num;
-	}
+}
