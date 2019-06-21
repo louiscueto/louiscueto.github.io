@@ -13,6 +13,8 @@ html, body {
 	top: 0;
 	right: 0;
 	left: 0;
+
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 #nav {
@@ -52,9 +54,10 @@ html, body {
 
 .nav-divider {
 	width: 100%;
-	border-top: 1px solid currentColor;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	/*border-top: 1px solid currentColor;*/
+	border-top: 1px solid #e5e5e5;
+	opacity: 0.2;
+	margin: 15px 0;
 }
 
 .fw {
@@ -70,10 +73,21 @@ html, body {
 	height: 100%;
 }
 .nav {
+	display: block;
 	margin: 0 2%;
 	cursor: pointer;
+	opacity: 0.6;
+	transition: all 0.4s ease;
 }
-
+.nav:hover {
+	opacity: 1;
+	color: white;
+}
+.nav.active {
+	opacity: 1;
+	font-weight: bold;
+	color: aqua;
+}
 #header {
 	background-image: url(headerbg.jpg);
 	background-repeat: no-repeat;
@@ -91,7 +105,9 @@ html, body {
 .relative {
 	position: relative;
 }
-
+.absolute {
+	position: absolute;
+}
 .uc {
 	text-transform: uppercase;
 }
@@ -134,26 +150,48 @@ html, body {
 	outline: 0;
 	cursor: pointer;
 
-	padding: 1em 2em;
+	padding: 1em 3em 1em 3em;
 	background-color: transparent;
 	color: whitesmoke;
 	border: 3px solid whitesmoke;
 
+	transition: all 0.3s ease;
+}
+
+#cta:hover {
+	padding: 1em 3em 1em 3em;
+}
+
+#cta i {
+	line-height: 1.25;
+	opacity: 0;
+	right: 20%;
+	transition: all 0.3s ease;
+}
+#cta:hover i {
+	right: 10%; opacity: 1;
 }
 
 .segment-header {
 	/*padding: 1em;*/
 	color: rgba(0, 0, 0, 0.8);
 }
+
+.block-segment-header {
+	margin: 0 0 50px;
+	font-size: 5vw;
+	color: rgba(0, 0, 0, 0.8);
+}
+
 .segment-icon i {
 	font-size: 3vw;
 }
 .segment {
-	padding: 2.5em;
+	padding: 2.3em;
 }
 
 .bordered {
-	border: 1px solid grey;
+	border: 1px solid #e5e5e5;
 }
 
 .text-align-center {
@@ -174,6 +212,15 @@ html, body {
 .pointer {
 	cursor: pointer;
 }
+.space {
+	padding: 20px;
+}
+.helper {
+	opacity: 0.8;
+}
+.vertical-margin {
+	margin: 3em 0;
+}
 
 .block-segment {
 	padding: 8% 10%;
@@ -183,11 +230,100 @@ html, body {
 	padding-right: 20px;
 }
 .facility i {
-	color: teal;
+	color: aqua;
 }
 .facility-segment {
 	padding-bottom: 20px;
 }
-.space {
-	padding: 20px;
+.facility-list {
+	/*padding-left: 20px;*/
 }
+
+.facility-list i {
+	color: green;
+	opacity: 0.5;
+}
+
+.free::before {
+	display: inline-block;
+	color: green;
+	border: 1px solid green;
+	padding: 5px 10px;
+	margin-right: 10px;
+	content: "Free";
+	font-size: 80%;
+	opacity: 0.6;
+}
+
+.add-charge::after {
+	margin-left: 10px;
+	content: "Additional Charge";
+	font-size: 80%;
+	opacity: 0.6;
+}
+
+.service {
+	border: 1px solid #e5e5e5;
+	transition: all 0.4s ease;
+}
+.service-header {
+	font-weight: bolder;
+	font-size: 1vw;
+	transition: all 0.4s ease;
+}
+.service-header {
+	display: block;
+	margin: 0.67em 0;
+	font-size: 1.5vw;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+.service-header:hover {
+	color: aqua;
+}
+.service-text {
+	opacity: 0.7;
+	font-size: 1vw;
+}
+
+.room-nav {
+	margin: 0 2%;
+	cursor: pointer;
+	opacity: 0.8;
+	transition: all 0.4s ease;
+}
+.room-nav:hover {
+	/*opacity: 1;*/
+	color: aqua;
+}
+.room-nav.active {
+	/*opacity: 1;*/
+	color: aqua;
+	font-weight: bold;
+}
+
+.blackish {
+	color: rgba(0, 0, 0, 0.8);
+}
+.white {
+	color: whitesmoke;
+}
+
+#overview {
+	background-image: url(headerbg1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*background-attachment: fixed;*/
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
