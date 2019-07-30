@@ -1,8 +1,10 @@
+
 body {
 	position: relative;
 }
 html, body {
 	width: 100%; height: 100%; margin: 0;
+	scroll-behavior: smooth;
 }
 * {
 	box-sizing: border-box;
@@ -262,7 +264,7 @@ html, body {
 	opacity: 0.6;
 }
 
-.service {
+.service:not(:last-child) {
 	border: 1px solid #e5e5e5;
 	transition: all 0.4s ease;
 }
@@ -308,7 +310,9 @@ html, body {
 .white {
 	color: whitesmoke;
 }
-
+.grey {
+	color: rgba(0, 0, 0, 0.8);
+}
 #overview {
 	background-image: url(headerbg1.jpg);
 	background-repeat: no-repeat;
@@ -325,5 +329,130 @@ html, body {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+.list-item {
+	margin: 5px 0 5px 0;
+}
+.nodecor {
+	text-decoration: none;
+}
+.footer-header {
+	font-size: 2.5vw; margin-top: 0;
+}
+
+.opacity-hover {
+	opacity: 0.6;
+}
+.opacity-hover:hover {
+	opacity: 1;
+}
+
+.text {
+	font-size: 1.1vw;
+}
+
+.quick-link {
+	position: relative;
+	overflow: hidden;
+
+	display: inline-block;
+	width: 100%;
+	min-height: 20px;
+}
+
+.quick-link span, .quick-link a {
+	/*position: absolute;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	text-decoration: none;
+	color: inherit;
+	margin: auto auto auto 20px;
+	transition: all 0.3s ease;
+}
+
+.quick-link:before {
+	position: absolute;
+	top: 51%;
+	overflow: hidden;
+	width: 10px;
+	height: 2px;
+	content: '\a0';
+
+	opacity: 0.6;
+	background-color: black;
+
+	margin-right: -20px;
+	text-align: right;
+
+	transition: all 0.3s ease;
+
+}
+
+.quick-link:hover span, .quick-link:hover a {
+	margin-left: 30px;
+}
+.quick-link:hover:before{
+	width: 20px;
+}
 
 
+.quick-link-1 span, .quick-link-1 a {
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.3s ease;
+}
+
+.bar {
+	border: 1px solid black;
+	padding: 0 10px;
+	width: 100%;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.bordered-item-col:not(:last-child) {
+	border-left: border: 1px solid #e5e5e5;
+}
+
+/*.bordered-item-col:last-child {
+	border-left: border: 1px solid #e5e5e5;
+}*/
+
+#louis {
+	font-weight: bold;
+	text-decoration: none !important;
+	/*color: rgba(0, 255, 255, 0.9);*/
+	/*border-bottom: 2px solid rgba(0, 255, 255, 0.8);*/
+
+	color: #0a79d8;
+}
+
+#louis:hover {
+	/*color: rgba(0, 255, 255, 1);*/
+	/*border-bottom: 2px solid rgba(0, 255, 255, 1);*/
+}
+
+#function-hall {
+	/*min-height: 500px;*/
+	background-image: url(headerbg3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*background-attachment: fixed;*/
+}
+
+.room-column {
+	padding: 0 10px 20px;
+}
+
+.php {
+	font-size: 120%;
+}
+.room-price {
+	font-size: 180%;
+}
