@@ -616,4 +616,22 @@ img {
 		font-size: 4vw !important;
 	}
 
+	#showmenu {
+		opacity: 1;
+		top: 50px; left: 50px;
+		font-size: 5vw;
+		transition: 0.4s all ease 0.4s;
+	}
+
+	#footer {		
+		width: 100%;
+		transition: 0.4s all ease;
+	}
+
+	#louis {
+		font-size: 5vw;
+		margin: auto;
+		transition: 0.4s all ease;
+	}
+
 }
