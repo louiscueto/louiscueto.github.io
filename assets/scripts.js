@@ -41,7 +41,7 @@ $(window).on("load", function(){
 				}
 				
 				var weed = $(window).width();
-
+				console.log("weed > " + weed);
 				// if (weed <= 999) {
 					// $("#showmenu").animate({"opacity": 1, top: 30, left: 30});
 				// }
