@@ -674,8 +674,8 @@ a#showmenu.visible {
 	}
 
 	#home .pattern {
-		width: 30% !important;
-		height: 35% !important;
+		width: 300px !important;
+		height: 580px !important;
 
 		top: 32% !important;
 		left: 7% !important;
