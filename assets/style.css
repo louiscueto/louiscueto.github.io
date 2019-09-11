@@ -158,8 +158,8 @@ a.sidebar-icon {
 
 #mobile-sidebar .sidebar-nav {
 	border: 3px solid transparent;
-	color: rgba(255, 255, 255, 0.8);
-	background-color: rgba(26, 27, 28, 0.7);
+	color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(26, 27, 28, 0.2);
 	font-size: 3vw;
 	cursor: pointer;
 	text-align: center;
@@ -167,7 +167,7 @@ a.sidebar-icon {
 	padding: 20px 25px !important;
 }
 #mobile-sidebar .sidebar-nav.active {
-	color: salmon;
+	color: rgba(250, 128, 114, 0.6);
 }
 
 .sidebar-nav {
