@@ -52,7 +52,7 @@ $(window).on("load", function(){
 
 
 				if (weed <= 999) {
-					$("#showmenu").animate({opacity: 1});
+					$("#showmenu").addClass("visible");
 				}
 				
 				if (!!location.hash) {
@@ -71,22 +71,22 @@ $(window).on("load", function(){
 
 					return false;
 
-					sidebar.animate({left: "-100px"}, function(){
-						$("#showmenu").animate({opacity: 1});
-					});
+					// sidebar.animate({left: "-100px"}, function(){
+					// 	$("#showmenu").animate({opacity: 1});
+					// });
 
-					$(".panel").animate({"padding-left": 0});
-					// footer.animate({"padding-left": 20});
+					// $(".panel").animate({"padding-left": 0});
+					// // footer.animate({"padding-left": 20});
 
-					var top = $(this).offset().top + 5;
-					var left = $(this).offset().left;
-					console.log(top + "/" + left);
-					footeroffset = footer.offset();
+					// var top = $(this).offset().top + 5;
+					// var left = $(this).offset().left;
+					// console.log(top + "/" + left);
+					// footeroffset = footer.offset();
 
-					top = "30px";
-					left = "30px";
+					// top = "30px";
+					// left = "30px";
 
-					$("#showmenu").css({left: left, top: top});
+					// $("#showmenu").css({left: left, top: top});
 
 				});
 
@@ -96,14 +96,14 @@ $(window).on("load", function(){
 
 					return false;
 
-					$(this).animate({opacity: 0}, 200, function(){
-						$(".panel").animate({"padding-left": sidebar.outerWidth() + 0}, function(){
+					// $(this).animate({opacity: 0}, 200, function(){
+					// 	$(".panel").animate({"padding-left": sidebar.outerWidth() + 0}, function(){
 							
-						});	
+					// 	});	
 
-						footer.animate({"left": sidebar.outerWidth() + 20});
-							sidebar.animate({left: 0, opacity: 1})							
-					});
+					// 	footer.animate({"left": sidebar.outerWidth() + 20});
+					// 		sidebar.animate({left: 0, opacity: 1})							
+					// });
 				});
 
 
@@ -124,6 +124,13 @@ $(window).on("load", function(){
 
 $(window).on("resize", function(){
 	$(".panel").height($(window).height());
+
+	var weed = $(window).width();
+	if (weed < 999) {
+		$("#showmenu").addClass("visible");
+	} else {
+		$("#showmenu").removeClass("visible");
+	}
 }).trigger("resize");
 
 
