@@ -42,9 +42,9 @@ $(window).on("load", function(){
 				
 				var weed = $(window).width();
 				console.log("weed > " + weed);
-				// if (weed <= 999) {
-					// $("#showmenu").animate({"opacity": 1, top: 30, left: 30});
-				// }
+				if (weed <= 999) {
+					$("#showmenu").animate({opacity: 1});
+				}
 
 				$(".panel").css({"padding-left": sidebar.outerWidth() + 0});
 				footer.css({"left": sidebar.outerWidth() + 20});
@@ -80,15 +80,8 @@ $(window).on("load", function(){
 
 				$("#showmenu").on("click", function(){
 
-					console.log($(window).width());
-					console.log(window.innerWidth);
-					console.log($("#mobile-sidebar").css("opacity"));
-					var $sidebar = $("#mobile-sidebar");
-
-					if ($sidebar.hasClass("visible")) {
-
-					}
 					$("#mobile-sidebar").toggleClass("visible");
+					
 					return false;
 
 					$(this).animate({opacity: 0}, 200, function(){
