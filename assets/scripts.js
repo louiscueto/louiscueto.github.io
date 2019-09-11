@@ -80,6 +80,15 @@ $(window).on("load", function(){
 
 				$("#showmenu").on("click", function(){
 
+					console.log($(window).width());
+					console.log(window.innerWidth);
+					console.log($("#mobile-sidebar").css("opacity"));
+					var $sidebar = $("#mobile-sidebar");
+
+					if ($sidebar.hasClass("visible")) {
+
+					}
+					$("#mobile-sidebar").toggleClass("visible");
 					return false;
 
 					$(this).animate({opacity: 0}, 200, function(){
@@ -124,12 +133,12 @@ var grid_interval = 0;
 $.fn.extend({
 	hidepanel: function(callback) {	
 		// console.log()
-		console.clear();
-		console.log($(this).attr("id"));
-		if ($(this).attr("id") == "work") {
-			console.log(grid_interval);
+		// console.clear();
+		// console.log($(this).attr("id"));
+		if ($(this).attr("id") == "portfolio") {
+			// console.log(grid_interval);
 			clearInterval(grid_interval);
-			console.log($(this).find(".content"));
+			// console.log($(this).find(".content"));
 			$(".panel.active").find(".content").css({opacity: 0});
 		} else {
 			$(this).find("img").css({opacity: 0})
@@ -139,10 +148,12 @@ $.fn.extend({
 	},
 	showpanel: function () {
 		
-		var $this = $(this);
+		var $this 		= $(this);
+		var $content 	= $this.find(".content");
+		var $id 		= $this.attr("id");
 
-		if ($this.attr("id") == "work") {
-			$(this).find(".content").css({opacity: 0});
+		if ($id == "portfolio") {
+			$content.css({opacity: 0});
 		}
 
 		$this.addClass("active").animate({
@@ -151,16 +162,19 @@ $.fn.extend({
 			height: $(window).height(),
 		}, duration, function(){
 
-			if ($this.attr("id") == "work") {
+			if ($id == "portfolio") {
 
 				var gridctr = 0;
 				clearInterval(grid_interval);
 				gridarr = [];
 				elems = [];
-				while (gridarr.length < 6) {
-					var r = Math.floor(Math.random()*6);
+
+				console.log($content.length)
+				var limit = $content.length // 6
+				while (gridarr.length < limit) {
+					var r = Math.floor(Math.random()*limit);
 					if (gridarr.indexOf(r) === -1) {
-						elems.push($("#work .content")[r]);
+						elems.push($("#portfolio .content")[r]);
 						gridarr.push(r);
 					}
 				}

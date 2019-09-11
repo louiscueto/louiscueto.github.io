@@ -105,6 +105,23 @@ a.sidebar-icon {
 
 }
 
+.footer-icon {
+
+	margin: auto;
+	display: inline-block;
+	display: none;
+	cursor: pointer;
+	text-decoration: none;
+
+	cursor: pointer;
+
+	transition: 0.3s color ease;
+
+	opacity: 0.8;
+	margin: 0 auto 10px !important;
+
+}
+
 
 #logo {
 	font-size: 250% !important;
@@ -114,6 +131,37 @@ a.sidebar-icon {
 #sc-icons {
 	/*justify-content: flex-start;*/
 	margin-bottom: 25px;
+}
+
+#mobile-sidebar {
+	color: white;
+	position: absolute;
+	right: -50px;
+	height: 100%;
+	/*border: 1px solid blue;*/
+	z-index: 97;
+	opacity: 0;
+
+	transition: all 0.4s ease;
+}
+
+#mobile-sidebar.visible {
+	right: 50px;
+	opacity: 1;
+	transition: all 0.4s ease;
+}
+
+
+#mobile-sidebar .sidebar-nav {
+	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(26, 27, 28, 0.7);
+	font-size: 2vw;
+	cursor: pointer;
+	margin-bottom: 40px !important;
+	padding: 20px !important;
+}
+#mobile-sidebar .sidebar-nav.active {
+	color: salmon;
 }
 
 .sidebar-nav {
@@ -180,6 +228,7 @@ a.sidebar-icon {
 
 	background-color: transparent;
 }
+
 .panel.active {
 	z-index: 9;
 }
@@ -477,19 +526,33 @@ img {
 	margin: auto;
 }
 
-#showmenu {
+
+
+a#showmenu {
 	position: absolute;
 	top: -20px;
+	right: -20px;
 	z-index: 98;
 	opacity: 0;
 
-	font-size: 2.5vw;
+	font-size: 5vw;
+	
+	border: 3px solid rgba(255, 255, 255, 0.2);
+	border-radius: 3px;
+	padding: 20px 25px;
 	/*transition: 0.3s all ease;*/
+
 }
 
-#workgrid {
+a#showmenu:hover {
+	border: 3px solid rgba(255, 255, 255, 1);
+}
+
+#portfoliogrid {
 	position: relative;
 	/*padding: 10px;*/
+
+	overflow-y: auto;
 }
 .grid {
 	display: flex;
@@ -566,29 +629,34 @@ img {
 	font-size: 2.5vw; font-weight: bolder;
 }
 
+#contact-header-panel {
+	padding: 50px; width: 50%; text-align: right;
+}
 
-.mobile {
-	display: none;
+#contact-details {
+	width: 100%;
+	border: 1px solid transparent;
+	z-index: 3;
+	font-size: 1.4vw;
 }
 
 @media all and (max-width: 999px) {
-
-	.desktop {
-		display: none;
-	}
-
-	.mobile {
-		display: flex;
-	}
 
 	#sidebar {
 		left: -100px !important;
 		transition: 0.4s all ease;
 	}
 
-	#home .panel-header {
+	.panel-header, .panel-sub-header {
+		margin-bottom: 20px;
+	}
+
+	.panel-header {
 		font-size: 10vw !important;
 	}
+	/*#home .panel-header {
+		font-size: 10vw !important;
+	}*/
 
 	#home .panel-sub-header {
 		font-size: 4vw !important;
@@ -596,25 +664,85 @@ img {
 
 	#home .pattern {
 		width: 30% !important;
-		height: 18% !important;
+		height: 35% !important;
 
 		top: 32% !important;
 		left: 7% !important;
 	}
 
-	#about .mobile .panel-header {
-		font-size: 11vw !important;
+	/*#about .panel-header {
+		font-size: 10vw !important;
+	}*/
+
+	#about .about-text {
+		font-size: 2.8vw !important;
 	}
 
-	#about .mobile .about-text {
+	#about #about-image {
+		display: none;
+	}
+
+	#about .about-label {
+		font-size: 2.5vw;
+	}
+
+	#about .pattern {
+		width: 300px !important;
+		height: 400px !important;
+
+		top: 12% !important;
+		right: 8% !important;
+	}
+
+	#portfolio {
+		overflow-y: auto;
+	}
+
+	#portfolio .column {
+		width: 100%;
+	}
+
+	#portfolio .pattern {
+		width: 300px !important;
+		height: 400px !important;
+
+		top: 12% !important;
+		right: 8% !important;
+	}
+
+	#contact {
+		flex-direction: column;
+	}
+
+	#contact-header-panel {
+		justify-content: flex-end;
+		text-align: left;
+		width: 100%;
+	}
+
+	#contact-details {
+		justify-content: flex-start;
 		font-size: 3vw !important;
 	}
-	
-	#showmenu {
+
+	#contact-details p {
+		margin: 0 0 10px;
+	}
+
+	#contact .pattern {
+		width: 340px !important;
+		height: 200px !important;
+
+		top: 5% !important;
+		left: 5% !important;
+	}
+	a#showmenu {
 		opacity: 1;
-		top: 50px; left: 50px;
+		top: 50px; right: 50px;
 		font-size: 5vw;
-		transition: 0.4s all ease 0.4s;
+		/*transition: 0.4s all ease 0.4s;*/
+
+		transition: border 0.1s ease 0;
 	}
 
 	#footer {		
@@ -630,6 +758,10 @@ img {
 		margin: auto !important;
 		background-color: transparent !important;
 		transition: 0.4s all ease;
+	}
+
+	.footer-icon {
+		display: inline-block;
 	}
 
 	.panel {
