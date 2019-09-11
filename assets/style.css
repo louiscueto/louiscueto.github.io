@@ -765,7 +765,7 @@ a#showmenu.visible {
 		width: 100% !important;
 		left: 0 !important;
 		right: auto;
-
+		bottom: 0;
 		transition: 0.4s all ease;
 	}
 
@@ -777,6 +777,7 @@ a#showmenu.visible {
 	}
 
 	.footer-icon {
+		font-size: 4vw !important;
 		display: inline-block;
 	}
 
