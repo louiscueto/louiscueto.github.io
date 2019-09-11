@@ -41,16 +41,28 @@ $(window).on("load", function(){
 				}
 				
 				var weed = $(window).width();
-				console.log("weed > " + weed);
-				if (weed <= 999) {
-					$("#showmenu").animate({opacity: 1});
-				}
+				
+				
 
 				$(".panel").css({"padding-left": sidebar.outerWidth() + 0});
 				footer.css({"left": sidebar.outerWidth() + 20});
 
 				footer.animate({opacity: 1});
 				sidebar.animate({left: 0, opacity: 1}, 800)
+
+
+				if (weed <= 999) {
+					$("#showmenu").animate({opacity: 1});
+				}
+				
+				if (!!location.hash) {
+					$(".sidebar-nav.active").removeClass("active");
+
+					$(location.hash+"-nav").addClass("active");
+					$(location.hash+"-nav-mobile").addClass("active");
+				}
+
+				togglepanel();
 
 				// console.log($("#hidemenu").offset());
 				// barleft = $("#hidemenu").offset().left;
@@ -81,7 +93,7 @@ $(window).on("load", function(){
 				$("#showmenu").on("click", function(){
 
 					$("#mobile-sidebar").toggleClass("visible");
-					
+
 					return false;
 
 					$(this).animate({opacity: 0}, 200, function(){
@@ -94,12 +106,6 @@ $(window).on("load", function(){
 					});
 				});
 
-				if (!!location.hash) {
-					$(".sidebar-nav.active").removeClass("active");
-					$(location.hash+"-nav").addClass("active");
-				}
-
-				togglepanel();
 
 				$(".sidebar-nav").on("click", function(){
 					if (!$(this).hasClass("active") && animating == false) {
