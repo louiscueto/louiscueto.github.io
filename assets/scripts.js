@@ -34,12 +34,17 @@ $(window).on("load", function(){
 			$(".contact-1, .contact-2").hide();
 			$("#loader").fadeOut("fast", function() {
 
-				if (!true) {
+				if (true) {
 					$(".contact-1").show();
 				} else {
 					$(".contact-2").show();
 				}
 				
+				var weed = $(window).width();
+
+				// if (weed <= 999) {
+					// $("#showmenu").animate({"opacity": 1, top: 30, left: 30});
+				// }
 
 				$(".panel").css({"padding-left": sidebar.outerWidth() + 0});
 				footer.css({"left": sidebar.outerWidth() + 20});
@@ -51,22 +56,32 @@ $(window).on("load", function(){
 				// barleft = $("#hidemenu").offset().left;
 				$("#hidemenu").on("click", function(){
 
+
+					return false;
+
 					sidebar.animate({left: "-100px"}, function(){
 						$("#showmenu").animate({opacity: 1});
 					});
 
 					$(".panel").animate({"padding-left": 0});
-					footer.animate({"padding-left": 20});
+					// footer.animate({"padding-left": 20});
 
 					var top = $(this).offset().top + 5;
 					var left = $(this).offset().left;
-
+					console.log(top + "/" + left);
 					footeroffset = footer.offset();
+
+					top = "30px";
+					left = "30px";
+
 					$("#showmenu").css({left: left, top: top});
-					
+
 				});
 
 				$("#showmenu").on("click", function(){
+
+					return false;
+
 					$(this).animate({opacity: 0}, 200, function(){
 						$(".panel").animate({"padding-left": sidebar.outerWidth() + 0}, function(){
 							

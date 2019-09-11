@@ -228,6 +228,7 @@ img {
 	position: absolute;
 	bottom: 20px; right: 0;
 	padding-right: 20px;
+	padding-left: 20px;
 	opacity: 0;
 	z-index: 99;
 	/*width: 100%;*/
@@ -456,7 +457,7 @@ img {
 #about-image {
 	position: relative;
 	background-color: #121314;
-	background-image: url('assets/me.jpg');
+	background-image: url('me.jpg');
 
 	background-repeat: no-repeat;
 
@@ -480,6 +481,7 @@ img {
 	z-index: 98;
 	opacity: 0;
 
+	font-size: 2.5vw;
 	/*transition: 0.3s all ease;*/
 }
 
@@ -554,3 +556,42 @@ img {
 	opacity: 1;
 }
 
+.relative {
+	position: relative;
+}
+
+#home .panel-sub-header {
+	font-size: 2.5vw; font-weight: bolder;
+}
+
+@media all and (max-width: 999px) {
+	#sidebar {
+		left: -100px !important;
+		transition: 0.4s all ease;
+	}
+
+	#showmenu {
+		opacity: 1;
+		top: 30px; left: 30px;
+		transition: 0.4s all ease 0.4s;
+	}
+
+	#footer {
+		left: 0 !important;
+		right: auto;
+
+		transition: 0.4s all ease;
+	}
+
+	#home .panel-header {
+		font-size: 8vw !important;
+	}
+
+	#home .panel-sub-header {
+		font-size: 3.5vw !important;
+	}
+
+	.panel {
+		padding-left: 0 !important;
+	}
+}
