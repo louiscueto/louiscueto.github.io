@@ -342,6 +342,8 @@ img {
 	cursor: pointer;
 	border-radius: 30px;
 
+	font-size: 1.2vw;
+
 	transition: 0.3s color ease;
 }
 
@@ -590,8 +592,28 @@ img {
 	#home .panel-sub-header {
 		font-size: 3.5vw !important;
 	}
+	#home .pattern {
+		width: 30% !important;
+		height: 35% !important;
+	}
 
 	.panel {
 		padding-left: 0 !important;
+	} 
+
+	#cta {
+		font-size: 2vw;
 	}
+}
+
+
+@media all and (max-width: 999px) {
+	#home .panel-header {
+		font-size: 10vw !important;
+	}
+
+	#home .panel-sub-header {
+		font-size: 4vw !important;
+	}
+
 }
