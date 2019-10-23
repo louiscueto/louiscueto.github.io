@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JEZRYL</title>
+
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Croissant+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css">
+	<script type="text/javascript" src="assets/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
+
+	<style type="text/css">
+		.pacifico {
+			font-family: 'Pacifico', cursive;
+		}
+		.croissant {
+			font-family: 'Croissant One', cursive;
+		}
+		.roboto {
+			font-family: 'Roboto', sans-serif;
+		}
+		.raleway {
+			font-family: 'Raleway', sans-serif;
+		}
+	</style>
+</head>
+<body style="background-color: #1c1b1d; position: relative;">
+	<div id="modal-overlay">
+		<div class="modal">
+			<div class="modal-img"></div>
+			<div class="modal-content"></div>
+		</div>
+	</div>
+	<div id="homepage">
+		<h1 class="pacifico" id="welcome">Welcome to My Page</h1>
+		<span id="logo">
+			<img src="assets/JEZ_Logo2.png" style="width: 100%; height: auto; max-width: 350px;"> 
+		</span>
+		<div class="social-icons">
+			<a class="item" href="#"><i class="facebook icon"></i></a>
+			<a class="item" href="#"><i class="twitter icon"></i></a>
+			<a class="item" href="#"><i class="instagram icon"></i></a>
+		</div>
+	</div>
+	<div id="content">
+		<div class="whitesmoke" id="nav">
+			<a class="item active" style="background-color: rgba(183, 247, 189, 0.7); /*color: #b7f7bd;*/ color: whitesmoke;" data-panel="home">#b7f7bd</a>
+			<a class="item" style="background-color: rgba(169, 246, 212, 0.7); /*color: #a9f6d4;*/ color: whitesmoke;" data-panel="dance">#a9f6d4</a>
+			<a class="item" style="background-color: rgba(72, 216, 180, 0.7); /*color: #48d8b4;*/ color: whitesmoke;" data-panel="highlights">#48d8b4</a>
+			<a class="item" style="background-color: rgba(19, 32, 64, 0.7); /*color: #132040;*/ color: rgba(245, 245, 245, 0.8);" data-panel="memory">#132040</a>
+			<a class="item" style="background-color: rgba(255, 193, 172, 0.7); /*color: #ffc1ac;*/ color: whitesmoke;" data-panel="friends">#ffc1ac</a>
+		</div>
+		<div id="panels" style="overflow-y: auto;">
+			<div class="panel active whitesmoke" id="home">
+				<h1 class="pacifico panel-header">Summary About Me..</h1>
+				<div style="display: flex; flex-direction: row;justify-content: space-between;">
+					<div style="width: 75%; margin-right: 1em;">
+						<p class="raleway" style="font-size: 1.5rem;">Hi! My name is ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+					</div>
+					<div style="width: 20%;">
+						<img src="assets/placeholder.png" style="width: 100%; height: auto;">
+					</div>
+				</div>
+			</div>
+			<div class="panel" id="dance">
+				<div class="container whitesmoke">
+					<h1 class="pacifico panel-header">Watch Me Dance..</h1>
+				</div>
+			</div>
+			<div class="panel" id="highlights">
+				<div class="container whitesmoke">
+					<h1 class="pacifico panel-header">Highlights of My Life</h1>
+				</div>
+			</div>
+			<div class="panel" id="memory">
+				<div class="container whitesmoke">
+					<h1 class="pacifico panel-header">Best years of my life</h1>
+				</div>
+			</div>
+			<div class="panel" id="friends">
+				<div class="container whitesmoke">
+					<h1 class="pacifico panel-header">PHD FAMILY</h1>
+					<div class="img-row">
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+					</div>
+
+					<div class="img-row">
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png">
+							<p>Lorem ipsum.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
