@@ -43,18 +43,24 @@ $(document).ready(function () {
 		$(".img-row > .item > img").on("click", function () {
 
 			var img = $(this).attr("src");
-			var desc = $(this).siblings("p").text();
+			var desc = $(this).siblings(".description").html();
+
 			$(".modal-img").css("background-image", "url("+img+")");
-			$(".modal-content").html('<div class="container">'+desc+"</div>");
-			$("#modal-overlay").css({"z-index": 2});
-			$("#modal-overlay").animate({opacity: 1});
+			$(".modal-content").html('<div style="padding: 2em;">'+desc+"</div>");
+			$("#modal-overlay").css({height: $(window).height()})
+			
+			$("#modal-overlay").addClass("active");
+			$("#modal-overlay").animate({opacity: 1}, function () {
+				$(".modal-img, .modal-content").css({"max-height": $("#modal-overlay > .modal").height(), display: "flex"}).animate({opacity: 1});
+			});
 		});
 		
 		$("#modal-overlay").on("click", function (e) {
 
 			if ($(e.target).attr("id") == "modal-overlay") {
 				$(this).animate({opacity: 0}, function () {
-					$(this).css({"z-index": -1});
+					$(this).removeClass("active");
+					$(this).find(".modal-img, .modal-content").css({display: "none", opacity: 0});
 				});
 			}
 		});

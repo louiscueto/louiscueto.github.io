@@ -191,7 +191,7 @@ html, body {
 	margin: auto;
 }
 
-.img-row > .item > p {
+.img-row > .item > .description {
 	display: none;
 }
 
@@ -204,13 +204,18 @@ html, body {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
 
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 
 	opacity: 0;
-}
 
+	transition: 0.3s all ease;
+}
+#modal-overlay.active {
+	z-index: 2;
+	display: flex;
+}
 
 #modal-overlay .modal {
 	width: 80%;
@@ -225,11 +230,13 @@ html, body {
 }
 .modal-content {
 	font-size: 2rem;
-	padding: 3em;
+	/*padding: 3em;*/
+	overflow-y: auto;
 }
 .modal-img, .modal-content {
 	width: 100%;
 	height: 100%;
+	display: none;
 }
 /*
 #dcffdf
