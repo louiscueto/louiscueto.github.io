@@ -7,6 +7,7 @@ $(document).ready(function () {
 	try {
 		resize();
 
+		$("#homepage").animate({opacity: 1});
 		$("#nav > a.item").on("click", function () {
 			$("#nav > a.item.active").removeClass("active");
 			$(this).addClass("active");
@@ -14,7 +15,7 @@ $(document).ready(function () {
 			showpanel(panel);
 		});
 
-		// $("#logo").on("click", function () {
+		$("#logo").on("click", function () {
 			$("#homepage").animate({opacity: 0}, 100, function () {
 
 				$("#homepage").hide();
@@ -41,7 +42,7 @@ $(document).ready(function () {
 					
 				});
 			});
-		// });
+		});
 
 		$(".highlight-image > img").on("click", function () {
 			var img = $(this).attr("src");
