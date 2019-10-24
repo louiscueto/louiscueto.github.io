@@ -50,37 +50,206 @@
 	</div>
 	<div id="content">
 		<div class="whitesmoke" id="nav">
-			<a class="item active" style="background-color: rgba(183, 247, 189, 0.7); /*color: #b7f7bd;*/ color: whitesmoke;" data-panel="home">#b7f7bd</a>
-			<a class="item" style="background-color: rgba(169, 246, 212, 0.7); /*color: #a9f6d4;*/ color: whitesmoke;" data-panel="dance">#a9f6d4</a>
-			<a class="item" style="background-color: rgba(72, 216, 180, 0.7); /*color: #48d8b4;*/ color: whitesmoke;" data-panel="highlights">#48d8b4</a>
-			<a class="item" style="background-color: rgba(19, 32, 64, 0.7); /*color: #132040;*/ color: rgba(245, 245, 245, 0.8);" data-panel="memory">#132040</a>
-			<a class="item" style="background-color: rgba(255, 193, 172, 0.7); /*color: #ffc1ac;*/ color: whitesmoke;" data-panel="friends">#ffc1ac</a>
+			<a class="item" style="background-color: rgba(183, 247, 189, 0.8); /*color: #b7f7bd;*/ color: whitesmoke;" data-panel="home">#b7f7bd</a>
+			<a class="item" style="background-color: rgba(169, 246, 212, 0.8); /*color: #a9f6d4;*/ color: whitesmoke;" data-panel="dance">#a9f6d4</a>
+			<a class="item" style="background-color: rgba(72, 216, 180, 0.8); /*color: #48d8b4;*/ color: whitesmoke;" data-panel="highlights">#48d8b4</a>
+			<a class="item" style="background-color: rgba(19, 32, 64, 0.8); /*color: #132040;*/ color: rgba(245, 245, 245, 0.8);" data-panel="memory">#132040</a>
+			<a class="item active" style="background-color: rgba(255, 193, 172, 0.8); /*color: #ffc1ac;*/ color: whitesmoke;" data-panel="friends">#ffc1ac</a>
 		</div>
 		<div id="panels" style="overflow-y: auto;">
-			<div class="panel active whitesmoke" id="home">
-				<h1 class="pacifico panel-header">Summary About Me..</h1>
-				<div style="display: flex; flex-direction: row;justify-content: space-between;">
-					<div style="width: 75%; margin-right: 1em;">
+			<div class="panel whitesmoke" id="home">
+				
+				<div style="display: flex; flex-direction: row; justify-content: space-between;">
+					<div style="width: 70%; margin-right: 1em;" class="flex-col justify-center">					<h1 class="pacifico panel-header">Summary About Me..</h1>
 						<p class="raleway" style="font-size: 1.5rem;">Hi! My name is ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+
+						<p class="raleway" style="font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
 					</div>
-					<div style="width: 20%;">
-						<img src="assets/placeholder.png" style="width: 100%; height: auto;">
+					<div style="width: 30%; margin-right: 1em;" class="flex-col justify-center">
+						<div class="slideshow">
+							<div class="nav"><a class="slideshow-nav-btn"><i class="chevron left icon"></i></a></div>
+							<div class="image">
+								<img class="placeholder" src="assets/placeholder.png">
+								<img class="slide" src="assets/placeholder.png">
+								<img class="slide" src="assets/placeholder2.png">
+								<img class="slide" src="assets/placeholder3.png">
+							</div>
+							<div class="nav"><a class="slideshow-nav-btn"><i class="chevron right icon"></i></a></div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
 			<div class="panel" id="dance">
-				<div class="container whitesmoke">
+				<div class="whitesmoke">
 					<h1 class="pacifico panel-header">Watch Me Dance..</h1>
+
+					<div class="whitesmoke">
+						<h1 class="pacifico panel-header">PHD Performances and Rehearsals</h1>
+					</div>
 				</div>
 			</div>
 			<div class="panel" id="highlights">
-				<div class="container whitesmoke">
+				<div class="whitesmoke">
 					<h1 class="pacifico panel-header">Highlights of My Life</h1>
 				</div>
+
+				<div class="highlight">
+					<h1 class="highlight-header raleway">
+						Date: <span>10/10/1996</span></h1>
+					<div class="highlight-content">
+						<div class="highlight-image">
+							<img src="assets/placeholder.png">
+						</div>
+						<div class="highlight-desc">
+							<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="highlight">
+					<h1 class="highlight-header raleway">
+						Date: <span>10/10/1996</span></h1>
+					<div class="highlight-content">
+						<div class="highlight-image">
+							<img src="assets/placeholder.png">
+						</div>
+						<div class="highlight-desc">
+							<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+						</div>
+					</div>
+				</div>
+
 			</div>
 			<div class="panel" id="memory">
-				<div class="container whitesmoke">
+				<div class="whitesmoke">
 					<h1 class="pacifico panel-header">Best years of my life</h1>
+					<br><br>
+					<div class="container">
+						<div class="timeline">
+							<div class="time">
+								<h1 class="year">2015</h1>
+								<div class="time-segments">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+							<div class="time">
+								<h1 class="year">2016</h1>
+								<div class="time-segments">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+							<div class="time">
+								<h1 class="year">2017</h1>
+								<div class="time-segments">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+							<div class="time">
+								<h1 class="year">2018</h1>
+								<div class="time-segments">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+							<div class="time">
+								<h1 class="year">2019</h1>
+								<div class="time-segments">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br><br>
+					<div class="container">
+						<h1 class="pacifico" id="instruction">Click which year you wanna see</h1>
+						<div class="year-content" id="year-2015">
+							<h1 class="panel-header">2015</h1>
+							<div class="highlight">
+								<div class="highlight-content">
+									<div class="highlight-image">
+										<img src="assets/placeholder.png">
+									</div>
+									<div class="highlight-desc">
+										<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="year-content" id="year-2016">
+							<h1 class="panel-header">2016</h1>
+							<div class="highlight">
+								<div class="highlight-content">
+									<div class="highlight-image">
+										<img src="assets/placeholder2.png">
+									</div>
+									<div class="highlight-desc">
+										<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="year-content" id="year-2017">
+							<h1 class="panel-header">2017</h1>
+							<div class="highlight">
+								<div class="highlight-content">
+									<div class="highlight-image">
+										<img src="assets/placeholder3.png">
+									</div>
+									<div class="highlight-desc">
+										<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="year-content" id="year-2018">
+							<h1 class="panel-header">2018</h1>
+							<div class="highlight">
+								<div class="highlight-content">
+									<div class="highlight-image">
+										<img src="assets/placeholder4.png">
+									</div>
+									<div class="highlight-desc">
+										<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="year-content" id="year-2019">
+							<h1 class="panel-header">2019</h1>
+							<div class="highlight">
+								<div class="highlight-content">
+									<div class="highlight-image">
+										<img src="assets/placeholder5.png">
+									</div>
+									<div class="highlight-desc">
+										<p class="whitesmoke">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="panel" id="friends">
@@ -151,6 +320,41 @@
 						</div>
 					</div>
 
+				</div>
+				<div class="container whitesmoke">
+					<h1 class="pacifico panel-header">My Best Friend</h1>
+					<br><br>
+					<div class="slideshow">
+						<div class="nav"><a class="slideshow-nav-btn"><i class="chevron left icon"></i></a></div>
+						<div class="image">
+							<img class="placeholder" src="assets/placeholder.png">
+							<img class="slide" src="assets/placeholder.png">
+							<img class="slide" src="assets/placeholder2.png">
+							<img class="slide" src="assets/placeholder3.png">
+						</div>
+						<div class="nav"><a class="slideshow-nav-btn"><i class="chevron right icon"></i></a></div>
+					</div>
+					<br><br>
+					<p style="font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+					<br><br>
+				</div>
+
+				<div class="container whitesmoke">
+					<h1 class="pacifico panel-header">The love of my life</h1>
+					<br><br>
+					<div class="slideshow">
+						<div class="nav"><a class="slideshow-nav-btn"><i class="chevron left icon"></i></a></div>
+						<div class="image">
+							<img class="placeholder" src="assets/placeholder.png">
+							<img class="slide" src="assets/placeholder.png">
+							<img class="slide" src="assets/placeholder2.png">
+							<img class="slide" src="assets/placeholder3.png">
+						</div>
+						<div class="nav"><a class="slideshow-nav-btn"><i class="chevron right icon"></i></a></div>
+					</div>
+					<br><br>
+					<p style="font-size: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum porttitor tincidunt. Suspendisse auctor pretium placerat. Proin vitae elementum lacus. Sed quis viverra nulla. Pellentesque vitae magna sit amet urna ullamcorper aliquet a vitae risus. Aenean condimentum dui vitae lacus scelerisque, at suscipit quam molestie. Praesent vehicula dolor massa, at viverra nulla ultrices vitae.</p>
+					<br><br>
 				</div>
 			</div>
 		</div>
