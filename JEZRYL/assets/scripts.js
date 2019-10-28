@@ -12,11 +12,17 @@ var ALBUMS = {
 	"FDC" : [
 		"1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
 		"6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg",
-		"11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg",
-		"16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg",
-		"21.jpg", "22.jpg", "23.jpg"
+		"11.jpg", "12.jpg", "13.jpg", "14.jpg"
+	],
+	"BESTFRIEND": [
+		"20190414_110852.jpg","20190512_084815.jpg","20190512_084817.jpg","20190624_102308.jpg","20190624_103658.jpg","20190624_104115.jpg","20190624_213301.jpg","20190810_164535.jpg","20190831_192647.jpg","20190831_200253.jpg","DSC_0003.JPG","DSC_0042.JPG","DSC_0417.JPG","FB_IMG_1481513974650.jpg","FB_IMG_1481514156574.jpg","IMG_0081.JPG","IMG_0082.JPG","IMG_0232.JPG","IMG_0315.JPG","IMG_0705.jpg","IMG_0708.jpg","IMG_0843.JPG","IMG_0898.JPG","IMG_0973.JPG","IMG_1025.JPG","IMG_1026.JPG","IMG_1592.JPG","IMG_1597.JPG","IMG_1598.JPG","IMG_1599.JPG","IMG_1610.JPG","IMG_1611.JPG","IMG_1805.JPG","IMG_1850.JPG","IMG_1851.JPG","IMG_1861.JPG","IMG_1863.JPG","IMG_1867.JPG","IMG_1879.JPG","IMG_1926.JPG","IMG_20180303_134119.jpg","IMG_20180311_051740.jpg","IMG_20180311_051747.jpg","IMG_20180413_174320.jpg","IMG_20180427_113130.jpg","IMG_20180510_200046.jpg","IMG_20181218_120458.jpg","IMG_2025.JPG","IMG_2028.JPG","IMG_2874.JPG","IMG_2885.JPG","IMG_3015.JPG","IMG_3058.JPG","IMG_3068.JPG","IMG_3080.JPG","IMG_3084.JPG","IMG_3121.JPG","IMG_3304.JPG","IMG_3511.JPG","IMG_3553.JPG","IMG_3554.JPG","IMG_3561.JPG","IMG_3592.JPG","IMG_4262.JPG","IMG_4264.JPG","IMG_4280.JPG","IMG_4290.JPG","IMG_8076.jpg"
+	],
+	"BOYFRIEND": [
+		"20190419_144709.jpg", "20190421_205532.jpg", "20190523_165927.jpg", "20190524_125310.jpg", "20190524_172742.jpg", "20190524_173102.jpg", "20190603_151858.jpg", "20190707_201657.jpg", "20190720_100211.jpg", "FB_IMG_1527775076332.jpg", "FB_IMG_1527776630569.jpg", "FB_IMG_1527779109052.jpg", "IMG_0129.JPG", "IMG_0130.JPG", "IMG_0433.PNG", "IMG_0498.JPG", "IMG_0503.JPG", "IMG_0516.JPG", "IMG_0529.JPG", "IMG_0559.JPG", "IMG_0597.jpg", "IMG_0612.JPG", "IMG_0823.jpg", "IMG_0859.jpg", "IMG_0861.JPG", "IMG_1069.JPG", "IMG_1157.JPG", "IMG_1217.JPG", "IMG_1555.JPG", "IMG_1556.JPG", "IMG_1822.jpg", "IMG_20180222_132339.jpg", "IMG_20180224_224217.jpg", "IMG_20180225_235545.jpg", "IMG_20180226_083403.jpg", "IMG_20180320_193259.jpg", "IMG_20180402_201951.jpg", "IMG_20180409_204601.jpg", "IMG_20180421_175232.jpg", "IMG_20180427_230251.jpg", "IMG_20180505_203655_1.jpg", "IMG_20180519_210031.jpg", "IMG_20180520_103354.jpg", "IMG_2076.jpg", "IMG_3260.jpg", "IMG_3261.jpg"
 	]
 };
+
+var SLIDE = [];
 
 $(window).on("resize", resize);
 
@@ -49,7 +55,7 @@ $(document).ready(function () {
 					console.log("navH > " + navH);
 
 					$("#panels").css({height: (contentH - navH)});
-
+					$("#panels > .panel").outerHeight((contentH - navH) + "px");
 					$("#content").css({display: "flex", "flex-direction": "column"});
 
 					setTimeout(function () {
@@ -159,6 +165,12 @@ $(document).ready(function () {
 
 			var album = $(this).data("album");
 			if (!!ALBUMS[album]) {
+
+				$(".album-columns > .album-column:first-child").html("");
+				$(".album-columns > .album-column:last-child").html("");
+
+				$("#album-viewer").css("background-image", "");
+
 				$("#album-overlay").css({height: $(window).height()})
 				$("#album-reel").css({height: $(window).height()});	
 
@@ -203,7 +215,7 @@ $(document).ready(function () {
 });
 
 
-var SLIDE = [];
+
 
 function slideshow(id) { // init function
 
