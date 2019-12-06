@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZAPATOS</title>
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.nicescroll.min.js"></script>
+	<!-- <script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.min.css">
+
+	<script type="text/javascript" src="assets/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
+</head>
+<body style="position: relative; background-color: #121314; overflow-y: hidden;">
+
+	<div class="poppins" id="loadingscreen">
+		<div class="content" style="text-align: left;">
+			<h1>LOADING <span id="percentage" style="float: right;"></span></h1>
+		</div>
+		<div class="content" id="progress">
+			<div id="bar"></div>
+		</div>
+	</div>
+
+	<div id="mainwrapper" style="opacity: 0;">
+		<div id="smoothscroll">
+			<div id="scrollhere" style="background-color: white;">
+
+				<div id="navbar" class="navbar poppins">
+					<a class="header item"><span><i class="bolt icon"></i> ZAPATOS</span></a>
+					<a class="item">About</a>
+					<div class="dropdown item" id="dropdown-nav">
+						<span>Services <i class="angle down icon"></i></span>
+						<div class="menu">
+							<a class="item" href="#">Shoe Repair</a>
+							<a class="item" href="#">Shoe Dyeing</a>
+							<a class="item" href="#">Shoe Shine</a>
+							<a class="item" href="#">Shoe Cleaning</a>
+							<a class="item" href="#">Sole Whitening</a>
+						</div>
+					</div>
+					<a class="item">Blog</a>
+					<a class="item">Contact Us</a>
+
+					<div class="right menu">
+						<div class="item">Login</div>
+						<div class="item action"><span>Register</span></div>
+						<div class="item always-active" style="position: relative;">
+							<span>
+								<i class="cart icon"></i>
+								0
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div id="mainheader" data-bg="assets/images/compressjpeg/headerbg-min.jpg">
+					<div class="overlay"></div>
+					<div class="hero">
+						<i class="bolt icon"></i>
+						<h1 class="poppins">ZAPATOS</h1>
+						<p class="raleway">The main destination for your shoe needs.</p>
+					</div>
+			 
+					<div class="scrolldown">
+						<i class="angle double down icon"></i>
+						<p class="poppins" style="text-align: center;">SCROLL DOWN</p>
+					</div>
+				</div>
+
+
+				<div class="container">
+					<div class="grid">
+						<div class="column-1 bg-img elevate" data-bg="assets/images/compressjpeg/col1-min.jpg">
+							<img src="assets/images/compressjpeg/col1-min.jpg">
+							<div class="overlay poppins">
+								<h1>Kemerut 1</h1>
+								<a class="action-btn">Learn More</a>
+							</div>
+						</div>
+						<div class="column-1 bg-img elevate" data-bg="assets/images/compressjpeg/col2-min.jpg">
+							<img src="assets/images/compressjpeg/col2-min.jpg">
+							<div class="overlay poppins">
+								<h1>Kemerut 2</h1>
+								<a class="action-btn">Learn More</a>
+							</div>
+						</div>
+						<div class="column-1 bg-img elevate" data-bg="assets/images/compressjpeg/col3-min.jpg">
+							<img src="assets/images/compressjpeg/col3-min.jpg">
+							<div class="overlay poppins">
+								<h1>Kemerut 3</h1>
+								<a class="action-btn">Learn More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container" style="padding-top: 0;">
+
+					<!-- <div class="divider"></div> -->
+
+					<p class="poppins" style="text-align: center; color: rgba(0, 0, 0, 0.4); font-size: 2rem; margin-bottom: .5em; font-weight: bold; margin-top: 0;">
+						<i class="money bill alternate outline icon"></i> &nbsp; We accept cash or credit via &nbsp; <i class="credit card icon"></i>
+					</p>
+					<div class="payments" style="text-align: center; font-size: 2rem; margin-bottom: 1em">
+						<div class="payment-method">
+							<img src="https://www.beepbeep.ph/images/icons/paypal.png" style="">
+						</div>
+						<div class="payment-method">
+							<img src="https://www.beepbeep.ph/images/icons/paymaya.png" style="">
+						</div>
+						<div class="payment-method">
+							<img src="https://www.beepbeep.ph/images/icons/global.png" style=" height: 60px;">
+						</div>
+					</div>
+
+					
+
+				</div>
+
+				<div class="divider"></div>
+
+				<div class="poppins container">
+					<h1 class="container-header poppins"><span>Locations</span></h1>
+					<div class="reel-outer" style="overflow: hidden; position: relative;">
+						<div class="reel-wrapper" style="position: relative; overflow: hidden; max-width: 100%; background-color: black;">
+							<div class="left reel-controls">
+								<i class="circular yellow-bg angle left icon"></i>
+							</div>
+							<div class="right reel-controls">
+								<i class="circular yellow-bg angle right icon"></i>
+							</div>
+							<div class="reel-list" style="transform: translate3d(0, 0, 0);">
+								<div class="reel-item">
+									<div class="reel-image bg-img" data-bg="assets/images/compressjpeg/b1-min.jpg"></div>
+									<div class="overlay"></div>
+									<div class="reel-text">
+										<span>Manila</span>
+									</div>
+								</div>
+								<div class="reel-item">
+									<div class="reel-image bg-img" data-bg="assets/images/compressjpeg/b2-min.jpg"></div>
+									<div class="overlay"></div>
+									<div class="reel-text">
+										<span>Makati</span>
+									</div>
+								</div>
+								<div class="reel-item">
+									<div class="reel-image bg-img" data-bg="assets/images/compressjpeg/b3-min.jpg"></div>
+									<div class="overlay"></div>
+									<div class="reel-text">
+										<span>London</span>
+									</div>
+								</div>
+								<div class="reel-item">
+									<div class="reel-image bg-img" data-bg="assets/images/compressjpeg/b4-min.jpg"></div>
+									<div class="overlay"></div>
+									<div class="reel-text">
+										<span>Paris</span>
+									</div>
+								</div>
+								<div class="reel-item">
+									<div class="reel-image bg-img" data-bg="assets/images/compressjpeg/b5-min.jpg"></div>
+									<div class="overlay"></div>
+									<div class="reel-text">
+										<span>Dubai</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="reel-pager" style="display: flex; justify-content: center; padding: 1em 0;"></div>
+					</div>
+				</div>
+
+				<div class="divider"></div>
+
+				<div class="container yellow-bg">
+
+					<h1 id="contact-header" class="poppins">
+						<i class="comments outline icon"></i>
+						<span style="background-color: #121314; padding: 0 .2em; color: #fdd93a;">CONTACT US</span>
+					</h1>
+					<p id="contact-subheader" class="raleway">
+						Send us a message and we'll get back to you!
+					</p>
+
+					<form class="form" action="" method="POST" style="width: 100%; max-width: 500px; margin: auto;">
+						<div class="field">
+							<input type="text" placeholder="Your Name" autocomplete="off">
+						</div>
+						<div class="field">
+							<input type="text" placeholder="Your Email" autocomplete="off">
+						</div>
+						<div class="field">
+							<input type="text" placeholder="Your Contact Number" autocomplete="off">
+						</div>
+						<div class="field">
+							<textarea rows="7" placeholder="Your Message" autocomplete="off"></textarea>
+						</div>
+						<div class="field" style="text-align: center;">
+							<button type="button" class="poppins action-btn-2">Submit</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="container black-bg poppins" id="footer">
+					<div class="header" style="text-align: center;">
+						<i class="bolt icon"></i>
+						<h1 class="poppins">ZAPATOS</h1>
+					</div>
+
+					<div class="footer-columns">
+						<div class="footer-column">
+							<a href="#" class="poppins footer-item">About</a>
+							<a href="#" class="poppins footer-item">Culture</a>
+							<a href="#" class="poppins footer-item">Downloads</a>
+						</div>
+						<div class="footer-column">
+							<a href="#" class="poppins footer-item">Terms of Service</a>
+							<a href="#" class="poppins footer-item">Privacy Policy</a>
+							<a href="#" class="poppins footer-item">Careers</a>
+						</div>
+						<div class="footer-column">
+							<div><h4 class="poppins" style="color: #fdd93a; margin: 0 0 1em;">Follow Us</h4></div>
+							<div>
+								<span style="color: #fdd93a;">
+									<i class="facebook icon footer-item"></i>	
+									<i class="instagram icon footer-item"></i>	
+									<i class="twitter icon footer-item"></i>	
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<h4 class="footer-copyright" style="">
+						Copyright <i class="copyright outline icon"></i> 2019
+						<!-- <span class="poppins" style="color: #fdd32a;"> -->
+							<!-- <i class="bolt icon"></i> -->
+							ZAPATOS
+						<!-- </span> -->
+					</h4>
+				</div>
+
+			</div><!-- end of #scrollhere -->
+		</div><!-- end of #smoothscroll -->
+	</div><!-- end of #mainwrapper -->
+	
+</body>
+</html>
