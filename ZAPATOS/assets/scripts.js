@@ -5,11 +5,14 @@ var width = 100, // width of a progress bar in percentage
 	EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart), // Calculated Estimated Time of Page Load which returns negative value.
 	time = parseInt((EstimatedTime/1000)%60)*100; //Converting EstimatedTime from miliseconds to seconds.
 
+// alert("EstimatedTime: " + EstimatedTime + " // time: " + time);
+
 var PercentageID = $("#percentage"),
 	start = 0,
 	end = 100,
 	duration = time;
-
+var $percentage = $("#percentage");
+var $bar = $("#bar");
 var reeling = false;
 
 function animateProgressBar(id, start, end, duration) {
@@ -19,6 +22,7 @@ function animateProgressBar(id, start, end, duration) {
 		increment = end > start ? 1 : -1,
 		stepTime = Math.abs(Math.floor(duration / range)),
 		obj = id;
+
 
 	var timer = setInterval(function() {
 
@@ -68,12 +72,13 @@ $(document).ready(function() {
 		console.log("All fonts in use by visible text have loaded.");
 		console.log("Raleway loaded? " + document.fonts.check("1em Raleway"));  // true
 		console.log("Poppins loaded? " + document.fonts.check("1em Poppins"));  // true
-		console.log(document.fonts);
+		// console.log(document.fonts);
+		// console.log($("[data-bg], img").length);
+
+		duration = ($("[data-bg], img").length) ? duration : 500;
 		animateProgressBar($("#percentage"), start, end, duration);
-		$("#loadingscreen > .content").animate({opacity: 1}, function () {
-			
+		$("#loadingscreen > .content").animate({opacity: 1}, function () {		
 		});
-		
 	});
 
 	console.log("document ready!!");
@@ -103,21 +108,41 @@ $(document).ready(function() {
 
 	totalimages = Object.keys(images).length;
 
-	// console.log("images", images);
-	$.each(images, function(i, obj){
+	if (totalimages) { // no images
+		$.each(images, function(i, obj){
 
-		$("<img/>").attr("src", i).on("load", function() {
-			$(this).remove(); // prevent memory leaks as @benweet suggested
-			// $('body').css('background-image', 'url(http://picture.de/image.png)');
+			// var imaj = new Image();
+			// imaj.src = i;
 
-			if (obj.type == "bg") {
-				for (var a = 0; a < obj.elem.length; a++) {
-					obj.elem[a].css("background-image", "url("+i+")");
+			// console.log("[" + i + "] is cached?", imaj.complete);
+			// console.log(obj.type);
+
+			// console.log("-----");
+
+			$("<img/>").attr("src", i).on("load", function() {
+				$(this).remove(); // prevent memory leaks as @benweet suggested
+				// $('body').css('background-image', 'url(http://picture.de/image.png)');
+
+				if (obj.type == "bg") {
+
+					var imaj = new Image();
+					imaj.src = i;
+					console.log("[" + i + "] is cached?", imaj.complete);
+					console.log(obj.type);
+
+					console.log("-----");
+			
+					for (var a = 0; a < obj.elem.length; a++) {
+						obj.elem[a].css("background-image", "url("+i+")");
+					}
 				}
-			}
-			imageChecker();
+				imageChecker();
+			});
 		});
-	});
+	} else {
+		imageChecker();
+	}
+	
 
 });
 
@@ -134,7 +159,7 @@ function imageChecker() {
 
 function scrollLoop() {
 
-	console.log("lastPosition: " + lastPosition + " // window.pageYOffset: " + window.pageYOffset + " // window.scrollTop: " + window.scrollTop);
+	// console.log("lastPosition: " + lastPosition + " // window.pageYOffset: " + window.pageYOffset + " // window.scrollTop: " + window.scrollTop);
 
 	// Avoid calculations if not needed
 	if (lastPosition == window.pageYOffset) {
@@ -193,8 +218,6 @@ function loadWindow() {
 
 		var transform 		= "translate3d(0px, -" + scroll + "px, 0px)";
 		var smoothScoll 	= $("#smoothscroll")[0];
-
-		
 
 
 		$("#smoothscroll").animate({
@@ -366,7 +389,11 @@ function initContainers() {
 	var windowH = $(window).height();
 	var navH = $("#navbar").outerHeight();
 	var headerH = windowH - navH + 0; // why da fuck 28 huuuhhh
-	$("#mainheader").css({height: headerH});
+	// $("#mainheader").css({height: headerH});
+	$("#mainheader").css({
+		"min-height": headerH,
+		"height": headerH,
+	});
 
 	// console.log("#mainheader resized!!", $("#mainheader").height());
 
