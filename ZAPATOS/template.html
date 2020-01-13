@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZAPATOS</title>
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.nicescroll.min.js"></script>
+	<!-- <script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.min.css">
+
+	<script type="text/javascript" src="assets/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
+</head>
+<body style="position: relative; background-color: #121314; overflow-y: hidden;">
+
+	<div class="poppins" id="loadingscreen">
+		<div class="content" style="text-align: left;">
+			<h1>
+				<i class="loading cog icon" style="color: #fdd32a;"></i>
+				LOADING
+				<span id="percentage" style="float: right;"></span>
+			</h1>
+		</div>
+		<div class="content" id="progress">
+			<div id="bar"></div>
+		</div>
+	</div>
+
+	<div id="mainwrapper" style="opacity: 0;">
+		<div id="smoothscroll">
+			<div id="scrollhere" style="background-color: white;">
+
+				<div id="navbar" class="navbar poppins">
+					<a class="header item"><span><i class="bolt icon"></i> ZAPATOS</span></a>
+					<a class="item">About</a>
+					<div class="dropdown item" id="dropdown-nav">
+						<span>Services <i class="angle down icon"></i></span>
+						<div class="menu">
+							<a class="item" href="#">Shoe Repair</a>
+							<a class="item" href="#">Shoe Dyeing</a>
+							<a class="item" href="#">Shoe Shine</a>
+							<a class="item" href="#">Shoe Cleaning</a>
+							<a class="item" href="#">Sole Whitening</a>
+						</div>
+					</div>
+					<a class="item">Blog</a>
+					<a class="item">Contact Us</a>
+
+					<div class="right menu">
+						<div class="item">Login</div>
+						<div class="item action"><span>Register</span></div>
+						<div class="item always-active" style="position: relative;">
+							<span>
+								<i class="cart icon"></i>
+								0
+							</span>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="container">
+					<h1 class="container-header poppins"><span>CONTENT HERE</span></h1>
+				</div>
+
+
+				<div id="contact-form" class="container yellow-bg">
+
+					<h1 id="contact-header" class="poppins">
+						<i class="comments outline icon"></i>
+						<span style="background-color: #121314; padding: 0 .2em; color: #fdd93a;">CONTACT US</span>
+					</h1>
+					<p id="contact-subheader" class="roboto">
+						Send us a message and we'll get back to you!
+					</p>
+
+					<form class="form" action="" method="POST" style="width: 100%; max-width: 500px; margin: auto;">
+						<div class="field">
+							<input type="text" placeholder="Your Name" autocomplete="off">
+						</div>
+						<div class="field">
+							<input type="text" placeholder="Your Email" autocomplete="off">
+						</div>
+						<div class="field">
+							<input type="text" placeholder="Your Contact Number" autocomplete="off">
+						</div>
+						<div class="field">
+							<textarea rows="7" placeholder="Your Message" autocomplete="off"></textarea>
+						</div>
+						<div class="field" style="text-align: center;">
+							<button type="button" class="poppins action-btn-2">Submit</button>
+						</div>
+					</form>
+				</div>
+
+				<div class="container poppins" id="footer">
+					<div class="header" style="text-align: center;">
+						<i class="bolt icon"></i>
+						<h1 class="poppins">ZAPATOS</h1>
+					</div>
+
+					<div class="footer-columns">
+						<div class="footer-column">
+							<a href="#" class="poppins footer-item">About</a>
+							<a href="#" class="poppins footer-item">Culture</a>
+							<a href="#" class="poppins footer-item">Downloads</a>
+						</div>
+						<div class="footer-column">
+							<a href="#" class="poppins footer-item">Terms of Service</a>
+							<a href="#" class="poppins footer-item">Privacy Policy</a>
+							<a href="#" class="poppins footer-item">Careers</a>
+						</div>
+						<div class="footer-column">
+							<div><h4 class="poppins" style="color: #fdd93a; margin: 0 0 1em;">Follow Us</h4></div>
+							<div>
+								<span style="color: #fdd93a;">
+									<i class="facebook icon footer-item"></i>	
+									<i class="instagram icon footer-item"></i>	
+									<i class="twitter icon footer-item"></i>	
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<h4 class="footer-copyright" style="">
+						Copyright <i class="copyright outline icon"></i> 2019
+						<!-- <span class="poppins" style="color: #fdd32a;"> -->
+							<!-- <i class="bolt icon"></i> -->
+							ZAPATOS
+						<!-- </span> -->
+					</h4>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+</body>

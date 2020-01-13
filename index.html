@@ -4,32 +4,17 @@
 	<title>LOUIS</title>
 
 	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
 	<script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script>
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"> -->
 
-	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
-	<link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
 	<style type="text/css">
-
-		.staat {
-			font-family: 'Staatliches', cursive !important;
-		}
-		.abril {
-			font-family: 'Abril Fatface', cursive !important;
-		}
-		.raleway {
-			font-family: 'Raleway', sans-serif !important;
-		}
-		.overpass {
-			font-family: 'Overpass', sans-serif !important;
-		}
 
 		html, body {
 			width: 100%;
@@ -44,8 +29,12 @@
 			/*font-size: 110% !important;*/
 		}
 		*:not(i) {
+			/*font-family: 'Staatliches', cursive !important;*/
+			/*font-family: 'Abril Fatface', cursive !important;*/
 			/*font-family: 'Raleway', sans-serif !important;*/
-			font-family: 'Overpass', sans-serif !important;
+			/*font-family: 'Overpass', sans-serif !important;*/
+			/*font-family: 'Montserrat', sans-serif !important;*/
+			font-family: 'Work Sans', sans-serif !important;
 		}
 
 		.container {
@@ -62,6 +51,10 @@
 			float: left;
 			overflow-y: auto;
 			/*padding: 10px;*/
+
+			padding: 3% 4%;
+			/*padding: 2px !important;*/
+			margin: 0;
 		}
 
 		#content {
@@ -132,6 +125,8 @@
 		.section {
 			padding: 3% 8%;
 			visibility: hidden;
+
+			position: relative;
 		}
 
 		.strike {
@@ -215,14 +210,44 @@
 		#mypic {
 			border-radius: 50%;
 			width: 100%;
+
+			padding: 10px;
+			border: 3px solid #36bed9;
 		}
+
+		#resumebtn {
+			border: 2px solid #36bed9;
+			box-shadow: none;
+			color: #36bed9 !important;
+		}
+		/*.78571429em .78571429em .78571429em*/
+		#pdficon {
+			float: right;
+			position: absolute; top: .78571429em; right: .78571429em;
+		}
+		#dlicon {
+			float: right;
+			position: absolute; top: 100%; right: .78571429em;
+			position: absolute; top: .78571429em; right: .78571429em;
+			opacity: 0;
+		}
+		#resumebtn:hover #pdficon {
+			top: 0; bottom: 100%; right: .78571429em;
+			opacity: 0;
+			transition: all 0.9s ease;
+		}
+
+		#resumebtn:hover #dlicon {
+			top: .78571429em; bottom: 0; right: .78571429em;
+			opacity: 1;
+			transition: all 0.9s ease;
+		}
+
 		#left {
 			text-align: center;
 			visibility: hidden;
-		}
-		#side-menu {
-			padding: 3% 4%;
-			margin: 0;
+			background-color: white !important;
+			margin: 0; padding: 0;
 		}
 		.bordered-panel {
 			border: 1px solid rgba(34, 36, 38, 0.15);
@@ -233,28 +258,69 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+
+		.bgicon {
+			position: absolute;
+			bottom: 0;
+			right: 10%;
+			z-index: -1;
+			color: lightgrey;
+			opacity: 0.4;
+		}
+		.bgicon i {
+			font-size: 600% !important;
+		}
+
 		@media screen and (max-width: 999px) {
+			.ui.header, .strike {
+				font-size: 3rem !important;
+			}
+			.ui.small.header {
+				font-size: 2rem !important;
+			}
+			p, .sub.header, i, #contact-info * {
+				font-size: 1.8rem !important;
+			}
+			li {
+				font-size: 1.2rem !important;
+				padding-bottom: 15px !important;
+			}
+			.bordered-panel {
+				border: 0px solid rgba(34, 36, 38, 0.15);
+			}
+			.container {
+				padding: 1%;
+			}
 			#mypic {
 				width: 50%;
-			}
-			
+			}			
 			#side-menu, #content {
 				width: 100%; height: auto;
 			}
 			#contact-fb, #contact-ig {
-				width: 50%;
+				width: 100%;
+			}
+			#bio-icons i {
+				opacity: 1 !important;
+				/*transition: all 0.3s ease !important;*/
+				border: 1.5px solid #36bed9;
+				color: #36bed9;
+			}
+			.bgicon {
+				display: none;
 			}
 		}
+
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="bordered-panel" id="side-menu">
-			<div id="left">
+			<div id="left" style="position: relative;">
 				<div class="avatar">
 					<img id="mypic" src="assets/300x300.png" />
 				</div>
-				<h1 class="ui header raleway">
+				<h1 class="ui header">
 					Juan Dela Cruz
 					<div class="sub header">
 						Web Developer at Google
@@ -284,9 +350,14 @@
 			<div id="content-panel" style="">
 				<div class="ui basic segment" style="padding: 0;">
 
-					<div class="section">
-						<div class="ui header strike">Profile</div>
+					<div class="section" id="test">
+						<h4 class="ui header strike">Profile</h4>
 						<p>My career objective is to plant myself and grow in the field of Information Technology where I can learn more about my chosen profession, help in my field's growth, and apply my skills in programming. I am a person who fully commits to given tasks and ensures deadlines are met.</p>
+
+						<!-- <div class="bgicon">
+							<i class="massive chess icon"></i>
+						</div> -->
+
 					</div>
 
 					<div class="section">
@@ -309,6 +380,7 @@
 									<li>Provide technical support at the main office as well as other branches</li>
 									<li>Ticketing system</li>
 									<li>CTPL Application</li>
+								</ul>
 							</div>
 						</div>
 						<div class="ui small header">
@@ -361,12 +433,22 @@
 								<img src="assets/300x300.png" style="width: 100%;" />
 							</div>
 						</div>
+						<div class="space" style="text-align: left; padding-left: 0; padding-right: 0;">
+							<button class="ui massive basic icon button" id="resumebtn" style="position: relative;">
+								Resume
+								<i class="heart icon" style="opacity: 0"></i>
+								<i class="file pdf icon" id="pdficon"></i>
+								<i class="cloud download icon" id="dlicon"></i>
+							</button>							
+						</div>
+						
+						<!-- <div class="space"></div> -->
 					</div>
 
 					<div class="section">
 						<div class="ui header strike">Contact Information</div>
 						<div class="ui stackable grid" style="margin-top: 20px;">
-							<div class="seven wide column">
+							<div class="seven wide column" id="contact-info">
 								<div class="ui very relaxed list">
 									<div class="item">
 										<i class="large map marker alternate middle aligned icon"></i>

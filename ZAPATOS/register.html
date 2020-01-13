@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>ZAPATOS</title>
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.nicescroll.min.js"></script>
+	<!-- <script type="text/javascript" src="assets/semantic-ui/semantic.min.js"></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/semantic-ui/semantic.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.min.css">
+
+	<script type="text/javascript" src="assets/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css">
+</head>
+<body style="position: relative; background-color: #121314; overflow-y: hidden;">
+
+	<div class="poppins" id="loadingscreen">
+		<div class="content" style="text-align: left;">
+			<h1>
+				<i class="loading cog icon" style="color: #fdd32a;"></i>
+				LOADING
+				<span id="percentage" style="float: right;"></span>
+			</h1>
+		</div>
+		<div class="content" id="progress">
+			<div id="bar"></div>
+		</div>
+	</div>
+
+	<div id="mainwrapper" style="opacity: 0;">
+		<div id="smoothscroll">
+			<div id="scrollhere" style="background-color: white;">
+
+				<div id="navbar" class="navbar poppins">
+					<a class="header item" href="index.html"><span><i class="bolt icon"></i> ZAPATOS</span></a>
+					<a class="item">About</a>
+					<div class="dropdown item" id="dropdown-nav">
+						<span>Services <i class="angle down icon"></i></span>
+						<div class="menu">
+							<a class="item" href="#">Shoe Repair</a>
+							<a class="item" href="#">Shoe Dyeing</a>
+							<a class="item" href="#">Shoe Shine</a>
+							<a class="item" href="#">Shoe Cleaning</a>
+							<a class="item" href="#">Sole Whitening</a>
+						</div>
+					</div>
+					<a class="item">Blog</a>
+					<a class="item">Contact Us</a>
+
+					<div class="right menu">
+						<a class="item" href="login.html">Login</a>
+						<a class="active item action" href="register.html"><span>Register</span></a>
+						<div class="item always-active" style="position: relative;">
+							<span>
+								<i class="cart icon"></i>
+								0
+							</span>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div id="mainheader">
+					<div class="fw fh bg-img" style="display: flex; flex-direction: column; justify-content: center; text-align: center;" data-bg="assets/images/compressjpeg/loginbg-min.jpg">
+						<div class="overlay"></div>
+
+						<div class="form-container">
+							<form class="form" method="POST" action="">								
+								<div class="field">
+									<h1 class="poppins yellow" style="text-align: center;">
+										<!-- <i class="bolt icon"></i> -->
+										<!-- <br> -->
+										<span style="font-weight: bold;">WELCOME</span>
+									</h1>
+								</div>
+								<div class="field">
+									<input type="text" placeholder="Username">
+								</div>
+								<div class="field">
+									<input type="text" placeholder="Password">
+								</div>								
+								<div class="field yellow roboto">
+									<button type="button" class="poppins action-btn-3" style="margin: 0.67em 0; width: 100%;">LOGIN</button>
+								</div>
+
+								<div class="field yellow roboto" style="display: flex; padding: 20px 0;">
+									<div class="fw" style="text-align: left;">
+										<a class="yellow-link" href="#">Forgot Password?</a>
+									</div>
+									<div class="fw" style="text-align: right;">
+										<a class="yellow-link" href="#">Create Account</a>
+									</div>
+								</div>
+
+								<!-- <div class="field">
+									<p class="whitesmoke roboto helper">Forgot your password? <a class="yellow-link">Click here!</a></p>
+								</div>
+								<div class="field">
+									<p class="whitesmoke roboto  helper" style="margin: 0;">
+										<a class="yellow-link" href="#">Create Account</a>
+									</p>
+								</div> -->
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="container black-bg poppins" id="footer">
+					<div class="header" style="text-align: center;">
+						<i class="bolt icon"></i>
+						<h1 class="poppins">ZAPATOS</h1>
+					</div>
+
+					<div class="footer-columns">
+						<div class="footer-column">
+							<a href="#" class="poppins footer-item">About</a>
+							<a href="#" class="poppins footer-item">Culture</a>
+							<a href="#" class="poppins footer-item">Downloads</a>
+						</div>
+						<div class="footer-column">
+							<a href="#" class="poppins footer-item">Terms of Service</a>
+							<a href="#" class="poppins footer-item">Privacy Policy</a>
+							<a href="#" class="poppins footer-item">Careers</a>
+						</div>
+						<div class="footer-column">
+							<div><h4 class="poppins footer-label">Follow Us</h4></div>
+							<div>
+								<!-- <span> -->
+									<i class="facebook icon footer-item"></i>	
+									<i class="instagram icon footer-item"></i>	
+									<i class="twitter icon footer-item"></i>	
+								<!-- </span> -->
+							</div>
+						</div>
+					</div>
+
+					<h4 class="footer-copyright" style="">
+						Copyright <i class="copyright outline icon"></i> 2019
+						<!-- <span class="poppins" style="color: #fdd32a;"> -->
+							<!-- <i class="bolt icon"></i> -->
+							ZAPATOS
+						<!-- </span> -->
+					</h4>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+</body>

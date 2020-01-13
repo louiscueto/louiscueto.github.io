@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LC</title>
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.css">
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/loader.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/transition.min.css">
+	<script type="text/javascript" src="assets/semantic-ui/components/transition.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<script type="text/javascript" src="assets/scripts.js"></script>
+
+	<script type="text/javascript" src="assets/textures-master/dist/textures.js"></script>
+	<script type="text/javascript" src="assets/d3.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab&display=swap" rel="stylesheet">
+
+
+	<style type="text/css">
+		
+
+		.montserrat {
+			font-family: 'Montserrat', sans-serif;
+		}
+		.merriweather {
+			font-family: 'Merriweather', serif;
+		}
+		
+		.raleway {
+			font-family: 'Raleway', sans-serif;
+		}
+		.robotoslab {
+			font-family: 'Roboto Slab', serif;
+		}
+
+
+		/*.slabo {
+			font-family: 'Slabo 27px', serif;
+		}*/
+
+		.anton {
+			font-family: 'Anton', sans-serif;
+		}
+		.poppins {
+			font-family: 'Poppins', sans-serif;
+		}
+
+	</style>
+
+</head>
+<body class="blackbg">
+
+	<div class="ui active dimmer" id="loader" style="text-align: center;">
+		<div class="ui massive text loader poppins" id="loader-text"></div>
+	</div>
+
+	<div id="palette">
+		<div class="primary"></div>
+		<div class="secondary"></div>
+		<div class="tertiary"></div>
+		<!-- <div class="teal"></div> -->
+	</div>
+
+	<a class="raleway togglemenu" id="showmenu">
+		<i class="fitted bars icon"></i>
+	</a>
+
+	<div id="mobile-sidebar" class="col-flex-3">
+		<a class="sidebar-nav active" data-panel="home" id="home-nav-mobile"><i class="fitted home icon"></i></a>
+		<a class="sidebar-nav" data-panel="about" id="about-nav-mobile"><i class="fitted user icon"></i></a>
+		<a class="sidebar-nav" data-panel="portfolio" id="portfolio-nav-mobile"><i class="fitted paint brush icon"></i></a>
+		<a class="sidebar-nav" data-panel="contact" id="contact-nav-mobile"><i class="fitted envelope outline icon"></i></a>
+	</div>
+
+	<!-- <div class="fullscreen blackbg col-flex-2" style="opacity: 1; position: absolute; top: 0; left: 0; z-index: 100; color: white;">
+		<div style="padding: 50px; font-size: 100%;">HOME</div>
+		<div style="padding: 50px; font-size: 100%;">ABOUT</div>
+		<div style="padding: 50px; font-size: 100%;">PORTFOLIO</div>
+		<div style="padding: 50px; font-size: 100%;">CONTACT</div>
+	</div> -->
+
+	<!-- <div class="blackbg row-flex-2" style="width: 100%; opacity: 1; position: absolute; top: 0; left: 0; z-index: 100; color: white;">
+		<div style="padding: 50px; font-size: 100%;">HOME</div>
+		<div style="padding: 50px; font-size: 100%;">ABOUT</div>
+		<div style="padding: 50px; font-size: 100%;">PORTFOLIO</div>
+		<div style="padding: 50px; font-size: 100%;">CONTACT</div>
+	</div> -->
+
+	<div class="blackbg-2" id="sidebar">
+		<div class="sidebar-item">
+			<!-- <a class="whitesmoke raleway togglemenu" id="hidemenu">
+				<i class="fitted bars icon"></i>
+			</a> -->
+		</div>
+
+		<div class="sidebar-item raleway" style="text-transform: lowercase;">
+			<a class="sidebar-nav active" data-panel="home" id="home-nav">Home</a>
+			<a class="sidebar-nav" data-panel="about" id="about-nav">About</a>
+			<a class="sidebar-nav" data-panel="portfolio" id="portfolio-nav">Portfolio</a>
+			<a class="sidebar-nav" data-panel="contact" id="contact-nav">Contact</a>
+		</div>
+
+		<div class="sidebar-item secondary" id="sc-icons">
+			<span class="whitesmoke raleway" id="social"> &nbsp; social</span>
+			<br>
+			<a class="sidebar-icon" href="https://www.facebook.com" target="_blank">
+				<i class="secondary facebook icon"></i></a>
+			<a class="sidebar-icon" href="https://www.instagram.com" target="_blank">
+				<i class="secondary instagram icon"></i></a>
+			<a class="sidebar-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank">
+				<i class="secondary linkedin icon"></i></a>
+			<a class="sidebar-icon" href="https://www.github.com/louiscueto" target="_blank">
+				<i class="secondary github icon"></i></a>
+		</div>
+	</div>
+
+
+	<div class="panel blackbg fullscreen row-flex" id="home">
+		
+
+		<div class="fullscreen col-flex-3 relative" style="text-align: left; padding: 0 11%;">
+
+			<div class="pattern" style="
+				top: 17%;
+				/*width: 120px; height: 200px; left: 7%;*/
+				width: 160px; height: 300px; left: 25%;				 
+				z-index: 2;
+			"></div>
+
+			<div style="z-index: 3; text-align: center;">
+				<h1 class="whitesmoke nomargin poppins panel-header" style="line-height: 0.7; letter-spacing: 2.5px;">
+					Hola,<br>
+					mi nombre es<br>
+					<span class="primary">Louis Cueto</span>
+				</h1>
+				<h1 class="whitesmoke poppins nomargin panel-sub-header">
+					<span class="secondary">Web developer</span> @ Cora's Tapsilog
+				</h1>
+				<div style="padding-top: 3em;">
+					<a id="cta" class="poppins" onclick="$('#contact-nav').trigger('click');"><span>I want a website too!</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel blackbg fullscreen row-flex" id="about">
+
+		<div class="fullscreen col-flex-3 relative" style="padding: 50px; text-align: left;">
+
+			<div class="pattern" style="
+				width: 100px;
+				height: 200px;
+				top: 12%; right: 5%;
+				z-index: 2;
+			"></div>
+
+			<div style="z-index: 3;">
+
+				<h1 class="primary nomargin poppins panel-header" style="font-size: 3.5vw;">
+					Get to know me
+				</h1>
+
+				<div style="padding: 10px 0;">
+					<p class="whitesmoke nomargin montserrat about-text">A 22 yr old web developer, Louis's career objective is to plant himself and grow in the field of Information Technology where he can learn more and apply his skills in his chosen profession. He is a person who fully commits to given tasks and ensures deadlines are met.</p>
+				</div>
+				
+				<div class="about-text row-flex" style="padding: 10px 0;">
+					<h2 class="nomargin montserrat secondary about-label" style="width: 40%; opacity: 1;">2012 - 2017</h2>
+					<div class="whitesmoke nomargin montserrat about-text" style="width: 100%;">				
+						<p class="nomargin">BS Information Technology with specialization in Web and Mobile Applications</p>
+						<p class="nomargin">FEU - Institute of Technology</p>
+						<p class="nomargin">Nicanor Reyes St., Sampaloc, Manila</p>
+					</div>
+				</div>
+
+				<div class="about-text row-flex" style="padding: 10px 0;">
+					<h2 class="nomargin montserrat secondary about-label" style="width: 40%; opacity: 1;">2017 - Present</h2>
+					<p class="whitesmoke nomargin montserrat" style="width: 100%; ">Wev Developer at Cora's Tapsilog</p>
+				</div>
+
+				<div class="about-text secondary about-separator"></div>
+				
+				<div class="about-text whitesmoke montserrat">
+					<p class="secondary" style="font-weight: bold;">HTML 5</p>
+					<p class="row-flex-2">
+						<span class="secondary" style="font-weight: bold; width: 1%; white-space: nowrap;">CSS 3</span>
+						<span>
+							<span class="separator" style="font-size: 100%;">[</span>
+							Semantic UI
+							<span class="separator">//</span>
+							Bulma
+							<span class="separator">//</span>
+							Bootstrap
+							<span class="separator" style="font-size: 100%;">]</span>
+						</span>
+					</p>
+					<p class="row-flex-2">
+						<span class="secondary" style="font-weight: bold; width: 1%;">JS</span>
+						<span>
+							<span class="separator" style="font-size: 100%;">[</span>
+							jQuery
+							<span class="separator">//</span>
+							React JS
+							<span class="separator">//</span>
+							Node JS
+							<span class="separator" style="font-size: 100%;">]</span>
+						</span>
+					</p>
+					<p class="row-flex-2">
+						<span class="secondary" style="font-weight: bold; width: 1%;">PHP</span>
+						<span>
+							<span class="separator" style="font-size: 100%;">[</span>
+							CodeIgniter 3
+							<span class="separator" style="font-size: 100%;">]</span>
+						</span>
+					</p>
+					<p><span class="secondary" style="font-weight: bold;">MySQL</span></p>
+				</div>
+
+			</div>
+			
+
+		</div>
+		<div class="fullscreen col-flex-3" id="about-image" style="">
+			<div class="fullscreen" style="background-color: black; opacity: 0.7"></div>
+			<!-- <img src="assets/me.jpg" style="width: 100%; height: 100%; opacity: 1;"> -->
+		</div>
+
+	</div>
+
+
+	<div class="panel blackbg fullscreen col-flex-3" id="portfolio">
+		<!-- <div  class="fullscreen"> -->
+			<div id="portfoliogrid" class="fullscreen grid">
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>						
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+				<div class="column">
+					<div class="content" data-bg="assets/placeholder.png">
+						<div class="overlay">
+							<span class="text"><i class="fitted search icon"></i></span>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+		<!-- </div> -->
+	</div>
+
+	<div class="panel blackbg fullscreen row-flex" id="contact">
+		<div class="fullscreen col-flex-3" id="contact-header-panel">
+			<h1 class="primary poppins panel-header" id="contact-header">
+				Get in touch, se&ntilde;or
+			</h1>
+		</div>
+		<div class="fullscreen blackbg-2" style="padding: 50px; border: 1px solid transparent;">
+			<div class="whitesmoke fullscreen row-flex relative"4>
+				
+				<div class="pattern" style="
+					width: 140px;
+					height: 240px;
+					top: 20%; left: 5%;
+					z-index: 2;
+				"></div>
+
+				<div id="contact-details" class="col-flex-3">
+					<p class="whitesmoke poppins">
+						<i class="map alternate marker secondary icon"></i> &nbsp; &nbsp; Tondo, Manila, Philippines</p>
+					<p class="whitesmoke poppins">
+						<i class="mobile secondary icon"></i> &nbsp; &nbsp; 0912 345 6789</p>					
+					<p class="whitesmoke poppins">
+						<i class="mail outline secondary icon"></i> &nbsp; &nbsp; my-email@yahoo.com <span class="separator">//</span> my-email322@gmail.com
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="whitesmoke poppins" id="footer">
+		<span class="footer-item" id="louis">&copy; 2019 Louis Cueto
+
+			<span class="footer-icon" style="margin: 0 20px !important;">
+				&nbsp;
+			</span>
+			<a class="footer-icon" href="https://www.facebook.com" target="_blank">
+				<i class="secondary facebook icon"></i></a>
+			<a class="footer-icon" href="https://www.instagram.com" target="_blank">
+				<i class="secondary instagram icon"></i></a>
+			<a class="footer-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank">
+				<i class="secondary linkedin icon"></i></a>
+			<a class="footer-icon" href="https://www.github.com/louiscueto" target="_blank">
+				<i class="secondary github icon"></i></a>
+
+		</span>
+		<!-- <span class="footer-item">
+			Icons from
+			<a class="teal" href="https://semantic-ui.com/" target="_blank"
+				style="text-decoration: none; cursor: pointer;">Semantic UI</a>
+		</span> -->
+	</div>
+
+	<script type="text/javascript">
+
+		$("#portfolio .content").each(function(){
+			var $this = $(this);
+			var bg = $this.data("bg");
+			bg = "https://placeholder.pics/svg/300x300";
+			$this.css({"background-image": 'url(' + bg + ')'});
+			console.log("img set");
+		})
+	</script>
+</body>
+</html>
