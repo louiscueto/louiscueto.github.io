@@ -76,6 +76,10 @@ $(document).ready(function() {
 		// console.log($("[data-bg], img").length);
 
 		duration = ($("[data-bg], img").length) ? duration : 500;
+		if ($("[data-bg], img").length <= 2) {
+			duration = 0;
+			start = 99;
+		}
 		animateProgressBar($("#percentage"), start, end, duration);
 		$("#loadingscreen > .content").animate({opacity: 1}, function () {		
 		});
@@ -390,10 +394,10 @@ function initContainers() {
 	var navH = $("#navbar").outerHeight();
 	var headerH = windowH - navH + 0; // why da fuck 28 huuuhhh
 	// $("#mainheader").css({height: headerH});
-	$("#mainheader").css({
-		"min-height": headerH,
-		"height": headerH,
-	});
+	// $("#mainheader").css({
+	// 	"min-height": headerH,
+	// 	"height": headerH,
+	// });
 
 	// console.log("#mainheader resized!!", $("#mainheader").height());
 

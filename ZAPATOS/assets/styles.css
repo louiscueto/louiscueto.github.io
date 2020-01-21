@@ -163,6 +163,8 @@ img.image {
 	/*margin-bottom: 10%;*/
 	margin: auto;
 	z-index: 2;
+
+	padding: 6.9em 0 11.9em;
 }
 
 #mainheader > .hero > i {
@@ -775,10 +777,83 @@ input[type=text]:focus::placeholder, textarea:focus::placeholder {
 	min-width: 450px;
 	min-height: 300px;
 	background-color: rgba(0, 0, 0, .5);
-	margin: auto; padding: 2em 3em;
+	margin: auto;
+
+	padding: 2em 3em;
+	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 5px;
 	box-shadow: 7px 7px 0 0 #fdd32a;
+}
+
+.reg-col {
+	z-index: 2;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: space-evenly;*/
+	text-align: left;
+	padding: 3em 4em 5em;
+	color: whitesmoke;
+}
+
+.reg-divider {
+	z-index: 2;
+	width: 1%;
+	background-color: #fdd93a;
+}
+
+.reg-col-header {
+	width: 80%;
+	margin: 0 auto;
+	z-index: 2;
+}
+
+.reg-col-header > p {
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+.reg-col-header > h1 {
+	font-size: 3.5rem;
+	line-height: 1;
+	color: #fdd93a;
+	text-shadow: 5px 0 0 #4f4000;
+}
+
+.reg-col-action {
+	width: 80%;
+	margin: 1.5em auto 2.5em;
+	z-index: 2;
+}
+
+.reg-col-action > p {
+	font-size: 1.4rem;
+	margin-bottom: .5em;
+}
+
+.reg-btn {
+	cursor: pointer;
+	outline: none;
+	font-size: 1.8rem;
+	font-weight: bold;
+	
+	width: fit-content;
+	padding: .4em .9em;
+	border-radius: 0em;
+
+	background: transparent;	
+	border: 4px solid #fdd93a;
+	color: #fdd93a;
+
+	transition: all 0.3s ease;
+}
+
+.reg-btn:hover {
+	background: #fdd93a;	
+	/*border: 4px solid #fdd93a;*/
+	color: #121314;
 }
