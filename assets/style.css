@@ -8,6 +8,7 @@ html, body {
 }
 * {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 .blackbg {
@@ -80,6 +81,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	/*text-align: center;*/
 	text-align: center;
 }
 
@@ -135,40 +137,54 @@ a.sidebar-icon {
 
 #mobile-sidebar {
 
-	border: 3px solid transparent;
+	/*display: none;*/
+	/*border: 3px solid transparent;*/
 	color: white;
 	position: absolute;
-	right: -70px;
+	right: -10px;
 	height: 100%;
 	/*border: 1px solid blue;*/
-	z-index: 97;
+	z-index: -1;
 	opacity: 0;
 
+	width: 100%;
+	background-color: black;
 
 	transition: all 0.4s ease;
 }
 
 #mobile-sidebar.visible {
-	border: 3px solid transparent;
-	right: 50px;
+	/*border: 3px solid transparent;*/
+	/*right: 50px;*/
+	z-index: 97;
+	right: 0;
 	opacity: 1;
 	transition: all 0.4s ease;
 }
 
 
 #mobile-sidebar .sidebar-nav {
-	border: 3px solid transparent;
+	border-bottom: 3px solid transparent;
 	color: rgba(255, 255, 255, 0.6);
-	background-color: rgba(26, 27, 28, 0.2);
+	/*background-color: rgba(26, 27, 28, 0.2);*/
 	font-size: 3vw;
 	cursor: pointer;
 	text-align: center;
-	margin-bottom: 40px !important;
+	/*margin-bottom: 40px !important;*/
 	padding: 20px 25px !important;
+	font-weight: bold;
+
+	transition: all 0.3s ease;
 }
 #mobile-sidebar .sidebar-nav.active {
 	color: rgba(250, 128, 114, 0.6);
 }
+
+#mobile-sidebar .sidebar-nav:hover {
+	/*background-color: rgba(26, 27, 28, 0.9);*/
+	border-bottom: 3px solid rgba(26, 27, 28, 0.9);
+}
+
 
 .sidebar-nav {
 	/*font-weight: bolder;*/
@@ -185,7 +201,7 @@ a.sidebar-icon {
 	/*transform: rotate(270deg);*/
 }
 .sidebar-nav:last-child {
-	border: none !important;
+	/*border: none !important;*/
 }
 
 .sidebar-nav:hover {
@@ -224,6 +240,8 @@ a.sidebar-icon {
 	justify-content: flex-start;
 }
 
+
+
 .panel {
 	/*padding-right: 30px;*/
 	height: 120%;
@@ -232,15 +250,35 @@ a.sidebar-icon {
 	top: -100px;
 	z-index: 1;
 
+	/*position: fixed;*/
+	/*transform-origin: 0 0;*/
+    /*transform: translate3d(0px, 0px, 0px);*/
+    /*transition: all .5s cubic-bezier(0.2, .84, .5, 1);*/
+
 	background-color: transparent;
 }
+
+.crawler {
+	cursor: default;
+}
+.crawler > span {
+	/*cursor: default;*/
+	transition: 0.3s all ease;
+}
+.crawler > span:not(.primary) {
+	opacity: 0.7;
+}
+.crawler > span:not(.primary):hover {
+	opacity: 1;
+}
+
 
 .panel.active {
 	z-index: 9;
 }
 
 .panel-header {
-	font-size: 6vw;
+	font-size: 7vw;
 	line-height: 0.9;
 }
 
@@ -281,15 +319,17 @@ img {
 
 #footer {
 	position: absolute;
+
 	bottom: 20px; right: 0;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding-right: 30px;
+	padding-left: 30px;
 	opacity: 0;
 	z-index: 99;
 	/*width: 100%;*/
 
 	display: flex;
-	justify-content: space-between;
+	/*justify-content: space-between;*/
+	justify-content: flex-end;
 }
 
 .footer-item {
@@ -403,6 +443,31 @@ img {
 }
 
 #cta:hover {
+	color: black;
+	/*color: #1FBED6;*/
+	background-color: #1FBED6;
+	/*background-color: #1a1b1c;*/
+}
+
+.action-btn {
+	border: 4px solid #1FBED6;
+	/*border: 2px solid #1a1b1c;*/
+	/*background-color: rgba(255, 255, 255, 0.05);*/
+	/*background-color: #1a1b1c;*/
+	background-color: transparent;
+	color: white;
+	color: #1FBED6;
+	padding: 1.1em 1.8em;
+	text-decoration: none;
+	font-weight: bolder;
+	cursor: pointer;
+	border-radius: 50px;
+	font-size: 1vw;
+
+	transition: 0.3s color ease;
+}
+
+.action-btn:hover {
 	color: black;
 	/*color: #1FBED6;*/
 	background-color: #1FBED6;
@@ -610,7 +675,11 @@ a#showmenu.visible {
 	bottom: 0;
 	right: 0;
 
-	background: rgba(0, 0, 0, 0.3);
+	/*background: rgba(0, 0, 0, 0.3);*/
+	/*background: rgba(0, 0, 0, 0);*/
+	background: rgb(0, 0, 0);
+
+	opacity: 0;
 
 	display: flex;
 	justify-content: center;
@@ -618,9 +687,9 @@ a#showmenu.visible {
 
 	transition: 0.3s all ease;
 }
-.content:hover .overlay {
+/*.content:hover .overlay {
 	background: rgba(0, 0, 0, 0);
-}
+}*/
 
 .content .text {
 	/*text-shadow: 2px 2px rgba(0, 0, 0, 0.7);*/
@@ -630,7 +699,7 @@ a#showmenu.visible {
 	transition: 0.3s all ease;
 }
 .content:hover .text {
-	opacity: 1;
+	/*opacity: 1;*/
 }
 
 .relative {
@@ -755,7 +824,8 @@ a#showmenu.visible {
 	}
 
 	a#showmenu.visible {
-		top: 50px; right: 50px;
+		top: 20px;
+		right: 40px;
 	}
 
 	#footer {		
