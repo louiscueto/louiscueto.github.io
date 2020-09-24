@@ -39,7 +39,8 @@
 		var $items 			= $("#items");
 		var ITEMS = [
 			{
-				title: "Entire condominium hosted by Jacqueline & Raul - 1",
+				title: "☆☆☆ LUXURIOUS CONDO MAKATI ☆☆☆",
+				subtitle: "Entire condominium hosted by Jacqueline & Raul",
 				fees: {
 					per_night: 6798,
 					cleaning_fee: 800,
@@ -60,7 +61,8 @@
 				]
 			},
 			{
-				title: "Entire condominium hosted by Jacqueline & Raul - 2",
+				title: "🌟MAKATI AIRBNB🌟",
+				subtitle: "Entire condominium hosted by Jacqueline & Raul",
 				fees: {
 					per_night: 6790,
 					cleaning_fee: 800,
@@ -80,7 +82,8 @@
 				]
 			},
 			{
-				title: "Entire apartment hosted by Leonida",
+				title: "Loft type Affordable Makati",
+				subtitle: "Entire apartment hosted by Leonida",
 				fees: {
 					per_night: 4200,
 					cleaning_fee: 380,
@@ -99,7 +102,8 @@
 				]
 			},
 			{
-				title: "Entire condominium hosted by LIDAN Hospitality.",
+				title: "2BR w/ Free Parking. WiFi 100Mbps.NETFLIX @Salcedo",
+				subtitle: "Entire condominium hosted by LIDAN Hospitality",
 				fees: {
 					per_night: 8000,
 					cleaning_fee: 500,
@@ -118,7 +122,8 @@
 				]
 			},
 			{
-				title: "Shared room in condominium hosted by Bella",
+				title: "Bright and Cozy Shared Condo @ Makati #2",
+				subtitle: "Shared room in condominium hosted by Bella",
 				fees: {
 					per_night: 4531,
 					cleaning_fee: 0,
@@ -136,7 +141,8 @@
 				]
 			},
 			{
-				title: "Entire condominium hosted by Nestor",
+				title: "Mirea Residences TJ's Crib 3 Bedroom with Parking",
+				subtitle: "Entire condominium hosted by Nestor",
 				fees: {
 					per_night: 5900,
 					cleaning_fee: 900,
@@ -160,7 +166,8 @@
 				]
 			},
 			{
-				title: "<i class='red heart icon'></i> Entire condominium hosted by Martin & Cate",
+				title: "Small Group Events & Parties 2-Uniquely Industrial",
+				subtitle: "<i class='red heart icon'></i> Entire condominium hosted by Martin & Cate",
 				fees: {
 					per_night: 6000,
 					cleaning_fee: 500,
@@ -180,8 +187,9 @@
 					'<i class="info circle icon"></i><div class="content">Temperature Checks will be done prior to check-in. Please have a list of you guest names available.</div>',
 				]
 			},
-			{
-				title: "<i class='red heart icon'></i> Entire condominium hosted by Janette",
+			{	
+				title: "Rare & Unique spacious 3 Bedroom in BSA Mansion",
+				subtitle: "<i class='red heart icon'></i> Entire condominium hosted by Janette",
 				fees: {
 					per_night: 8195,
 					cleaning_fee: 1800,
@@ -210,9 +218,12 @@
 		$.each(ITEMS, function (i, item) {
 
 			let notes = "";
+			// item.notes.push('<i class="map marker alternate icon"></i><div class="content">'+item.location+'</div>');
 			if (item.notes.length) {
 				notes = "<div class='ui list'><div class=item>"+item.notes.join("</div><div class=item>")+"</div></div>";
 			}
+			
+
 
 			let nights = item.dates.length-1;
 			let total = (item.fees.per_night*nights) + item.fees.cleaning_fee + item.fees.service_fee;
@@ -220,7 +231,7 @@
 				<div class="item">\
 					<div class="content" style="padding-top: 1rem;">\
 						<div class="header">'+item.title+' &nbsp; <a style="font-size: 1rem;" href="'+item.link+'" target="_blank"><i class="fitted external alternate icon"></i></a></div>\
-						<div class="meta"><i class="map marker alternate icon"></i> '+item.location+'</div>\
+						<div class="meta"><span class="price">'+item.subtitle+'</span><span class="stay"><i class="map marker alternate icon"></i> '+item.location+'</span></div>\
 						<div class="description">\
 							<div class="ui equal width stackable grid" style="padding: 1em 0;">\
 								<div class="column">'+notes+'</div>\
