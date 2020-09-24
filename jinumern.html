@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>M A Ñ A N I T A</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+
+	<style type="text/css">
+		* {
+			box-sizing: border-box !important;
+		}
+		#main {
+			padding: 5em 0;
+			width: 80%;
+			margin: auto;
+		}
+		.breakdown {
+			/*width: 50%;*/
+			width: 100%;
+			table-layout: fixed;
+		}
+
+		.breakdown td:last-child {
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="ui divided relaxed items" id="items">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		var $items 			= $("#items");
+		var ITEMS = [
+			{
+				title: "Entire condominium hosted by Jacqueline & Raul - 1",
+				fees: {
+					per_night: 6798,
+					cleaning_fee: 800,
+					service_fee: 1073,
+				},
+				guests: 9,
+				dates: ["October 9", "October 10"],
+				location: "Makati (Chino Roces cor. EDSA)",
+				link: "https://www.airbnb.com/rooms/31094388?source_impression_id=p3_1600937059_Strgxr%2Fgj9I1vlkz&check_in=2020-10-09&guests=9&adults=9&check_out=2020-10-10",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Check-in: After 3:00 PM</div>',
+					'<i class="clock outline icon"></i><div class="content">Checkout: 12:00 PM</div>',
+					'<i class="user icon"></i><div class="content">10 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">1 queen bed, 1 sofa bed</div>',
+					'<i class="bed icon"></i><div class="content">1 queen bed, 2 floor mattresses</div>',
+					'<i class="bed icon"></i><div class="content">2 sofa beds, 1 air mattress, 2 floor mattresses</div>',
+					'<i class="info circle alternate icon"></i><div class="content">Fully furnished</div>'
+				]
+			},
+			{
+				title: "Entire condominium hosted by Jacqueline & Raul - 2",
+				fees: {
+					per_night: 6790,
+					cleaning_fee: 800,
+					service_fee: 676,
+				},
+				guests: 9,
+				dates: ["October 10", "October 11"],
+				location: "Makati (near Tejeros? lel)",
+				link: "https://www.airbnb.com/rooms/29936336?source_impression_id=p3_1600929060_kn%2BWONF9vixtFzLG&guests=7&adults=7&check_in=2020-10-10&check_out=2020-10-11",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Check-in: 3:00 PM - 10:00 PM</div>',
+					'<i class="clock outline icon"></i><div class="content">Checkout: 11:00 AM</div>',
+					'<i class="user icon"></i><div class="content">10 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">1 queen bed, 1 sofa bed, 1 air mattress, 2 floor mattresses</div>',
+					'<i class="bed icon"></i><div class="content">1 queen bed, 1 sofa bed, 1 floor mattress</div>',
+					'<i class="info circle alternate icon"></i><div class="content">Fully furnished</div>'
+				]
+			},
+			{
+				title: "Entire apartment hosted by Leonida",
+				fees: {
+					per_night: 4200,
+					cleaning_fee: 380,
+					service_fee: 1240,
+				},
+				guests: 7,
+				dates: ["October 9", "October 10", "October 11"],
+				location: "Makati (near SM Jazz)",
+				link: "https://www.airbnb.com/rooms/20429597?check_in=2020-10-09&check_out=2020-10-11&source_impression_id=p3_1600926944_63f%2BwyjPVVXj83Cx&guests=7&adults=7",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Check-in: 2:00 PM - 10:00 PM</div>',
+					'<i class="clock outline icon"></i><div class="content">Checkout: 11:00 AM</div>',
+					'<i class="user icon"></i><div class="content">7 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">1 double bed, 1 sofa bed</div>',
+					'<i class="car icon"></i><div class="content">Car park is available at the condominium for &#8369;150.00 per night</div>',
+				]
+			},
+			{
+				title: "Entire condominium hosted by LIDAN Hospitality.",
+				fees: {
+					per_night: 8000,
+					cleaning_fee: 500,
+					service_fee: 2329,
+				},
+				guests: 8,
+				dates: ["October 9", "October 10", "October 11"],
+				location: "Makati (Salcedo Village)",
+				link: "https://www.airbnb.com/rooms/14349991?check_in=2020-10-09&check_out=2020-10-11&source_impression_id=p3_1600927119_zphBCSjQZIfcGb0%2B&guests=8&adults=8",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Checkout: 11:00 AM</div>',
+					'<i class="user icon"></i><div class="content">8 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">1 king bed, 1 crib</div>',
+					'<i class="bed icon"></i><div class="content">2 double beds</div>',
+					'<i class="bed icon"></i><div class="content">1 sofa bed, 1 couch</div>',					
+				]
+			},
+			{
+				title: "Shared room in condominium hosted by Bella",
+				fees: {
+					per_night: 4531,
+					cleaning_fee: 0,
+					service_fee: 1279,
+				},
+				guests: 9,
+				dates: ["October 9", "October 10", "October 11"],
+				location: "Makati",
+				link: "https://www.airbnb.com/rooms/25997789?adults=9&check_in=2020-10-09&check_out=2020-10-11&source_impression_id=p3_1600925636_ZKdNWZcf7UHkX3xo&guests=1",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Check-in: After 2PM (14:00-19:00)</div>',
+					'<i class="clock outline icon"></i><div class="content">Checkout: 12:00 PM</div>',
+					'<i class="user icon"></i><div class="content">12 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">Dami ng beds pwede nang warehouse ng mattress</div>',
+				]
+			},
+			{
+				title: "Entire condominium hosted by Nestor",
+				fees: {
+					per_night: 5900,
+					cleaning_fee: 900,
+					service_fee: 1793,
+				},
+				guests: 8,
+				dates: ["October 9", "October 10", "October 11"],
+				location: "Pasig (5 mins away from Ali's place)",
+				link: "https://www.airbnb.com/rooms/33867069?check_in=2020-10-09&check_out=2020-10-11&source_impression_id=p3_1600927827_rLF0UGEIDhygIEss&guests=8&adults=8",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Check-in: 3:00 PM - 9:00 PM</div>',
+					'<i class="clock outline icon"></i><div class="content">Checkout: 12:00 PM</div>',
+					'<i class="user icon"></i><div class="content">8 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">1 queen bed</div>',
+					'<i class="bed icon"></i><div class="content">2 single beds</div>',
+					'<i class="bed icon"></i><div class="content">2 single beds</div>',
+					'<i class="bed icon"></i><div class="content">2 double beds</div>',
+					'<i class="bed icon"></i><div class="content">1 sofa bed</div>',
+					'<i class="car icon"></i><div class="content">Free parking for 1 slot</div>',
+					'<i class="car icon"></i><div class="content">If more than 1 car, pay parking is on a first come, first served basis</div>',					
+				]
+			},
+			{
+				title: "<i class='red heart icon'></i> Entire condominium hosted by Martin & Cate",
+				fees: {
+					per_night: 5900,
+					cleaning_fee: 900,
+					service_fee: 1793,
+				},
+				guests: 9,
+				dates: ["October 9", "October 10", "October 11"],
+				location: "Taguig",
+				link: "https://www.airbnb.com/rooms/40433010?adults=9&check_in=2020-10-09&check_out=2020-10-11&source_impression_id=p3_1600925308_4MqOMW1IG7hmZDAz&guests=1",
+				notes: [
+					'<i class="clock outline icon"></i><div class="content">Check-in: 3:00 PM - 10:00 PM</div>',
+					'<i class="clock outline icon"></i><div class="content">Checkout: 11:00 AM</div>',
+					'<i class="user icon"></i><div class="content">12 guests maximum</div>',
+					'<i class="bed icon"></i><div class="content">1 queen bed, 1 single bed</div>',
+					'<i class="bed icon"></i><div class="content">1 single bed, 1 couch, 1 floor mattress</div>',
+					'<i class="bed icon"></i><div class="content">1 single bed, 1 couch</div>',
+					'<i class="info circle icon"></i><div class="content">Temperature Checks will be done prior to check-in. Please have a list of you guest names available.</div>',
+				]
+			},
+		];
+
+
+		$.each(ITEMS, function (i, item) {
+
+			let notes = "";
+			if (item.notes.length) {
+				notes = "<div class='ui list'><div class=item>"+item.notes.join("</div><div class=item>")+"</div></div>";
+			}
+
+			let nights = item.dates.length-1;
+			let total = (item.fees.per_night*nights) + item.fees.cleaning_fee + item.fees.service_fee;
+			$items.append('\
+				<div class="item">\
+					<div class="content" style="padding-top: 1rem;">\
+						<div class="header">'+item.title+' &nbsp; <a style="font-size: 1rem;" href="'+item.link+'" target="_blank"><i class="fitted external alternate icon"></i></a></div>\
+						<div class="meta"><i class="map marker alternate icon"></i> '+item.location+'</div>\
+						<div class="description">\
+							<div class="ui equal width stackable grid" style="padding: 1em 0;">\
+								<div class="column">'+notes+'</div>\
+								<div class="column">\
+								<p>Dates: '+item.dates.join(", ")+'</p>\
+								<table class="breakdown">\
+									<tr>\
+										<td>&#8369; '+item.fees.per_night+' x '+(nights)+" "+(nights > 1 ? "nights" : "night")+'</td>\
+										<td>&#8369; '+(item.fees.per_night*nights)+'</td>\
+									</tr>\
+									<tr>\
+										<td>Cleaning fee</td>\
+										<td>&#8369; '+(item.fees.cleaning_fee)+'</td>\
+									</tr>\
+									<tr>\
+										<td>Service fee</td>\
+										<td>&#8369; '+(item.fees.service_fee)+'</td>\
+									</tr>\
+									<tr>\
+										<td colspan="2"><div class="ui divider"></div></td>\
+									</tr>\
+									<tr>\
+										<td>Total</td>\
+										<td><b>&#8369; '+total+'</b></td>\
+									</tr>\
+									<tr>\
+										<td>Total / '+item.guests+'</td>\
+										<td><b>&#8369; '+(total/item.guests).toFixed(2)+'</b></td>\
+									</tr>\
+								</table>\
+								</div>\
+							</div>\
+						</div>\
+					</div>\
+				</div>\
+			')
+		});
+
+	</script>
+</body>
+</html>
