@@ -8,18 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>The Catalyst Advisory Group</title>
 
-
-	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-	
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
-
-	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" / media="all"> -->
 
 	<style type="text/css">
 		body, html {
@@ -37,31 +27,12 @@
 		}
 		body {
 			position: relative;
-			/*color: white;*/
+			color: white;
 			letter-spacing: 2px;
 			font-size: 11px;
 			font-family: 'Poppins', sans-serif;
 			width: 100%;
 			height: 100vh;
-		}
-		body.grab {
-			cursor: -webkit-grab !important; cursor: grab !important;
-		}
-		body.grabbing {
-			cursor: -webkit-grabbing !important; cursor: grabbing !important;
-		}
-
-		.poppins {
-			font-family: "Poppins", sans-serif !important;
-		}
-		.fjalla {
-			font-family: Fjalla One, sans-serif !important;
-		}
-		.roboto {
-			font-family: 'Roboto Slab', serif;
-		}
-		.noto {
-			font-family: 'Noto Serif', serif;
 		}
 		.wrapper {
 			display: flex;
@@ -100,7 +71,7 @@
 			position: absolute;
 			top: 10px;
 			left: 10px;
-			/*z-index: 9999;*/
+			z-index: 9999;
 			color: black;
 			font-weight: bold;
 			font-size: 2rem;
@@ -132,7 +103,13 @@
 			background-color: rgba(0, 0, 0, 0);
 			height: 80%;
 			height: 90%;
+			/*border-bottom: 1px solid black;*/
+
+			/*overflow-y: scroll;*/
+			cursor: auto;
 		}
+
+
 		#footer {
 			background-color: rgba(0, 0, 0, 0);
 			height: 10%;
@@ -143,8 +120,12 @@
 
 			color: rgba(0, 0, 0, .85);
 		}
-		#header, #footer {
-			user-select: none;
+
+		.poppins {
+			font-family: "Poppins", sans-serif !important;
+		}
+		.fjalla {
+			font-family: Fjalla One, sans-serif !important;
 		}
 
 		.menu {
@@ -153,7 +134,7 @@
 			color: rgba(0, 0, 0, .85);
 			width: 80%;
 			margin: auto;
-			padding-top: 3em;
+			padding-top: 2em;
 		}
 		.menu > .right {
 			margin-left: auto;
@@ -161,20 +142,16 @@
 		}
 		.menu .header.item {
 			font-size: 2rem;
-			font-weight: bold;
+			font-size: bold;
 		}
-		.menu > .right > .item {
+		.menu > .item {
 			/*border-bottom: 3px solid rgba(255, 255, 255, 0);*/
-
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
 		}
 		.menu > .right > .item:not(:first-child) {
 			margin-left: .5em;
 		}
 
-		.menu > .right > .item > span {
+		.menu > .right > .item {
 			font-size: 1rem;
 			cursor: pointer;
 
@@ -188,9 +165,9 @@
 			border-radius: 25px;
 			transition: all 0.3s ease;
 		}
-		.menu > .right > .item > span:hover {
-			color: #00104d;
-			border: 2px solid #00104d;
+		.menu > .right > .item:hover {
+			color: #246bd6;
+			border: 2px solid #246bd6;
 			/*border-bottom: 3px solid rgba(255, 255, 255, .85);*/
 		}
 
@@ -205,7 +182,7 @@
 		#dragger {
 			width: 100%;
 			background-color: rgba(0, 0, 0, 0);
-			z-index: 98;
+			/*z-index: 3;*/
 			/*border-bottom: 1px solid black;*/
 		}
 
@@ -214,389 +191,17 @@
 			display: none;
 			border: 1px solid black; 
 			margin: auto;
-			/*z-index: 999*/
+			z-index: 999
 		}
 		#guide-x {
-			width: 100%;
-			height: min-content;
-			top: 0;
-			bottom: 0;
+			width: 100%; height: min-content; top: 0; bottom: 0;
 		}
 		#guide-y {
-			height: 100%;
-			width: min-content;
-			left: 0;
-			right: 0;
-		}
-
-
-		#tooltip {
-			min-width: 200px;
-			/*border: 1px solid black;*/
-			/*background-color: rgba(0, 0, 0, .5);*/
-			color: whitesmoke;
-			/*padding: 2em 4em;*/
-			text-align: center;
-
-			display: none;
-			opacity: 0;
-			position: absolute;
-			top: -100px; 
-			left: -100px;
-
-			/*z-index: -1;*/
-
-			user-select: none;
-			transition: opacity 0.15s ease;
-
-		}
-
-		#tooltip > img {
-			width: 100%;
-			max-width: 300px;
-			/*height: auto;*/
-
-			user-select: none;
-		}
-		#text {
-			width: fit-content;
-			display: flex;
-			flex-direction: column;
-		}
-		#text > .position {
-			margin-top: .5em;
-			font-size: .65em;
-			opacity: .85;
-		}
-
-		.modal {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, .75);
-			padding: 3em;
-			z-index: -99;
-			opacity: 0;
-			overflow-y: auto;
-			flex-direction: column;
-			justify-content: center;
-
-			transition: all 0.5s ease;
-		}
-
-		.modal.visible {
-			opacity: 1;
-			z-index: 100;
-		}
-
-		.modal-content {
-			position: relative;
-			min-width: 500px;
-			width: 75%;
-			background-color: #e5e7e8;;
-			/*padding: 2em 5em;*/
-			color: rgba(0, 0, 0, .85);
-			letter-spacing: 1px;
-			font-size: 1rem;
-			transition: all 0.5s ease;
-		}
-		.modal:not(.visible) .modal-content {
-			margin: 15em auto 4em;
-		}
-		.modal.visible .modal-content {
-			margin: 3em auto 3em;
-		}
-
-		.modal > .modal-content > button.close {
-			position: absolute;
-			top: 0;
-			right: -5em;
-			cursor: pointer;
-			outline: none !important;
-
-			font-size: .85rem;
-			font-weight: bold;
-			border-radius: 500rem;
-			border: 3px solid rgba(255, 255, 255, .85);
-			color: rgba(255, 255, 255, .85);
-			background: transparent;
-			padding: .85em 1.10em;
-		}
-
-		.fw {
-			width: 100%;
-		}
-
-		.debugger {
-			padding: 2em;
-			position: absolute;
-			/*top: 0;*/
-			left: 0;
-			background-color: black;
-			color: whitesmoke;
-			z-index: 9999;
+			height: 100%; width: min-content; left: 0; right: 0;
 		}
 	</style>
 </head>
 <body>
-
-	
-
-	<!-- <div class="debugger" id="debugger" style="top: 0;"></div>
-	<div class="debugger" id="debugger2" style="top: 80px;"></div>
-	<div class="debugger" id="debugger3" style="top: 160px;"></div> -->
-
-	<div class="modal" id="modal2">
-		<div class="modal-content noto" style="height: 80%;">
-			<button class="close">X</button>
-			<object width="100%" height="100%" type="application/pdf" data="assets/MG_Bio.pdf#toolbar=0&navpanes=0&scrollbar=0">
-			    <p>Insert your error message here, if the PDF cannot be displayed.</p>
-			</object>
-		</div>
-	</div>
-
-	<div class="modal" id="modal">
-	
-
-	<style type="text/css">
-		.modal-content-header {
-			margin: 0; padding-bottom: 1em; border-bottom: 2px solid white;
-		}
-		#modal-header {
-			padding: 5em 3em;
-			background-color: #cacaca;
-			background-image: url('assets/biodata/PBR.png');
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-		#modal-title {
-			font-size: 2.75rem;
-			padding-bottom: .25em;
-			margin-bottom: .25em;
-			border-bottom: 2px solid white;
-		}
-		#modal-subtitle {
-			font-size: 1rem;
-			letter-spacing: 1px;
-			font-weight: bold;
-			margin-bottom: 0;
-		}
-		.flex {
-			display: flex;
-		}
-		.flex-col {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-		.modal-header-left {
-			width: 80%;
-			text-align: center;
-			padding: 2.5em 3em;
-		}
-		.modal-header-right {
-			width: 20%;
-			padding: 2em;
-		}
-	</style>
-	<div class="modal-content noto">
-		<button class="close">X</button>
-		<div id="modal-header">
-			<div class="flex">
-				<div class="modal-header-left">
-					<h1 class="roboto" id="modal-title">MIKHAELLAH GILLEGO</h1>
-					<p class="poppins" id="modal-subtitle">A leader and change agent that seeks to continuously learn and adapt to prosper in environments that are unpredictable and constantly changing.</p>
-				</div>
-				<div class="modal-header-right flex-col"></div>
-			</div>
-		</div>
-		<div style="padding: 2em 5em; background-color: #e5e7e8; display: none;">
-			<div style="display: flex; margin-bottom: 2em;">
-				<div style="width: 40%; text-align: right; padding: 0 2em 0 0; border-right: 2px solid white;">
-					<h1 class="roboto" style="line-height: 1.1;">THE<br>CATALYST<br>ASIA'S<br>PERSPECTIVE<br>ON ITS ROLE</h1>
-				</div>
-				<div class="poppins" style="width: 60%; padding: .85em 2em .85em 2em; font-weight: bold; letter-spacing: 1.2px;">
-					<p style="font-size: .85rem;">Leaders need to evolve their way of thinking and understanding issues of increasing complexity in their businesses and in the contexts their businesses operate in. This is a growing imperative for them to remain competitive and certainly if they intend to grow.</p>
-					<p style="font-size: .85rem;">Companies' systems and processes are more typically designed for a very predictable world. Increasingly the complex challenges businesses face are not predictable, often quite abruptly so, and the unfolding challenges are often ambiguous as well.</p>
-					<p style="font-size: .85rem;">It is not enough for leaders to improve just their leadership capabilities, they also need to simultaneously change how their organizations are designed and operate to thrive and eventually excel in complexity. This change involves modifying norms and behaviors, changing policies and procedures, and implementing programs, systems and technologies that can enable and support these modifications.</p>
-					<p style="font-size: .85rem;">The Catalyst Asia group can advise and partner with leaders who want to transform their leadership approach to make themselves in to leaders who can thrive in complexity. We also advise and partner with leaders who are also ready to change their organizations to become complexity friendly as well.</p>
-					<p style="font-size: .85rem;">Catalyst Asia partners with leaders to first assess their existing leadership capabilities to determine how adaptive they are in the face of complex challenges. Catalyst Asia can then guide leaders or leadership teams to change their leadership mindset, approach and dynamics to be optimally suited for their complex environment.</p>
-					<p style="font-size: .85rem;">Catalyst Asia also supports leaders to apply their newly realized ways of leadership to how their companies are organized and operate, readying the organization to succeed in complexity. Support typically takes the form of diagnosing the organization's needed design changes and facilitating change programs to position their companies to execute in ways adapted to rapid and/or unexpected change, evolving customer expectations and needs, shifting employee demographics, new technologies, disruptive innovations, and regional or global competition.</p>
-				</div>
-			</div>
-		</div>
-		<style type="text/css">
-			.someone-who td {
-				padding: 0;
-				margin: 0;
-				vertical-align: top;
-				font-weight: bold;
-			}
-			.someone-who td:first-child {
-				padding-right: 1.5em;
-			}
-			.someone-who td:last-child {
-				padding-left: 1.5em;
-			}
-			.someone-who ul {
-				padding-left: 0;
-			}
-			.someone-who li {
-				letter-spacing: 0.85px;
-				font-size: 0.75rem;
-				margin-bottom: .5em;
-			}
-			#someone-who {
-				width: 100%; table-layout: fixed;
-			}
-		</style>
-		<div style="padding: 2em 6em;">
-			<div style="padding: 1.5em 4em;  background-color: #c1c0c0;">
-				<h3 class="roboto" style="margin: 0;" id="modal-someone-header">MIKHA IS SOMEHONE WHO...</h3>
-			</div>
-			<div style="padding: 0 4em 1em; background-color: #cacaca;">
-				<table class="someone-who poppins" id="someone-who">
-					<tr>
-						<td>
-							<ul>
-								<li>has been exposed to an array of situations that provide her with an understanding of who to tackle many operational challenges</li>
-								<li>recognizes opportunities for improvement and finds ways to realize them</li></ul>
-							</ul>
-						</td>
-						<td>
-							<ul>
-								<li>is committed to developing programs that can make positive changes in an organization</li>
-								<li>is a people-centric leader that builds strong relationships and creates trust in an open environment</li>
-							</ul>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	
-
-		<style type="text/css">
-			#wish {
-				margin: 0;
-				letter-spacing: 0.85px;
-				font-size: 0.75rem;
-				font-weight: bold;
-			}
-		</style>
-		<div style="padding: 2em 6em;">
-			<div style="padding: 1.5em 4em 1em; background-color: #cacaca; ">
-				<h3 class="roboto modal-content-header" id="modal-wish-header">MIKHA'S WISH FOR THE FUTURE</h3>
-			</div>
-			<div style="padding: 0 4em 2em; background-color: #cacaca;">
-				<p class="poppins" id="wish">Mikha wants to inspire and influence people she touches to have a positive mindset even as they go through challenging times. Mikha wants to always strive to find the nuggets of learning in every experience she goes through.</p>
-			</div>
-		</div>
-
-		<style type="text/css">
-			.capabilities ul {
-				padding-left: 0;
-				padding-right: 1em;
-			}
-			.capabilities ul > li {
-				letter-spacing: .85px;
-				font-size: 0.85rem; font-weight: bold;
-				margin-bottom: .5em;
-			}
-		</style>
-		<div style="padding: 2em 6em;">
-			<h3 class="roboto modal-content-header" style="width: 85%;">CAPABILITIES</h3>
-			<div class="poppins capabilities" style="padding: 1em 4em 1em; font-size: 0.75rem;" id="capabilities">
-				<div style="display: flex;">
-					<div>
-						<ul><li>Operations Management</li><li>Training Program Development</li></ul>
-					</div>
-					<div style="margin-left: auto;">
-						<ul><li>Process Design</li><li>Performance Management</li></ul>
-					</div>
-				</div>
-				<div style="text-align: center;">
-					<ul style="padding-left: 0; width: fit-content; margin: auto;"><li>Customer Management</li></ul>
-				</div>
-			</div>
-		</div>
-
-		<style type="text/css">
-			#qualifications-1 {
-				padding-right: 1em;
-			}
-		</style>
-		<div style="padding: 2em 6em; ">
-			<div style="padding: 1.5em 4em 1em; background-color: #cacaca;">
-				<h3 class="roboto modal-content-header">QUALIFICATIONS</h3>
-			</div>
-			<div style="padding: .25em 4em 1.5em; background-color: #cacaca;">
-				<div class="poppins" style="display: flex; letter-spacing: 0.85px; font-size: 0.75rem; font-weight: bold;">
-					<div id="qualifications-1">
-						San Sebastian College (Manila, Philippines)<br>
-						2008 to 2012<br>
-						Bachelor of Science<br>
-						Major in Hotel and Restaurant Management<br>
-					</div>
-					<div id="qualifications-2" style="margin-left: auto; margin-right: 1em;">
-						<b><i>Certifications:</i></b>
-						<ul style="padding-left: 1em;">
-							<li>Effective Management Practices</li>
-							<li>People Management</li>
-							<li>Advance Shift Management</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<style type="text/css">
-			#career_history {
-				letter-spacing: 0.85px;
-				font-size: 0.75rem;
-				font-weight: bold;
-			}
-		</style>
-		<div style="padding: 2em 10em; margin-bottom: 2em;">
-			<h3 class="roboto modal-content-header">CAREER HISTORY</h3>
-			<div class="poppins" id="career_history">
-				<p>Prior to joining Catalyst Asia, Mikha learned about managing people and improving systems in the Food &amp; Beverage sector.</p>
-				<p>The foundation of her knowledge was laid in the rigorous and disciplined environment of McDonald's where she roes from trainee to Assistant Manager in two years.</p>
-				<p>Mikha took her learnings in McDonald's to Wee Nam Kee, where she was able to redesign the inventory system and training programs that created measurable improvements in less than a year.</p>
-				<p>She grabbed a chance to expand her skill setr by shifting from Store Operations to Sales with the Bistro Group of Companies.</p>
-				<p>She then joined Specialty Food Retailers when an opportunity came up to lead both Front-of-the-House and Back-of-the-House operations of a TWG branch. In TWG, Mikha was able to redesign training programs and create sales tools that were deployed in her branch and other branches under her Area Manager.</p>
-				<p>Mikha now deepens her knowledge in the fields of Leadership and Organizational Development as she collaborates with Catalyst Asia teammates and clients.</p>
-			</div>
-		</div>
-
-		<div style="padding: 2em 10em; text-align: center; margin-bottom: 2em;">
-			<img src="assets/TCA_Logo_FA_Layered.png" style="width: 300px; height: auto; margin: auto;">
-		</div>
-
-		<style type="text/css">
-			.modal-footer {
-				display: flex;
-				padding: 2em 5em;
-				background-color: whitesmoke;
-			}
-			.modal-footer-data {
-				letter-spacing: 1px;
-				font-weight: bold;
-			}
-			#modal-email {
-				text-align: left; padding: 1em 0 1em 5em;
-			}
-			#modal-contact {
-				text-align: right; padding: 1em 5em 1em 0;
-			}
-		</style>
-		<div class="modal-footer">
-			<div class="fw modal-footer-data" id="modal-email">mikha@thecatalyst.asia</div>
-			<div class="fw modal-footer-data" id="modal-contact">PH +63 917 145 1681</div>
-		</div>
-	</div>
-</div>
 
 	<div class="guide" id="guide-x" style=""></div>
 	<div class="guide" id="guide-y" style=""></div>
@@ -604,21 +209,18 @@
 	<div id="main">
 		<div id="header">
 			<div class="menu">
-				<div class="header item">
-					<img src="assets/TCA_Logo_FA_Layered.png" style="width: 200px; height: auto; margin: auto;">
-				</div>
+				<div class="header item fjalla">THE CATALYST</div>
 				<div class="right">
-					<div class="item"><span>HOME</span></div>
-					<div class="item"><span>ABOUT</span></div>
-					<div class="item"><span>PORTFOLIO</span></div>
-					<div class="item"><span>CONTACT</span></div>
+					<div class="item">HOME</div>
+					<div class="item">ABOUT</div>
+					<div class="item">PORTFOLIO</div>
+					<div class="item">CONTACT</div>
 				</div>
 			</div>
 			<div id="menu-border"></div>
 		</div>
 		<div id="content">
 			<div id="dragger"></div>
-			<div id="tooltip"><h1 id="text">Patrick Reyes</h1></div>
 		</div>
 		<div id="footer">
 			<div style="display: flex; width: 80%; margin: auto;">
@@ -652,19 +254,10 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/loaders/OBJLoader.js"></script> -->
 <script src="https://threejs.org/examples/js/loaders/OBJLoader.js"></script>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.7.0/Tween.js"></script> -->
-
-<script type="text/javascript" src="assets/tween.js-master/src/Tween.js"></script>
-<script type="text/javascript" src="assets/pdfjs/build/pdf.js"></script>
-<script type="text/javascript" src="biodata.js?q=<?php echo strtotime("now"); ?>"></script>
-
-
-
 <!-- low_poly_sphere.obj -->
 <script type="module">
 
 	(function() {
-
 
 		let scene,  
 		renderer,
@@ -680,398 +273,57 @@
 		raycaster = new THREE.Raycaster(),  // Used to detect the click on our character
 		loaderAnim = document.getElementById("js-loader");
 		var $x = document.getElementById("x");
-		var prevX, prevY;
+		var prev;
 
-
-		// var mouse = new THREE.Vector2();
-		var raycaster2 = new THREE.Raycaster();
-		// raycaster2.linePrecision = 3; // deprecated
-		raycaster2.params.Line.threshold = 1;
-
-		var idleMode = false;
-		var idleTimer;
-		// var $debugger = document.getElementById("debugger");
-		// var $debugger2 = document.getElementById("debugger2");
-		// var $debugger3 = document.getElementById("debugger3");
-		// idle sequence: 3/20/*15*/19/18/11/14/1/3 | word: Sphere_fracturepart[n]
 
 		var container 	= window.innerHeight;
 		var menu 		= document.getElementById("header").clientHeight;
 		document.getElementById("dragger").style.height = (container-menu)+"px";
 
-		var $modal = document.getElementById("modal");
-
-		var modalvisible = false;
-		var dragmode = false;
-		var dragging = false;
-		var slice;
-		var slices = [];
-		var size = 1.05;
-		var target = new THREE.Vector3(size, size, size); // create on init
-		var $tooltip = document.getElementById("tooltip");
-		var $text = document.getElementById("text");
-		var popupTimer;
-		var materials = {};
-
-		document.querySelector("#modal .close").addEventListener("click", function (e) {
-			MODAL.hide();
-		});
-		document.querySelector("#modal2 .close").addEventListener("click", function (e) {
-			this.parentElement.parentElement.classList.remove("visible");
-			this.parentElement.parentElement.style.opacity = 0;
-		});
-
-		$modal.addEventListener("click", function (e) {
-			if (e.target.id == "modal") {
-				MODAL.hide();
-			}
-		});
-
-		function idlePop2 () {
-
-			let x = screen.width/2;
-			let y = screen.height/2;
-
-			raycaster2.setFromCamera({x: 0, y: 0.051}, camera);
-			var intersects = raycaster2.intersectObjects(scene.children, true);
-
-			// console.log(intersects);
-
-			if (intersects.length > 0) {
-
-				// console.log(intersects[0]);
-				let intersectedslices = {};
-				for (let i = 0; i < intersects.length; i++) {
-					let inter = intersects[i];
-					console.log(inter);
-					console.log(inter.object.name);
-					// intersectedslices.push(inter.object.name);
-					intersectedslices[inter.object.name] = inter.distance;
-				}
-
-				console.log(intersectedslices);
-			}
-
-		}
-
-		function idlePop () {
-
-			let x = document.body.offsetWidth/2;
-			let y = document.body.offsetHeight/2;
-
-			raycaster2.setFromCamera({x: 0, y: 0.051}, camera);
-			var intersects = raycaster2.intersectObjects(scene.children, true);
-
-			if (intersects[0] && intersects[0].distance < 100) {
-
-				var object 		= intersects[0].object;
-				var name 		= object.name;
-
-				if (!!BIODATA[name]) {
-					try {
-
-						// $tooltip.style.top 			= (y-300)+ "px";
-						$tooltip.style.top 			= "15%";
-						// $tooltip.style.left 		= (x-168)+ "px";
-						$tooltip.style.left 		= (x-($tooltip.offsetWidth/2))+ "px";
-
-						if (object.name == hovered.name) {
-							// console.log("dont change");
-						} else {
-							// console.log("change");
-							
-							// $text.innerHTML 			= BIODATA[name].title+"<span class=position>"+BIODATA[name].position+"</span>";
-							$tooltip.innerHTML 			= '<img src="'+BIODATA[name].idtag+'">';
-							$tooltip.style.display 		= "block";
-							$tooltip.style.opacity 		= 1;
-							
-							for (var key in slices) {
-								let slice = slices[key];
-								tween(slice.scale, {x: 1, y: 1, z: 1}, {
-									duration: 300, 
-									easing : TWEEN.Easing.Quadratic.InOut,
-								});
-								slice.material = materials[slice.name];
-							}
-
-							hovered.slice 		= object;
-							hovered.name 		= object.name;
-
-							tween(object.scale, target, {
-								duration: 300, 
-								easing : TWEEN.Easing.Quadratic.InOut
-							});
-
-							var col = new THREE.MeshPhongMaterial({color: new THREE.Color("rgb(0, 17, 83)")});
-							object.material = col;
-
-						}
-
-					} catch (e) {
-						console.log(e.message);
-					}
-				}
-			}
-		}
-
 		document.onkeydown = function (e) {
-
-			if (e.keyCode == 27) { // esc
-				idlePop2();
-			} else if (e.keyCode == 49) { // 1
-
-				console.log($tooltip.offsetWidth);
-				console.log($tooltip.offsetHeight);
-			} else if (e.keyCode == 50) { // 2
-
-				model.rotation.y += Math.PI;
-
-				// Math.PI * 2 = 6.28;
-			} else if (e.keyCode == 51) { // 3
+			if (e.keyCode == 192) {
 			}
 		};
 
-		var MODAL = {
-			classes: [],
-			visible: false,
-			show: function () {
-				MODAL.visible = true;
-
-				let name = hovered.name;
-				let biodata = BIODATA[name];
-
-				let headerbg = biodata.headerbg;
-				let someone = biodata.someone;
-				let last_letter_fname = biodata.first_name.slice(-1);
-				let caps = biodata.capabilities;
-				let q2 = biodata.qualifications.column2;
-				let cap1 = [], cap2 = [];
-
-				// header
-				document.getElementById("modal-title").innerHTML = biodata.title;
-				document.getElementById("modal-subtitle").innerHTML = biodata.subtitle;
-				// image
-				document.getElementById("modal-header").style.backgroundImage = "url('"+headerbg+"')";
-				// person is someone who...
-				document.getElementById("modal-someone-header").innerHTML = (biodata.first_name+" is someone who...").toUpperCase();
-				document.getElementById("someone-who").innerHTML = '\
-					<tr>\
-						<td><ul><li>'+someone.column1.join('</li><li>')+'</li></ul></td>\
-						<td><ul><li>'+someone.column2.join('</li><li>')+'</li</ul></td>\
-					</tr>\
-				';
-
-				// person's wish for the future
-				if (["S", "s"].indexOf(last_letter_fname) > -1) {
-					document.getElementById("modal-wish-header").innerHTML = (biodata.first_name+"' wish for the future").toUpperCase();
-				} else {
-					document.getElementById("modal-wish-header").innerHTML = (biodata.first_name+"'s wish for the future").toUpperCase();
-				}
-				document.getElementById("wish").innerHTML = (biodata.wish);
-
-				// capabilities
-				for (let i = 0; i < caps.length; i++) {
-					let cap = caps[i];
-					if ((caps.length%2 == 0) && i == caps.length -1) {
-						continue;
-					}
-					if (i%2 == 0) {
-						cap1.push(cap);
-					} else {
-						cap2.push(cap);
-					}
-				}
-				document.getElementById("capabilities").innerHTML = '\
-					<div style="display: flex">\
-						<div style="width: 50%;"><ul><li>'+cap1.join('</li><li>')+'</li></ul></div>\
-						<div style="margin-left: auto; width: 50%;"><ul><li>'+cap2.join('</li><li>')+'</li></ul></div>\
-					</div>\
-					<div style="text-align: center;">\
-						<ul style="padding-left: 0; width: fit-content; margin: auto;"><li>'+caps[caps.length-1]+'</li></ul>\
-					</div>';
-
-
-				// qualifications
-				document.getElementById("qualifications-1").innerHTML = biodata.qualifications.column1.join("<br>");
-				if (Array.isArray(q2)) {
-					document.getElementById("qualifications-2").innerHTML = q2.join("<br>");
-				} else {
-					document.getElementById("qualifications-2").innerHTML = '<b><i>'+q2.title+'</i><b><ul style="padding-left: 1em;"><li>'+q2.certifications.join("</li><li>")+'</li></ul>';
-				}
-
-				// extras
-				document.getElementById("career_history").innerHTML = biodata.career_history;
-				document.getElementById("modal-email").innerHTML = biodata.email;
-				document.getElementById("modal-contact").innerHTML = biodata.contact;
-				$modal.scrollTo(0, 0);
-				$modal.classList.add("visible");
-				// $modal.classList.add("chever");
-				// $modal.classList.add("asd");
-			},
-			hide: function () {
-				
-				$modal.classList.remove("visible");
-				setTimeout(function () {
-					MODAL.visible = false;
-				}, 550);
-			}
-		}
-
+		var dragmode = false;
 		window.addEventListener("mousedown", function (e) {
-			console.log(e.target.id);
 			if (e.target.id == "dragger") {
 				dragmode = true;
-				var mousecoords = getMousePos(e);
-				prevX = mousecoords.x;
-				prevY = mousecoords.y;
-
-				// console.log("add grab");
-				// document.body.classList.add("grab");
 			}
 		});
-
-		var dragTimeout;
 		window.addEventListener("mouseup", function (e) {
 			dragmode = false;
-			if (dragging == false) {
-				// clearTImeout(dragTimeout);
-				// dragTimeout = setTimeout(function () {
-					raycast(e, false, true);
-				// }, 500);
-				
-			}
-		});
-
-
-		window.addEventListener("focus", function (e) {
-
-			dragmode = false;
-			
-			popupTimer = null;
-			hovered.slice = null;
-			hovered.name = null;
-
-			raycast(e, false);
-		});
-
-		window.addEventListener("blur", function (e) {
-			dragmode = false;
-			clearTimeout(popupTimer);
-			popupTimer = null;
-			hovered.slice = null;
-			hovered.name = null;
 		});
 
 		document.addEventListener("mousemove", function(e) {
 
-			// if (document.body.classList.contains("grab")) {
-			// 	document.body.classList.add("grabbing");
-			// } else {
-			// 	document.body.classList.remove("grabbing");
-			// }
-
-			idleMode = false;
-			clearTimeout(idleTimer);
-			idleTimer = null;
-
 			var mousecoords = getMousePos(e);
 			var x = mousecoords.x;
-			var y = mousecoords.y;
 			var max = window.innerWidth;
-			var diffX, diffY;
-
-			dragging = dragmode;
-
-			var speed = 0.003;
-			if (typeof prevX !== undefined && typeof prevY !== undefined && model && dragmode == true) {
-				if (prevX > x) { // turn left
-					diffX = (prevX-x) * speed;
-					diffX = diffX/2;
-					model.rotation.y -= diffX;
-				} else if (prevX < x) { // turn right
-					diffX = (x-prevX) * speed;
-					diffX = diffX/2;
-					model.rotation.y += diffX;
+			var diff;
+			if (typeof prev !== undefined && model && dragmode == true) {
+				if (prev > x) { // turn left
+					diff = (prev-x) * 0.01;
+					diff = diff/2;
+					model.rotation.y -= diff;
+				} else if (prev < x) { // turn right
+					diff = (x-prev) * 0.01;
+					diff = diff/2;
+					model.rotation.y += diff;
 				}
-				if (prevY > y) { // turn up
-					diffY = (prevY-y) * speed;
-					diffY = diffY/2;
-					if ((model.rotation.x-diffY) > -0.4) {
-						model.rotation.x -= diffY;
-					}
-				} else if (prevY < y) { // turn down
-					diffY = (y-prevY) * speed;
-					diffY = diffY/2;
-					if ((model.rotation.x+diffY) < 0.4) {
-						model.rotation.x += diffY;
-					}
-				}
+				// $x.innerHTML = max+" / "+x+" / "+prev+" / "+diff;
 			}
-
-			prevX = x;
-			prevY = y;
-
-			if (dragmode == false && MODAL.visible == false) {
-				raycast(e, false);
-			}
-
-			if (!idleTimer) {
-				idleTimer = setTimeout(function () {
-					idleMode = true;
-					clearTimeout(idleTimer);
-					idleTimer = null;
-				}, 1500); 
-			}
-
+			prev = x;
 		});
 
 
 		function getMousePos (e) {
-			return {x: e.clientX, y: e.clientY};
+			return { x: e.clientX, y: e.clientY };
 		}
 
-		function tween (vectorToAnimate, target, options) {
-			options = options || {};
-			// get targets from options or set to defaults
-			var to = target || THREE.Vector3(1.05, 1.05, 1.05),
-			easing = options.easing || TWEEN.Easing.Quadratic.In,
-			duration = options.duration || 2000;
-			// create the tween
-			var tweenVector3 = new TWEEN.Tween(vectorToAnimate)
-				.to({ x: to.x, y: to.y, z: to.z}, duration)
-				.easing(easing)
-				.onUpdate(function (d) {
-					if (options.update) { 
-						options.update(d);
-					}
-				})
-				.onComplete(function () {
-					if(options.callback) options.callback();
-				});
-			// start the tween
-			tweenVector3.start();
-			// return the tween in case we want to manipulate it later on
-			return tweenVector3;
-		}
+		// window.addEventListener("click", e => raycast(e));
 
-		var hovered = {
-			slice: null,
-			name: null,
-			time: null,
-			animated: false,
-			animating: false,
-		};
-
-		function getCenterPoint (mesh) {
-			var geometry = mesh.geometry;
-			geometry.computeBoundingBox();
-			var center = geometry.boundingBox.getCenter();
-			mesh.localToWorld(center);
-			return center;
-		}
-
-		function raycast (e, touch = false, click = false) {
-
+		function raycast(e, touch = false) {
 			var mouse = {};
 			if (touch) {
 				mouse.x = 2 * (e.changedTouches[0].clientX / window.innerWidth) - 1;
@@ -1080,172 +332,24 @@
 				mouse.x = 2 * (e.clientX / window.innerWidth) - 1;
 				mouse.y = 1 - 2 * (e.clientY / window.innerHeight);
 			}
-
 			// update the picking ray with the camera and mouse position
 			raycaster.setFromCamera(mouse, camera);
 
 			// calculate objects intersecting the picking ray
 			var intersects = raycaster.intersectObjects(scene.children, true);
 
-			if (intersects[0] && intersects[0].distance < 100) {
-
-				// document.getElementsByTagName("canvas")[0].style.cursor = "pointer";
+			if (intersects[0]) {
 				var object = intersects[0].object;
-				var name = object.name;
-
-				if (!!BIODATA[name]) {
-
-					if (click == true) {
-
-						if (hovered.name == object.name) {
-
-							if (!!BIODATA[name]) {
-								MODAL.show();
-							}
-						}
-						
-					} else {
-
-						try {
-
-							var coords = getMousePos(e);
-
-							if (idleMode == false) {
-
-								// if (name == "Sphere_fracturepart20") {
-									// $tooltip.style.top 			= (coords.y - 180)+ "px";
-								// } else {
-									// $tooltip.style.top 			= (coords.y - 150)+ "px";
-									$tooltip.style.top 			= (coords.y - ($tooltip.offsetHeight+20))+ "px";
-								// }
-								$tooltip.style.left 		= (coords.x - 150)+ "px";
-							}
-							
-							if (name == hovered.name) {
-								// console.log("dont change");
-							} else {
-								// console.log("change");
-								
-								// $text.innerHTML 			= BIODATA[name].title+"<span class=position>"+BIODATA[name].position+"</span>";
-
-								$tooltip.innerHTML 			= '<img src="'+BIODATA[name].idtag+'">';
-								$tooltip.style.display 		= "block";
-								$tooltip.style.opacity 		= 1;
-								
-								for (var key in slices) {
-									let slice = slices[key];
-									tween(slice.scale, {x: 1, y: 1, z: 1}, {
-										duration: 300, 
-										easing : TWEEN.Easing.Quadratic.InOut,
-									});
-									slice.material = materials[slice.name];
-								}
-
-								hovered.slice 		= object;
-								hovered.name 		= object.name;
-
-								tween(object.scale, target, {
-									duration: 300, 
-									easing : TWEEN.Easing.Quadratic.InOut
-								});
-
-								// if (object.name != "Sphere_fracturepart2") {
-									var col = new THREE.MeshPhongMaterial({color: new THREE.Color("rgb(0, 17, 83)")});
-									object.material = col;
-								// }
-								
-
-								// add this to tween params to log 
-								/* 
-									update: function(d) {
-										// console.log("Updating: " + d);
-									},
-									callback : function(){
-										// console.log("Completed");
-									}
-								*/
-							}
-
-						} catch (e) {
-							console.log(e.message);
-						}
-					}
-
-				}
-
-			} else {
-				if (hovered.slice) {
-
-					clearTimeout(popupTimer);
-
-					hovered.slice = null;
-					hovered.name = null;
-				}
+				console.log("object.name", object.name);
 			}
 		}
 
-		function update() { // called on model load
-			requestAnimationFrame(update);
-			if (mixer) {
-				mixer.update(clock.getDelta());
-			}
-			if (resizeRendererToDisplaySize(renderer)) {
-				const canvas = renderer.domElement;
-				camera.aspect = canvas.clientWidth / canvas.clientHeight;
-				camera.updateProjectionMatrix();
-			}
-
-			// $debugger.innerHTML = idleMode ? "true" : "false";
-
-			if (idleMode == true) {
-				idlePop();
-			}
-
-			if (hovered.slice) {
-				clearTimeout(popupTimer);
-				$tooltip.style.opacity = 1;
-				// TWEEN.update();
-			} else {
-				if ($tooltip.style.opacity != 0) {
-
-					if (!popupTimer) {
-						popupTimer = setTimeout(function () {
-
-							$tooltip.style.opacity 		= 0;
-
-							for (var key in slices) {
-								let slice = slices[key];
-								tween(slice.scale, {x: 1, y: 1, z: 1}, {
-									duration: 300, 
-									easing : TWEEN.Easing.Quadratic.InOut,
-								});
-								slice.material = materials[slice.name];
-							}
-							
-							clearTimeout(popupTimer);
-							popupTimer = null;
-
-						}, 300);
-					}
-				}
-			}
-			TWEEN.update();
-
-			if (MODAL.visible == false) {
-				model.rotation.y += 0.0008;
-			} else {
-				// model.rotation.y += 0.0002;
-			}
-
-			// $debugger2.innerHTML = model.rotation.y;
-
-			renderer.render(scene, camera);
-		}
 
 		init(); 
 		function init() {
 
-			const MODEL_PATH = "low_poly_sphere_20.obj";
+
+			const MODEL_PATH = "low_poly_sphere.obj";
 			const canvas = document.querySelector("#c");
 			let backgroundColor = 0xf1f1f1;
 			// backgroundColor = 0x4c4c4c;
@@ -1276,41 +380,30 @@
 			const ship_material 	= new THREE.MeshBasicMaterial({color: "red"});
 			const loader 			= new THREE.OBJLoader(); // instantiate a loader
 
-			var ctr = 1;
 			loader.load( // load a resource
 				MODEL_PATH, // resource URL
 				function (object) { // called when resource is loaded
-					
+					console.log("object", object);
 					model = object;
-					model.traverse(function (child) {
+					model.traverse(function(child) {
+
+						console.log("child.isMesh", child.isMesh);
 
 						if (child instanceof THREE.Mesh) {
-							child.castShadow = true;
+							// child.castShadow = true;
 							child.receiveShadow = true;
-							if (ctr == 2) {
-								// child.material = new THREE.MeshPhongMaterial({
-								// 	color: "orange",
-								// });
-
-								slice = child;
-							}
-							ctr++;
-							slices.push(child);
-							materials[child.name] = child.material;
+							// child.material = new THREE.MeshBasicMaterial({color: 'black'});
 						}
 					});
-					console.log("ctr", ctr-1);
-					// model.scale.set(600, 600, 600);
-					model.scale.set(0.25, 0.25, 0.25);
+
+					// mode.matrixWorldNeedsUpdate = true;
+					model.scale.set(600, 600, 600);
 					
 					model.position.z 	= (!true) ? -30 : -30; 
 					model.position.x 	= (!true) ? -10 : 0;
 					model.position.y 	= (!true) ? -3 : 0;
 					model.name 			= "MOWDEL";
-					if (!true) {
-						model.rotation.y    = Math.random() * Math.PI;
-					}
-					model.rotation.y -= 0.5;
+					
 
 					loaderAnim.remove();
 					mixer = new THREE.AnimationMixer(model);
@@ -1359,14 +452,9 @@
 					sphere.position.x = (!true) ? -0.25 : 0;
 					// scene.add(sphere);  
 
+					// modal.opacity = .85;
 					scene.add(model);
 					update();
-
-					idleTimer = setTimeout(function () {
-						idleMode = true;
-						clearTimeout(idleTimer);
-						idleTimer = null;
-					}, 800);
 					// renderer.render(scene, camera);
 				},
 				// called when loading is in progresses
@@ -1381,6 +469,27 @@
 
 			
 		}
+
+		function update() {
+
+			requestAnimationFrame(update);
+			// console.log("mixer", mixer);
+			if (mixer) {
+				mixer.update(clock.getDelta());
+			}
+			if (resizeRendererToDisplaySize(renderer)) {
+				const canvas = renderer.domElement;
+				camera.aspect = canvas.clientWidth / canvas.clientHeight;
+				camera.updateProjectionMatrix();
+			}
+
+			// sphere.position.x += 0.02;
+			// console.log("renderer", renderer);
+
+			model.rotation.y += 0.0005;
+			renderer.render(scene, camera);
+		}
+		// update();
 
 		function resizeRendererToDisplaySize(renderer) {
 			const canvas = renderer.domElement;
@@ -1399,4 +508,5 @@
 
 	})();
 
+	
 </script>
