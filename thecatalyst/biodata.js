@@ -4,7 +4,7 @@ BIODATA = {
 		idtag: "assets/idtags/PBR.png",
 		first_name: "Patrick",
 		title: "Patrick Reyes",
-		position: "Managing Partner",
+		position: "Partner",
 		subtitle: "An advisor and partner of leaders in pursuit of a better leadership approach and better systems that thrive in complexity",
 		someone: {
 			column1: [
