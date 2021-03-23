@@ -216,7 +216,8 @@ body {
 	font-size: 2rem;
 }
 .section-sub-header {
-	margin-bottom: .5em;
+	margin-bottom: .25em;
+
 }
 
 #mobile-nav-item {
@@ -498,7 +499,6 @@ body {
 .modal-footer-data {
 	letter-spacing: 1px;
 	font-weight: bold;
-	/*border: 1px solid black;*/
 	font-size: .85rem;
 	white-space: nowrap;
 }
@@ -672,6 +672,7 @@ body {
 	.modal-content {
 		width: 85%;
 	}
+
 }
 
 @media all and (max-width: 767px) {
@@ -791,5 +792,13 @@ body {
 
 	.grid.turn {
 		flex-direction: column-reverse;
+	}
+
+	.section-graphic {
+		margin-top: 3em;
+	}
+
+	.section {
+		margin: 5em 0 2em;
 	}
 }
