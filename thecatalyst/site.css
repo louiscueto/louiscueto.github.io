@@ -864,6 +864,9 @@ body {
 	#mobile-nav-item > i {
 		font-size: 1.5rem;
 	}
+	#close-mobile-menu > i, #mobile-menu > .nav-items > .nav-item {
+		font-size: 1.5rem;
+	}
 	#menu-logo {
 		width: 45%;
 	}
