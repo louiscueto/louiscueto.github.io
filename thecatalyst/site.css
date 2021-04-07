@@ -194,7 +194,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 }
-/*.section-graphic > img {
+.section-graphic > img {
 	width: 100%;
 	height: auto;
 }
@@ -203,7 +203,7 @@ body {
 	width: 100%;
 	height: auto;
 	margin: auto;
-}*/
+}
 
 .grid {
 	display: flex;
@@ -600,7 +600,17 @@ body {
 	background: transparent;
 }
 
+.section-graphic.has-bg-img {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 @media all and (max-width: 999px) {
+
+	.section-graphic.has-bg-img {
+		background-size: contain;
+	}
 
 
 	#modal-header {
@@ -675,7 +685,7 @@ body {
 
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 800px) {
 
 	.modal-header-left {
 		width: 50%;
@@ -761,7 +771,7 @@ body {
 	}
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 800px) {
 
 	#menu {
 		padding: 1em 2em;
