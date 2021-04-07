@@ -26,7 +26,7 @@
 	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-	<link rel="stylesheet" type="text/css" href="site.css?q=3">
+	<link rel="stylesheet" type="text/css" href="site.css?q=4">
 </head>
 <body>
 
@@ -155,7 +155,7 @@
 				<a class="nav-item" data-section="we-seek">WE SEEK</a>
 				<a class="nav-item" data-section="we-are">WE ARE</a>
 				<a class="nav-item" data-section="people-say">PEOPLE SAY</a>
-				<a class="nav-item" data-section="we-pause">WE PAUSE</a>
+				<!-- <a class="nav-item" data-section="we-pause">WE PAUSE</a> -->
 			</div>
 
 			<div id="mobile-nav-item">
@@ -177,7 +177,7 @@
 				<a class="nav-item" data-section="we-seek">WE SEEK</a>
 				<a class="nav-item" data-section="we-are">WE ARE</a>
 				<a class="nav-item" data-section="people-say">PEOPLE SAY</a>
-				<a class="nav-item" data-section="we-pause">WE PAUSE</a>
+				<!-- <a class="nav-item" data-section="we-pause">WE PAUSE</a> -->
 			</div>
 			
 		</div>
@@ -328,15 +328,6 @@
 			</div>
 		</div>
 
-
-		<div class="section" id="we-pause">
-			<div class="grid turn">
-				<div class="column section-graphic"><h1>GRAPHIC</h1></div>
-				<div class="column section-text">
-					<h1 class="futura section-header">What Grabs Our Attention</h1>
-				</div>
-			</div>
-		</div>
 	</div>
 
 
@@ -406,7 +397,7 @@
 			$(window).resize(function () {
 				let width = $(window).width();
 	
-				if (width <= 767) {
+				if (width <= 800) {
 					$("#sphere_iframe").css({
 						height: ($("#sphere_iframe").parent().width())+"px",
 						width: ($("#sphere_iframe").parent().width())+"px"

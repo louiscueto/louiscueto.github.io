@@ -266,7 +266,7 @@ body {
 }
 
 #mobile-menu > .nav-items > .nav-item {
-	font-size: 2rem;
+	font-size: 1.2rem;
 	padding: 1em 0;
 
 	text-align: center;
@@ -606,12 +606,15 @@ body {
 	background-repeat: no-repeat;
 }
 
-@media all and (max-width: 999px) {
+@media all and (max-width: 1024px) {
+
+	#logo {
+		margin: 0;
+	}
 
 	.section-graphic.has-bg-img {
 		background-size: contain;
 	}
-
 
 	#modal-header {
 		padding: 2em 1em;
@@ -685,7 +688,8 @@ body {
 
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1024px) {
+
 
 	.modal-header-left {
 		width: 50%;
@@ -771,7 +775,7 @@ body {
 	}
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1024px) {
 
 	#menu {
 		padding: 1em 2em;
