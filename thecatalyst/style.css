@@ -247,6 +247,13 @@ body.grabbing {
 
 	user-select: none;
 }
+
+@media all and (max-width: 480px) {
+	#tooltip > img {
+		height: 80px;
+	}
+}
+
 #text {
 	width: fit-content;
 	display: flex;

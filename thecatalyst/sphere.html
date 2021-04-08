@@ -320,6 +320,10 @@
 			}
 		}
 
+		window.addEventListener("resize", function (e) {
+			document.getElementById("dragger").style.height = (window.innerHeight)+"px";
+		});
+		
 		window.addEventListener("mousedown", function (e) {
 
 			if (e.target.id == "dragger") {
@@ -364,7 +368,7 @@
 		});
 
 
-		window.addEventListener("focus", function (e) {
+		top.window.addEventListener("focus", function (e) {
 
 			dragmode = false;
 			
@@ -380,7 +384,7 @@
 			raycast(e, false);
 		});
 
-		window.addEventListener("blur", function (e) {
+		top.window.addEventListener("blur", function (e) {
 			dragmode = false;
 			clearTimeout(popupTimer);
 			popupTimer = null;
