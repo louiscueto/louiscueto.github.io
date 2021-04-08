@@ -654,6 +654,7 @@ body {
 		padding: 0;
 		text-align: left;
 		margin: 0;
+		white-space: normal;
 	}
 
 	#capabilities {

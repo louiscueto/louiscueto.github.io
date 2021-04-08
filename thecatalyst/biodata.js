@@ -45,7 +45,7 @@ BIODATA = {
 			<p>When Patrick came back full-time to the Philippines in 2007, he started and managed a family-owned Business Process Outsourcing firm called QBitron. QBitron gave clients opportunities to design, test and operate Philippine-based lead generation, lead qualifying and sales closing teams.</p>\
 			<p>While in Boston, Patrick ran sales, marketing, fulfillment and customer service operations as the Chief Operating Officer of a Boston-based start-up in the Healthcare space called Citizens Health. He also worked for six years in the Boston headquarters of Bain &amp; Company, a global management consulting firm, where he led teams in different types of projects, ranging from Growth, Restructuring, Profit Optimization to Re-engineering. He left Bain &amp; Company to join his mentor who was chosen by the investors of Citizens Health to be its CEO.</p>",
 		email: "patrick@thecatalyst.asia",
-		contact: "PH: +63 917 863 3188"
+		contact: "<span>PH: +63 917 863 3188</span>"
 	},
 
 	"Sphere_fracturepart20": {
@@ -99,7 +99,7 @@ BIODATA = {
 			<p>His work has included training and facilitation to development leadership and management skills, coaching and mentoring skills, communication skills. His consulting work has included quality improvement but mostly focused on building strong and aligned intact teams of leaders facing strategic changes and challenges. Typically, this has focused on very senior and top leaders.</p>\
 			<p>Prior to private consulting, Cliff held leadership roles as an internal Organization Development Consultant and Human Resources. He spent 11 years across three organizations, Tufts University (Medford, MA, USA), Houghton Mifflin Publishing (Boston, MA USA), and Bolt, Beranik and Newman (BBN) (Cambridge, MA USA).</p>",
 		email: "cliff@cultivatingleadership.com",
-		contact: "PH: +63 917 803 3419 | US: +1 425 244 2250"
+		contact: "<span>PH: +63 917 803 3419</span><span class='hide-on-mobile'>|</span><span>US: +1 425 244 2250</span>"
 	},
 
 	"Sphere_fracturepart19": {
@@ -148,7 +148,7 @@ BIODATA = {
 			<p>Vivien spent many years in different roles and companies in the Aboitiz Group. She started in the shipping and logistics business which was eventually known as 2GO where she headed Corporate Planning and Investor Relations as part of the Office of the CFO. After the Aboitizes divested 2GO, Vivien moved to the conglomerates holding company, Aboitiz Equity Ventures (AEV), as the Assistant Vice President for Strategy and Corporate Finance before taking on general management roles in AboitizLand, the Real Estate company of AEV. In AboitizLand, Vivien headed the Project Development department in AboitizLand before being promoted to handle on of the three business units of the company as Residential Business Unit Head.</p>\
 			<p>Vivien started her business career in finance in UBP's Privatization and Equities Group and as a Senior Associate in PCI Capital Corporation. She also served as the Engagement Director of AJOnet Holdings before joining the Aboitiz Group.</p>",
 		email: "vivien@thecatalyst.asia",
-		contact: "PH: +63 917 727 8528"
+		contact: "<span>PH: +63 917 727 8528</span>"
 	},
 
 	"Sphere_fracturepart18": {
@@ -201,7 +201,7 @@ BIODATA = {
 			<p>Charity started her management track by accumulating skills and knowledge across functional disciplines. She worked in HR as a consultant for John Clements, cut her teeth in Sales as the Corporate Advertising as a Call Center Manager in the Communications Group of the Lopez Group of Companies.</p>\
 			<p>Charity now leverages her experiences as a general manager to be a coach to senior leaders and a mentor to managers who seek to evolve their leadership approach.</p>",
 		email: "charity@thecatalyst.asia",
-		contact: "PH: +63 917 711 0105"
+		contact: "<span>PH: +63 917 711 0105</span>"
 	},
 
 	"Sphere_fracturepart11": {
@@ -252,7 +252,7 @@ BIODATA = {
 			<p>She then joined Specialty Food Retailers when an opportunity came up to lead both Front-of-the-House and Back-of-the-House operations of a TWG branch. In TWG, Mikha was able to redesign training programs and create sales tools that were deployed in her branch and other branches under her Area Manager.</p>\
 			<p>Mikha now deepends her knowledge in the fields of Leadership and Organizational Development as she collaborates with Catalyst Asia teammates and clients.</p>",
 		email: "mikha@thecatalyst.asia",
-		contact: "PH: +63 917 145 1681"
+		contact: "<span>PH: +63 917 145 1681</span>"
 	},
 
 }
