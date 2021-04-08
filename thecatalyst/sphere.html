@@ -32,7 +32,7 @@
 	<div class="modal" id="modal2">
 		<div class="modal-content noto" style="height: 80%;">
 			<button class="close">X</button>
-			<object width="100%" height="100%" type="application/pdf" data="assets/MG_Bio.pdf#toolbar=0&navpanes=0&scrollbar=0">
+			<object width="100%" height="100%" type="application/pdf" data="">
 			    <p>Insert your error message here, if the PDF cannot be displayed.</p>
 			</object>
 		</div>
@@ -207,26 +207,26 @@
 
 		document.onkeydown = function (e) {
 
-			if (e.keyCode == 27) { // esc
+			// if (e.keyCode == 27) { // esc
 
-				hovered.name = "Sphere_fracturepart20";
-				MODAL.show();
+			// 	hovered.name = "Sphere_fracturepart20";
+			// 	MODAL.show();
 
-			} else if (e.keyCode == 192) { // `
-				// idlePop2();
-				hovered.name = "Sphere_fracturepart20";
-				MODAL.show();
-			} else if (e.keyCode == 49) { // 1
+			// } else if (e.keyCode == 192) { // `
+			// 	// idlePop2();
+			// 	hovered.name = "Sphere_fracturepart20";
+			// 	MODAL.show();
+			// } else if (e.keyCode == 49) { // 1
 
-				console.log($tooltip.offsetWidth);
-				console.log($tooltip.offsetHeight);
-			} else if (e.keyCode == 50) { // 2
+			// 	console.log($tooltip.offsetWidth);
+			// 	console.log($tooltip.offsetHeight);
+			// } else if (e.keyCode == 50) { // 2
 
-				model.rotation.y += Math.PI;
+			// 	model.rotation.y += Math.PI;
 
-				// Math.PI * 2 = 6.28;
-			} else if (e.keyCode == 51) { // 3
-			}
+			// 	// Math.PI * 2 = 6.28;
+			// } else if (e.keyCode == 51) { // 3
+			// }
 		};
 
 		var MODAL = {
@@ -332,6 +332,18 @@
 			}
 		});
 
+		window.addEventListener("touchstart", function (e) {
+
+			if (e.target.id == "dragger") {
+				dragmode = true;
+				var touch = e.touches[0] || e.changedTouches[0];
+		        prevX = Math.round(touch.pageX);
+		        prevY = Math.round(touch.pageY);
+
+			}
+		});
+
+
 		var dragTimeout;
 		window.addEventListener("mouseup", function (e) {
 			dragmode = false;
@@ -341,6 +353,13 @@
 					raycast(e, false, true);
 				// }, 500);
 				
+			}
+		});
+
+		window.addEventListener("touchend", function (e) {
+			dragmode = false;
+			if (dragging == false) {
+				raycast(e, true, true);
 			}
 		});
 
@@ -371,6 +390,71 @@
 			idleMode = false;
 			clearTimeout(idleTimer);
 			idleTimer = null;
+		});
+
+
+		document.addEventListener("touchmove", function(e) {
+
+			// if (document.body.classList.contains("grab")) {
+			// 	document.body.classList.add("grabbing");
+			// } else {
+			// 	document.body.classList.remove("grabbing");
+			// }
+
+			idleMode = false;
+			clearTimeout(idleTimer);
+			idleTimer = null;
+
+			var touch = e.touches[0] || e.changedTouches[0];
+		    var x = Math.round(touch.pageX);
+		    var y = Math.round(touch.pageY);
+
+			var max = window.innerWidth;
+			var diffX, diffY;
+
+			dragging = dragmode;
+
+			var speed = 0.003;
+			if (typeof prevX !== undefined && typeof prevY !== undefined && model && dragmode == true) {
+				if (prevX > x) { // turn left
+					diffX = (prevX-x) * speed;
+					diffX = diffX/2;
+					model.rotation.y -= diffX;
+				} else if (prevX < x) { // turn right
+					diffX = (x-prevX) * speed;
+					diffX = diffX/2;
+					model.rotation.y += diffX;
+				}
+				if (prevY > y) { // turn up
+					diffY = (prevY-y) * speed;
+					diffY = diffY/2;
+					if ((model.rotation.x-diffY) > -0.4) {
+						model.rotation.x -= diffY;
+					}
+				} else if (prevY < y) { // turn down
+					diffY = (y-prevY) * speed;
+					diffY = diffY/2;
+					if ((model.rotation.x+diffY) < 0.4) {
+						model.rotation.x += diffY;
+					}
+				}
+			}
+
+			prevX = x;
+			prevY = y;
+
+			if (dragmode == false && MODAL.visible == false) {
+				raycast(e, true);
+			}
+
+			if (!idleTimer) {
+				idleTimer = setTimeout(function () {
+					idleMode = true;
+					clearTimeout(idleTimer);
+					idleTimer = null;
+				}, 1500); 
+			}
+
 		});
 
 		document.addEventListener("mousemove", function(e) {
