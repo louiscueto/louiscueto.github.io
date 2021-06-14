@@ -24,7 +24,7 @@
 	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-	<link rel="stylesheet" type="text/css" href="site.css?q=9">
+	<link rel="stylesheet" type="text/css" href="site.css?q=10">
 </head>
 <body>
 
@@ -311,7 +311,7 @@
 		<div class="section" id="we-are">
 			<div class="grid turn">
 				<div class="column section-graphic" style="text-align: center;">
-					<iframe id="sphere_iframe" src="sphere.html"></iframe>
+					<iframe id="sphere_iframe" src="sphere.html?q=10"></iframe>
 					<!-- <div id="dragger"></div> -->
 				</div>
 				<div class="column section-text">
@@ -353,236 +353,7 @@
 				</div><!-- end of #carousel -->
 				<div class="carousel-dots"></div>
 			</div>
-
-			<script type="text/javascript">
-
-				var slidePosition = 1;
-				var CAROUSEL = {
-					animating: false,
-					position: 1,
-					count: 0,
-					raw_texts: [],
-					shorten: function (item, itemtext) {
-
-						let $itemtext 	= $(item).children(".carousel-item-text");
-						// let text = $itemtext.html().trim();
-						let text = itemtext;
-						let split = text.split(" ");
-						let maxctr = 100;
-
-						console.log(item.scrollHeight);
-						while (item.scrollHeight > 200) {
-
-							// console.log("height", item.scrollHeight);
-							split.pop();
-
-							// console.log($itemtext.html());
-							$itemtext.html(split.join(" ")+"... <span class='read-more' onclick='CAROUSEL.read_more()'>Read More</span>");
-							maxctr--;
-							if (maxctr <= 0) { // prevent infinite looping
-								break;
-							}
-						}
-						console.log("maxctr", maxctr);
-						console.log("text", text);
-						// $itemtext.html($itemtext.html());
-
-					},
-					read_more: function () {
-
-						let index = CAROUSEL.position-1;
-						let raw_text = CAROUSEL.raw_texts[index];
-						console.log(CAROUSEL.raw_texts);
-
-						$("#read-more-content").html("<h1>"+raw_text.text+"</h1><p><b>"+raw_text.subtext+"</b></p>");
-						$("body, html").addClass("unscrollable");
-						$("#read-more").addClass("visible");
-						return false;
-
-						$(".carousel-item.active > .carousel-item-text").html(CAROUSEL.raw_texts[index]+" <span class='read-more' onclick='CAROUSEL.read_less()'>Read Less</span>");
-					},
-					read_less: function () {
-						$("body, html").removeClass("unscrollable");
-						$("#read-more").removeClass("visible");
-						// let index = CAROUSEL.position-1;
-						// CAROUSEL.shorten($(".carousel-item.active")[0], CAROUSEL.raw_texts[index]);
-					},
-					init: function () {
-
-						let items = $("#carousel > .carousel > .carousel-items > .carousel-item");
-						let $dots = $("#carousel > .carousel-dots");
-
-						$dots.html("");
-						CAROUSEL.count = items.length;
-						CAROUSEL.raw_texts = [];
-
-						for (let i = 0; i < items.length; i++) {
-
-
-							let item 			= items[i];
-							let klasname 		= item.className;
-							let height 			= item.scrollHeight;
-							let $itemtext 		= $(item).children(".carousel-item-text");
-							let $itemsubtext 	= $(item).children(".carousel-item-subtext");
-							CAROUSEL.raw_texts.push({text: $itemtext.html(), subtext: $itemsubtext.html()});
-
-							if (klasname.indexOf("active") > -1) {
-								CAROUSEL.shorten(item, $itemtext.html());
-							}
-
-							if (i == 0) {
-								$(item).animate({
-									opacity: 1
-								}, 500);
-							}
-
-							$dots.append('<span class="dots '+(i == 0 ? "enable" : "")+'" onclick="CAROUSEL.currentSlide('+(i+1)+')">');
-						}
-						
-					},
-					plusSlides: function (n) {
-						if (CAROUSEL.animating) {
-							return false;
-						}
-						let direction = n < 0 ? "left" : "right"; 
-						CAROUSEL.slideShow(CAROUSEL.position += n, direction, n);
-					},
-					currentSlide: function (n) {
-						if (CAROUSEL.animating) {
-							return false;
-						}
-						console.log(CAROUSEL.position);
-						console.log(n);
-
-						let direction = n < CAROUSEL.position ? "left" : "right";
-						CAROUSEL.slideShow(CAROUSEL.position = n, direction, n);
-					},
-					slideShow: function (n, direction = "left", raw_n) {
-
-						if (n > CAROUSEL.count) {
-							n = 1;
-						} else if (n <= 0) {
-							n = CAROUSEL.count;
-						}
-
-						CAROUSEL.position = n;
-
-						console.log("direction", direction);
-
-						// if (direction == "left") {
-						// 	$(".carousel-item.active").animate({
-						// 		opacity: 0,
-						// 	}, 500, function () {
-						// 		$(".carousel-item:nth-child("+(n)+")").addClass("active").animate({
-						// 			opacity: 1
-						// 		}, 500);
-						// 	})
-						// } else if (direction == "right") {
-						// 	$(".carousel-item.active").animate({
-						// 		opacity: 0,
-						// 	}, 500, function () {
-						// 		$(".carousel-item:nth-child("+(n)+")").addClass("active").animate({
-						// 			opacity: 1
-						// 		}, 500);
-						// 	})
-						// }
-						CAROUSEL.animating = true;
-
-						// $(".carousel-item.active").removeClass("active");
-						// $(".carousel-item:nth-child("+(n)+")").addClass("active");
-
-						// $(".carousel-item.active").fadeOut("400", function () {
-						// 	$(this).removeClass("active");
-						// 	$(".carousel-item:nth-child("+(CAROUSEL.position)+")").fadeIn("400", function () {
-						// 		$(this).addClass("active");
-						// 		CAROUSEL.animating = false;
-						// 	});
-						// });
-
-						let $old = $(".carousel-item.active");
-						$old.animate({
-							opacity: 0,
-						}, 400, function () {
-							$old.removeClass("active");
-							let $new = $(".carousel-item:nth-child("+(CAROUSEL.position)+")");
-							$new.animate({
-								opacity: 1,
-							}, 400, function () {
-
-								$new.addClass("active");
-								CAROUSEL.shorten($new[0], CAROUSEL.raw_texts[CAROUSEL.position-1].text);
-
-								// console.log($new[0].scrollHeight);
-								// let text = $new.children(".carousel-item-text").html().trim();
-								// console.log(text);
-								// let split = text.split(" ");
-								// console.log(split);
-								// split.pop();
-								// console.log(split);
-								// while ($new[0].scrollHeight >= (200)) {
-
-								// }
-								CAROUSEL.animating = false;
-							})
-						});
-
-						// $(".carousel-item.active").fadeOut("400", function () {
-
-						// 	$(this).removeClass("active");
-						// 	$(".carousel-item:nth-child("+(n)+")").fadeIn("400", function () {
-						// 		$(this).addClass("active");
-						// 		CAROUSEL.animating = false;
-						// 	});
-						// });
-
-						$(".carousel-dots > .dots").removeClass("enable");
-						$(".carousel-dots > .dots:nth-child("+(n)+")").addClass("enable");
-					}
-				}
-				
-				// forward / back controls
-				function plusSlides(n) {
-					
-				}
-				//  images controls
-				function currentSlide(n) {
-					SlideShow(slidePosition = n);
-				}
-
-				function SlideShow (n) {
-					var i;
-					var slides = document.getElementsByClassName("carousel-item");
-					var circles = document.getElementsByClassName("dots");
-					if (n > slides.length) {slidePosition = 1}
-					if (n < 1) {slidePosition = slides.length}
-					for (i = 0; i < slides.length; i++) {
-						slides[i].style.display = "none";
-					}
-					for (i = 0; i < circles.length; i++) {
-						circles[i].className = circles[i].className.replace(" enable", "");
-					}
-					slides[slidePosition-1].style.display = "block";
-					circles[slidePosition-1].className += " enable";
-				} 
-
-			</script>
-
-			<!-- <hr>
-			<div class="grid">
-				<div class="column section-text">
-					<h1 class="futura section-header">What Our Aligned Groups Say</h1>
-				</div>
-				<div class="column section-graphic">
-					
-
-					<h1>CAROUSEL</h1>
-
-					
-				</div>
-			</div> -->
-
 		</div>
-
 	</div>
 
 
@@ -660,8 +431,186 @@
 			$(window).trigger("resize");
 			CAROUSEL.init();
 		});
+
+
+		var slidePosition = 1;
+		var CAROUSEL = {
+			animating: false,
+			position: 1,
+			count: 0,
+			raw_texts: [],
+			interval: null,
+			shorten: function (item, itemtext) {
+
+				let $itemtext 	= $(item).children(".carousel-item-text");
+				let text = itemtext;
+				let split = text.split(" ");
+				let maxctr = 100;
+
+				while (item.scrollHeight > 200) {
+					split.pop();
+					$itemtext.html(split.join(" ")+"... <span class='read-more' onclick='CAROUSEL.read_more()'>Read More</span>");
+					maxctr--;
+					if (maxctr <= 0) { // prevent infinite looping
+						break;
+					}
+				}
+			},
+			read_more: function () {
+
+				let index = CAROUSEL.position-1;
+				let raw_text = CAROUSEL.raw_texts[index];
+
+				$("#read-more-content").html("<h1>"+raw_text.text+"</h1><p><b>"+raw_text.subtext+"</b></p>");
+				$("body, html").addClass("unscrollable");
+				$("#read-more").addClass("visible");
+				return false;
+
+				$(".carousel-item.active > .carousel-item-text").html(CAROUSEL.raw_texts[index]+" <span class='read-more' onclick='CAROUSEL.read_less()'>Read Less</span>");
+			},
+			read_less: function () {
+				$("body, html").removeClass("unscrollable");
+				$("#read-more").removeClass("visible");
+				// let index = CAROUSEL.position-1;
+				// CAROUSEL.shorten($(".carousel-item.active")[0], CAROUSEL.raw_texts[index]);
+			},
+			init: function () {
+
+				let items = $("#carousel > .carousel > .carousel-items > .carousel-item");
+				let $dots = $("#carousel > .carousel-dots");
+
+				$dots.html("");
+				CAROUSEL.count = items.length;
+				CAROUSEL.raw_texts = [];
+
+				for (let i = 0; i < items.length; i++) {
+
+					let item 			= items[i];
+					let klasname 		= item.className;
+					let height 			= item.scrollHeight;
+					let $itemtext 		= $(item).children(".carousel-item-text");
+					let $itemsubtext 	= $(item).children(".carousel-item-subtext");
+					CAROUSEL.raw_texts.push({text: $itemtext.html(), subtext: $itemsubtext.html()});
+
+					if (klasname.indexOf("active") > -1) {
+						CAROUSEL.shorten(item, $itemtext.html());
+					}
+
+					if (i == 0) {
+						$(item).animate({
+							opacity: 1
+						}, 500);
+					}
+
+					$dots.append('<span class="dots '+(i == 0 ? "enable" : "")+'" onclick="CAROUSEL.currentSlide('+(i+1)+')">');
+				}
+
+				CAROUSEL.setTimeout();
+			},
+			setTimeout: function () {
+				clearInterval(CAROUSEL.interval);
+				CAROUSEL.interval = setTimeout(function () {
+					CAROUSEL.plusSlides(1);
+				}, 5000);
+			},
+			plusSlides: function (n) {
+				if (CAROUSEL.animating) {
+					return false;
+				}
+				let direction = n < 0 ? "left" : "right"; 
+				CAROUSEL.slideShow(CAROUSEL.position += n, direction, n);
+			},
+			currentSlide: function (n) {
+				if (CAROUSEL.animating) {
+					return false;
+				}
+				let direction = n < CAROUSEL.position ? "left" : "right";
+				CAROUSEL.slideShow(CAROUSEL.position = n, direction, n);
+			},
+			slideShow: function (n, direction = "left", raw_n) {
+
+				if (n > CAROUSEL.count) {
+					n = 1;
+				} else if (n <= 0) {
+					n = CAROUSEL.count;
+				}
+
+				CAROUSEL.position = n;
+
+				// if (direction == "left") {
+				// 	$(".carousel-item.active").animate({
+				// 		opacity: 0,
+				// 	}, 500, function () {
+				// 		$(".carousel-item:nth-child("+(n)+")").addClass("active").animate({
+				// 			opacity: 1
+				// 		}, 500);
+				// 	})
+				// } else if (direction == "right") {
+				// 	$(".carousel-item.active").animate({
+				// 		opacity: 0,
+				// 	}, 500, function () {
+				// 		$(".carousel-item:nth-child("+(n)+")").addClass("active").animate({
+				// 			opacity: 1
+				// 		}, 500);
+				// 	})
+				// }
+				CAROUSEL.animating = true;
+
+				// $(".carousel-item.active").removeClass("active");
+				// $(".carousel-item:nth-child("+(n)+")").addClass("active");
+
+				// $(".carousel-item.active").fadeOut("400", function () {
+				// 	$(this).removeClass("active");
+				// 	$(".carousel-item:nth-child("+(CAROUSEL.position)+")").fadeIn("400", function () {
+				// 		$(this).addClass("active");
+				// 		CAROUSEL.animating = false;
+				// 	});
+				// });
+
+				let $old = $(".carousel-item.active");
+				$old.animate({
+					opacity: 0,
+				}, 400, function () {
+					$old.removeClass("active");
+					let $new = $(".carousel-item:nth-child("+(CAROUSEL.position)+")");
+					$new.animate({
+						opacity: 1,
+					}, 400, function () {
+
+						$new.addClass("active");
+						CAROUSEL.shorten($new[0], CAROUSEL.raw_texts[CAROUSEL.position-1].text);
+
+						// console.log($new[0].scrollHeight);
+						// let text = $new.children(".carousel-item-text").html().trim();
+						// console.log(text);
+						// let split = text.split(" ");
+						// console.log(split);
+						// split.pop();
+						// console.log(split);
+						// while ($new[0].scrollHeight >= (200)) {
+
+						// }
+						CAROUSEL.animating = false;
+					})
+				});
+
+				// $(".carousel-item.active").fadeOut("400", function () {
+
+				// 	$(this).removeClass("active");
+				// 	$(".carousel-item:nth-child("+(n)+")").fadeIn("400", function () {
+				// 		$(this).addClass("active");
+				// 		CAROUSEL.animating = false;
+				// 	});
+				// });
+
+				$(".carousel-dots > .dots").removeClass("enable");
+				$(".carousel-dots > .dots:nth-child("+(n)+")").addClass("enable");
+
+				CAROUSEL.setTimeout();
+			}
+		}
+
 	</script>
-	
 
 </body>
 </html>

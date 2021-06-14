@@ -73,7 +73,7 @@
 
 <script type="text/javascript" src="assets/tween.js-master/src/Tween.js"></script>
 <script type="text/javascript" src="assets/pdfjs/build/pdf.js"></script>
-<script type="text/javascript" src="biodata.js"></script>
+<script type="text/javascript" src="biodata.js?q=2"></script>
 
 
 
@@ -243,7 +243,7 @@
 				let last_letter_fname = biodata.first_name.slice(-1);
 				let caps = biodata.capabilities;
 				let q2 = biodata.qualifications.column2;
-				let cap1 = [], cap2 = [];
+				let cap1 = [], cap2 = [], odd_one = "";
 
 				// header
 				top.document.getElementById("modal-title").innerHTML = biodata.title;
@@ -269,32 +269,34 @@
 
 				// capabilities
 				for (let i = 0; i < caps.length; i++) {
-					let cap = caps[i];
-					if ((caps.length%2 == 0) && i == caps.length -1) {
-						continue;
-					}
-					if (i%2 == 0) {
-						cap1.push(cap);
+					if ((i+1)%2 == 0) {
+						cap1.push(caps[i]);
 					} else {
-						cap2.push(cap);
+						cap2.push(caps[i]);
 					}
 				}
-				top.document.getElementById("capabilities").innerHTML = '\
+				if (caps.length%2 == 1) {
+					odd_one = cap2.pop();
+				}
+
+				let capstr = '\
 					<div id="capability-grid" class="flex">\
 						<div id="capability-col-1"><ul><li>'+cap1.join('</li><li>')+'</li></ul></div>\
 						<div id="capability-col-2"><ul><li>'+cap2.join('</li><li>')+'</li></ul></div>\
-					</div>\
-					<div id="odd-one-out">\
-						<ul><li>'+caps[caps.length-1]+'</li></ul>\
 					</div>';
-
+				if (odd_one != "") {
+					capstr += '<div id="odd-one-out">\
+						<ul><li>'+odd_one+'</li></ul>\
+					</div>';
+				}
+				top.document.getElementById("capabilities").innerHTML = capstr;
 
 				// qualifications
 				top.document.getElementById("qualifications-1").innerHTML = biodata.qualifications.column1.join("<br>");
 				if (Array.isArray(q2)) {
 					top.document.getElementById("qualifications-2").innerHTML = q2.join("<br>");
 				} else {
-					top.document.getElementById("qualifications-2").innerHTML = '<b><i>'+q2.title+'</i></b><ul style="padding-left: 0; margin-left: 1.25em;"><li>'+q2.certifications.join("</li><li>")+'</li></ul>';
+					top.document.getElementById("qualifications-2").innerHTML = '<b><i>'+q2.title+'</i></b><ul style="padding-left: 0; margin-left: 1.25em; list-style-type: none;"><li>'+q2.certifications.join("</li><li>")+'</li></ul>';
 				}
 
 				// extras
@@ -304,6 +306,7 @@
 				// top.window.scrollTo(0, 0);
 				// $modal.scrollTo(0, 0);
 				top.document.body.classList.add("unscrollable");
+				top.document.querySelector("html").classList.add("unscrollable");
 				$modal.classList.add("visible");
 				
 				// $modal.classList.add("chever");
@@ -312,6 +315,7 @@
 			hide: function () {
 				
 				top.document.body.classList.remove("unscrollable");
+				top.document.querySelector("html").classList.remove("unscrollable");
 				$modal.classList.remove("visible");
 
 				setTimeout(function () {

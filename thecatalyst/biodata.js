@@ -49,7 +49,7 @@ BIODATA = {
 	},
 
 	"Sphere_fracturepart20": {
-		headerbg: "assets/biodata/CDS.png",
+		headerbg: "assets/biodata/CDS_.png",
 		idtag: "assets/idtags/CDS.png",
 		first_name: "Cliff",
 		title: "Cliff Scott",
@@ -255,4 +255,128 @@ BIODATA = {
 		contact: "<span>PH: +63 917 145 1681</span>"
 	},
 
+
+	"Sphere_fracturepart6": {
+		headerbg: "assets/biodata/GSK.png",
+		idtag: "assets/idtags/GSK.png",
+		first_name: "Grace",
+		title: "Grace Kagahastian",
+		position: "Director",
+		subtitle: "A servant leader that connect human beings to find meaning in their pursuits and be more comfortable to change",
+		someone: {
+			column1: [
+				"cultivates from dynamic background to share practical learning and useful insights",
+				"mobilizes foundational principles to daily practices.",
+				"nurtures relationship to build partnership as a means to co-create",
+				"bridges great talent to unique opportunities",
+			],
+			column2: [
+				"evangelizes positive change on people and projects",
+				"blossoms on challenging but happy work environments",
+				"co-pilots with diverse individuals to inspire collaboration in teams and organizations",
+				"braves the unknown to learn, unlearn and relearn to stay relevant to the community she serves"
+			],
+		},
+		wish: "Grace envisions a world that offers equal opportunity around the global workforce not by credential but by potential. This possibility will allow women-led organizations to step up and be fully trusted in the roles they play. Grace also believes that happy and healthy employees make happy customers, hence organizations have a call of duty in ensuring wellbeing of people in heart, mind, body and spirit and coaching is a huge part of it.",
+		capabilities: [
+			"Organizational Development",
+			"Business Development",
+			"Transformational Coaching and Mentoring",
+			"Product Development",
+			"Strategic Human Resource Management",
+			"Customer Experience",
+		],
+		qualifications: {
+			column1: [
+				"Coach Masters Academy (Singapore)",
+				"2020",
+				"Advanced Level, PCC",
+				"<br>",
+				"Miriam College (Philippines)",
+				"2013-2016",
+				"Masters in Strategic Human Resource",
+			],
+			// column2: {
+			// 	title: "Certifications:",
+			// 	certifications: [
+			// 		"Effective Management Practices",
+			// 		"People Management",
+			// 		"Advance Shift Management"
+			// 	]
+			// },
+			column2: [
+				"Ateneo CORD",
+				"2016",
+				"Foundations of Organization Development",
+				"<br>",
+				"De La Salle - College of St. Benilde",
+				"1999-2003",
+				"Bachelor of Science in Business Administration - Information Services Management",
+				"Dean's Lister",
+			]
+		},
+		career_history: '<img src="assets/biodata/gsk_career_history.png" style="width: 100%; height: auto;">',
+		email: "grace@thecatalyst.asia",
+		contact: "<span>PH: +63 917 145 1681</span>"
+	},
+
+	"Sphere_fracturepart4": {
+		headerbg: "assets/biodata/SSA.png",
+		idtag: "assets/idtags/SSA.png",
+		first_name: "Shiela",
+		title: "Shiela Aguinaldo",
+		position: "Director",
+		subtitle: "A partner-enabler of leaders and organizations as they push for resilience and drive for performance excellence in an ever-changing and complex world.",
+		someone: {
+			column1: [
+				"builds collaborative partnerships to help in self-discovery and personal growth.",
+				"is committed to helping others develop and install learning solutions that are relevant, impactful, holistic and integrated with talent management process."
+			],
+			column2: [
+				"creates a way for others to see correlational and casual relationships that deepens the process of sense-making, leading to informed decision-making and taking action.",
+			],
+		},
+		wish: "Wants to be that spark that ignites curiosity in others, energizing them to discover purpose and meaning in their learning journeys. Sheila aspires to be authentic and grow in the discipline of lifelong learning.",
+		capabilities: [
+			"Leadership, Coaching and Mentoring",
+			"Culture and Organization Development",
+			"Leaning Development Solutions",
+			"Performance Management",
+		],
+		qualifications: {
+			column1: [
+				"ASIAN INSTITUTE MANAGEMENT",
+				"Management Development Program",
+				"2000",
+				"<br>",
+				"DE LA SALLE UNIVERSITY",
+				"Liberal Arts and Commerce (LIACOM)",
+				"Majors in Psychology and Marketing",
+				"1986-1991",
+			],
+			column2: {
+				title: "Certifications:",
+				certifications: [
+					"2019 TEAM PSYCHOLOGICAL SAFETY FACILITATOR",
+					"Team.As.One, Thailand",
+					"<br>",
+					"2017 ADVANCED COACHING",
+					"Coaching Masters Academy, Singapore",
+					"<br>",
+					"2016 CONVERSATIONAL INTELLIGENCE (CIQ) FOR COACHED ENHANCED PROGRAM",
+					"<br>",
+					"2015 THE LEADERSHIP CIRCLE PROFILE CERTIFICATION",
+					"The Leadership Circle, Singapore",
+					"<br>",
+					"2015 TRANSFORMATIVE COACHING",
+					"Coaching Masters Academy, Singapore",
+				]
+			},
+		},
+		career_history: "<p>Prior to joining The Catalyst Asia, Sheila has built her expertise in learning and coaching from her combined experience as the Head of Learning and Development of large companies and as an external consultatnt.</p>\
+			<p>In her capacity as the Vice President of Learning and Development of EastWest Bank Corporation, Capability Development Solutions Head of Accenture Philippines, Training and OD Manager of Lafarge Cements Philippines Inc and Country Learning and Development of Philips Electronics, she led restructuring of learning function, established the foundations and developed the learning roadmap to ensure learning happens effectively and efficiently. Sheila was also a general HR Practitioner when she became the HR Manager of NIKE Philippines and HR Business Partner of Accenture's Finance and Accounting Outsourcing Services. Handling different facets of HR enabled her to prived a holistic and integrated talent management solutions anchored on business strategy.</p>\
+			<p>As a Consultant, Sheila provided executive coaching, designed and implemented various leadership development solutions for both local and multinational companies in various industries - Telecommunications, Utilities, Technology, Outsourcing, and Maritime.</p>",
+		email: "sheila@thecatalyst.asia",
+		contact: "<span>PH: +63 917 186 9965</span>"
+	},
 }
