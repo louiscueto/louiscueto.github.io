@@ -315,7 +315,7 @@ BIODATA = {
 				"Dean's Lister",
 			]
 		},
-		career_history: '<img src="assets/biodata/gsk_career_history.png" style="width: 100%; height: auto;">',
+		career_history: '<img src="assets/biodata/gsk_career_history.PNG" style="width: 100%; height: auto;">',
 		email: "grace@thecatalyst.asia",
 		contact: "<span>PH: +63 917 145 1681</span>"
 	},
