@@ -365,24 +365,24 @@
 			cost += PRICING[pcs][form_factor][service];
 
 			if (!!board) {
-				breakdown.push('<tr><td>'+board+' for '+labels[service]+' (case is'+pcs+' pcs)</td><td class="collapsing">&#8369; '+numbeautify(PRICING[pcs][form_factor][service])+'</span></td></tr>');
+				breakdown.push('<tr><td>'+board+' for '+labels[service]+' (case is '+pcs+' pcs)</td><td class="collapsing">&#8369; '+numbeautify(PRICING[pcs][form_factor][service])+'</span></td></tr>');
 			} else {
-				breakdown.push('<tr><td>'+labels[service]+' (case is'+pcs+' pcs)</td><td class="collapsing">">&#8369; '+numbeautify(PRICING[pcs][form_factor][service])+'</span></td></tr>');
+				breakdown.push('<tr><td>'+labels[service]+' (case is '+pcs+' pcs)</td><td class="collapsing">&#8369; '+numbeautify(PRICING[pcs][form_factor][service])+'</span></td></tr>');
 			}
 			if (flat_bottom == "yes") { // flat bottom
 				cost += PRICING.flat_bottom
-				breakdown.push('<tr><td>Case has a flat bottom</td><td class="collapsing">">&#8369; '+numbeautify(PRICING.flat_bottom)+'</span></td></tr>');
+				breakdown.push('<tr><td>Case has a flat bottom</td><td class="collapsing">&#8369; '+numbeautify(PRICING.flat_bottom)+'</span></td></tr>');
 			}
 			if (integrated_plate == "yes") { // integplate
 				cost += PRICING.integrated_plate
-				breakdown.push('<tr><td>Case has an integrated plate</td><td class="collapsing">">&#8369; '+numbeautify(PRICING.integrated_plate)+'</span></td></tr>');
+				breakdown.push('<tr><td>Case has an integrated plate</td><td class="collapsing">&#8369; '+numbeautify(PRICING.integrated_plate)+'</span></td></tr>');
 			}
 
 			// plates
 			if (plate != "none") {
 				breakdown.push('<tr><td colspan="2" class="row-header"><b>Plates</b></td></tr>');
 				cost += PRICING.plates[plate];
-				breakdown.push('<tr><td>Alu plate form factor ('+labels[plate]+')</td><td class="collapsing">">&#8369; '+numbeautify(PRICING.plates[plate])+'</span></td></tr>');
+				breakdown.push('<tr><td>Alu plate form factor ('+labels[plate]+')</td><td class="collapsing">&#8369; '+numbeautify(PRICING.plates[plate])+'</span></td></tr>');
 			}
 			
 			// knobs
