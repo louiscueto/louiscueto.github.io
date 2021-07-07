@@ -387,11 +387,10 @@
 			
 			// knobs
 			if (knobs > 0) {
-
+				breakdown.push('<tr><td colspan="2" class="row-header"><b>Knobs</b></td></tr>');
+				cost += PRICING.knobs*knobs;
+				breakdown.push('<tr><td>x'+knobs+'</td><td class="collapsing">&#8369; '+numbeautify(PRICING.knobs*knobs)+'</td></tr>');
 			}
-			breakdown.push('<tr><td colspan="2" class="row-header"><b>Knobs</b></td></tr>');
-			cost += PRICING.knobs*knobs;
-			breakdown.push('<tr><td>x'+knobs+'</td><td class="collapsing">&#8369; '+numbeautify(PRICING.knobs*knobs)+'</td></tr>');
 
 			breakdown.push('<tr><td>&nbsp;</td><td class="collapsing"><span id="cost">&#8369; '+numbeautify(cost)+'</span></td></tr>');
 
