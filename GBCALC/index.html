@@ -144,13 +144,13 @@
 				<div class="inline fields">
 					<div class="field">
 						<div class="ui radio checkbox">
-							<input type="radio" name="flat_bottom" value="yes">
+							<input type="radio" name="flat_bottom" value="yes" id="yes-flat_bottom">
 							<label>Yes</label>
 						</div>
 					</div>
 					<div class="field">
 						<div class="ui radio checkbox">
-							<input type="radio" name="flat_bottom" value="no">
+							<input type="radio" name="flat_bottom" value="no" id="no-flat_bottom">
 							<label>No</label>
 						</div>
 					</div>
@@ -334,17 +334,6 @@
 			score++;
 		}
 
-		console.log("board", board);
-		console.log("pcs", pcs+"/"+typeof pcs);
-		console.log("form_factor", form_factor);
-		console.log("service", service);
-
-		console.log("plate", plate);
-		console.log("flat_bottom", flat_bottom);
-		console.log("integrated_plate", integrated_plate);
-
-		console.log("score", score);
-
 		if (errmsg.length > 0) {
 			iziToast.show({
 				theme: "dark", layout: 2, position: "topCenter",
@@ -424,6 +413,16 @@
 		let val = $(this).val();
 		if (!!val) {
 			$(this).val(parseInt(parse));
+		}
+	});
+
+	$("input[name=pcs]").on("click", function () {
+		if (this.value == "1") {
+			$("#no-flat_bottom").prop("checked", true);
+			$("input[name=flat_bottom]").prop("disabled", true);
+		} else if (this.value == "2") {
+			$("input[name=flat_bottom]").prop("disabled", false);
+			$("input[name=flat_bottom]").prop("checked", false);
 		}
 	});
 
