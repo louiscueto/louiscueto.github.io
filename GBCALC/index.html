@@ -139,7 +139,7 @@
 				</div>
 
 				<div class="required field">
-					<label>4 &nbsp; <span class="helper">|</span> &nbsp; Case has flat bottom part (like the ID80)</label>
+					<label>4 &nbsp; <span class="helper">|</span> &nbsp; Case has plate-like flat bottom part (like the ID80)</label>
 				</div>
 				<div class="inline fields">
 					<div class="field">
@@ -324,7 +324,7 @@
 			score++;
 		}
 		if (!flat_bottom) {
-			errmsg.push('Indicate if your case has a flat bottom part');
+			errmsg.push('Indicate if your case has a plate-like flat bottom part');
 		} else {
 			score++;
 		}
@@ -360,7 +360,7 @@
 			}
 			if (flat_bottom == "yes") { // flat bottom
 				cost += PRICING.flat_bottom
-				breakdown.push('<tr><td>Case has a flat bottom</td><td class="collapsing">&#8369; '+numbeautify(PRICING.flat_bottom)+'</span></td></tr>');
+				breakdown.push('<tr><td>Case has a plate-like flat bottom</td><td class="collapsing">&#8369; '+numbeautify(PRICING.flat_bottom)+'</span></td></tr>');
 			}
 			if (integrated_plate == "yes") { // integplate
 				cost += PRICING.integrated_plate
