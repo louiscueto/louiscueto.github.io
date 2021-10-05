@@ -232,17 +232,17 @@
 		var MODAL = {
 			classes: [],
 			visible: false,
-			show: function () {
+			show: function (clicked = null) {
 				MODAL.visible = true;
 
-				let name = hovered.name;
-				let biodata = BIODATA[name];
+				let name 				= !!clicked ? clicked : hovered.name;
+				let biodata 			= BIODATA[name];
 
-				let headerbg = biodata.headerbg;
-				let someone = biodata.someone;
-				let last_letter_fname = biodata.first_name.slice(-1);
-				let caps = biodata.capabilities;
-				let q2 = biodata.qualifications.column2;
+				let headerbg 			= biodata.headerbg;
+				let someone 			= biodata.someone;
+				let last_letter_fname 	= biodata.first_name.slice(-1);
+				let caps 				= biodata.capabilities;
+				let q2 					= biodata.qualifications.column2;
 				let cap1 = [], cap2 = [], odd_one = "";
 
 				// header
@@ -584,28 +584,23 @@
 			// calculate objects intersecting the picking ray
 			var intersects = raycaster.intersectObjects(scene.children, true);
 
+			
 			if (intersects[0] && intersects[0].distance < 100) {
 
 				// document.getElementsByTagName("canvas")[0].style.cursor = "pointer";
 				var object = intersects[0].object;
 				var name = object.name;
 
-
 				if (click == true) {
-
-					if (hovered.name == object.name) {
-
+					// if (hovered.name == object.name) {
 						if (!!BIODATA[name]) {
-							MODAL.show();
+							MODAL.show(name);
 						}
-					}
-					
+					// }
 				} else {
 
 					try {
-
 						var coords = getMousePos(e);
-
 						if (!!BIODATA[name]) {
 							// $tooltip.innerHTML 			= '<img src="'+BIODATA[name].idtag+'">';
 							$tooltip.style.display 		= "block";
@@ -616,7 +611,6 @@
 						}
 
 						if (idleMode == false) {
-
 							// if (name == "Sphere_fracturepart20") {
 								// $tooltip.style.top 			= (coords.y - 180)+ "px";
 							// } else {
