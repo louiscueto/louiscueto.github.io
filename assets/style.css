@@ -523,7 +523,9 @@ img {
 }
 
 .about-text {
-	opacity: 0.85; font-size: 1vw;
+	opacity: 0.85;
+	font-size: 1vw;
+	padding: 10px 0;
 }
 
 .about-separator {
@@ -721,6 +723,23 @@ a#showmenu.visible {
 	font-size: 1.4vw;
 }
 
+.about-info {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	color: whitesmoke;
+	width: 100%;
+}
+
+.about-label {
+	font-size: 2.8vw !important;
+	font-family: 'Montserrat', sans-serif;
+	font-display: swap;
+	color: #1FBED6;
+	margin: 0;
+	width: 100%;
+	opacity: 1;
+}
+	
 @media all and (max-width: 999px) {
 
 	#sidebar {
@@ -750,14 +769,22 @@ a#showmenu.visible {
 		top: 32% !important;
 		left: 7% !important;
 	}
-
 	/*#about .panel-header {
 		font-size: 10vw !important;
 	}*/
-
-	#about .about-text, #about .about-label {
+	/*#about .about-text, #about .about-label {
 		font-size: 2.8vw !important;
+	}*/
+	.about-text, .about-label {
+		font-size: 2.8vw !important;
+		font-family: 'Montserrat', sans-serif;
+		font-display: swap;
+		color: #1FBED6;
+		margin: 0;
+		width: 100%;
+		opacity: 1;
 	}
+	
 
 	#about #about-image {
 		display: none;

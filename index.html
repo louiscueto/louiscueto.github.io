@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Security-Policy" content="script-src 'none'">
 	<title>LC</title>
-	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.css">
+	<!-- <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- <link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/icon.css">
 	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/loader.min.css">
 
-
 	<link rel="stylesheet" type="text/css" href="assets/semantic-ui/components/transition.min.css">
-	<script type="text/javascript" src="assets/semantic-ui/components/transition.min.js"></script>
+	<script type="text/javascript" src="assets/semantic-ui/components/transition.min.js"></script> -->
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/loader.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	<script type="text/javascript" src="assets/scripts.js"></script>
 
-	<script type="text/javascript" src="assets/textures-master/dist/textures.js"></script>
-	<script type="text/javascript" src="assets/d3.js"></script>
+	<!-- <script type="text/javascript" src="assets/textures-master/dist/textures.js"></script> -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/textures@1.2.3/dist/textures.js"></script>
+	<!-- <script type="text/javascript" src="assets/d3.js"></script> -->
+	<script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet"> -->
 
-	<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab&display=swap" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> -->
 
 	<style type="text/css">
 		
@@ -29,25 +40,22 @@
 		.montserrat {
 			font-family: 'Montserrat', sans-serif;
 		}
-		.merriweather {
+		/*.merriweather {
 			font-family: 'Merriweather', serif;
-		}
-		
+		}*/
 		.raleway {
 			font-family: 'Raleway', sans-serif;
 		}
-		.robotoslab {
+		/*.robotoslab {
 			font-family: 'Roboto Slab', serif;
-		}
-
-
+		}*/
 		/*.slabo {
 			font-family: 'Slabo 27px', serif;
 		}*/
 
-		.anton {
+		/*.anton {
 			font-family: 'Anton', sans-serif;
-		}
+		}*/
 		.poppins {
 			font-family: 'Poppins', sans-serif;
 		}
@@ -68,24 +76,24 @@
 		<!-- <div class="teal"></div> -->
 	</div>
 
-	<a class="raleway togglemenu" id="showmenu">
+	<a class="raleway togglemenu" id="showmenu" rel="noreferrer">
 		<i class="fitted bars icon"></i>
 	</a>
 
 	<div id="mobile-sidebar" class="col-flex-3">
-		<a class="raleway sidebar-nav active" data-panel="home" id="home-nav-mobile">
+		<a class="raleway sidebar-nav active" data-panel="home" id="home-nav-mobile" rel="noreferrer">
 			<!-- <i class="fitted home icon"></i> -->
 			HOME
 		</a>
-		<a class="raleway sidebar-nav" data-panel="about" id="about-nav-mobile">
+		<a class="raleway sidebar-nav" data-panel="about" id="about-nav-mobile" rel="noreferrer">
 			<!-- <i class="fitted user icon"></i> -->
 			ABOUT
 		</a>
-		<a class="raleway sidebar-nav" data-panel="portfolio" id="portfolio-nav-mobile">
+		<a class="raleway sidebar-nav" data-panel="portfolio" id="portfolio-nav-mobile" rel="noreferrer">
 			<!-- <i class="fitted paint brush icon"></i> -->
 			PORTFOLIO
 		</a>
-		<a class="raleway sidebar-nav" data-panel="contact" id="contact-nav-mobile">
+		<a class="raleway sidebar-nav" data-panel="contact" id="contact-nav-mobile" rel="noreferrer">
 			<!-- <i class="fitted envelope outline icon"></i> -->
 			CONTACT
 		</a>
@@ -113,22 +121,22 @@
 		</div>
 
 		<div class="sidebar-item raleway" style="text-transform: lowercase;">
-			<a class="sidebar-nav active" data-panel="home" id="home-nav">Home</a>
-			<a class="sidebar-nav" data-panel="about" id="about-nav">About</a>
+			<a class="sidebar-nav active" data-panel="home" id="home-nav" rel="noreferrer">Home</a>
+			<a class="sidebar-nav" data-panel="about" id="about-nav" rel="noreferrer">About</a>
 			<!-- <a class="sidebar-nav" data-panel="portfolio" id="portfolio-nav">Portfolio</a> -->
-			<a class="sidebar-nav" data-panel="contact" id="contact-nav">Contact</a>
+			<a class="sidebar-nav" data-panel="contact" id="contact-nav" rel="noreferrer">Contact</a>
 		</div>
 
 		<div class="sidebar-item secondary" id="sc-icons">
 			<span class="whitesmoke raleway" id="social"> &nbsp; social</span>
 			<br>
-			<a class="sidebar-icon" href="https://www.facebook.com" target="_blank">
+			<a class="sidebar-icon" href="https://www.facebook.com" target="_blank" rel="noreferrer">
 				<i class="secondary facebook icon"></i></a>
-			<a class="sidebar-icon" href="https://www.instagram.com" target="_blank">
+			<a class="sidebar-icon" href="https://www.instagram.com" target="_blank" rel="noreferrer">
 				<i class="secondary instagram icon"></i></a>
-			<a class="sidebar-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank">
+			<a class="sidebar-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank" rel="noreferrer">
 				<i class="secondary linkedin icon"></i></a>
-			<a class="sidebar-icon" href="https://www.github.com/louiscueto" target="_blank">
+			<a class="sidebar-icon" href="https://www.github.com/louiscueto" target="_blank" rel="noreferrer">
 				<i class="secondary github icon"></i></a>
 		</div>
 	</div>
@@ -158,7 +166,7 @@
 				</h1>
 				<h1 class="whitesmoke poppins nomargin panel-sub-header crawler"><span class="secondary">Web developer</span> @ Viva Communications Inc.</h1>
 				<div style="padding-top: 3em;">
-					<a id="cta" class="poppins" onclick="$('#contact-nav').trigger('click');"><span>I want a website too!</span></a>
+					<a id="cta" class="poppins" onclick="$('#contact-nav').trigger('click');" rel="noreferrer"><span>I want a website too!</span></a>
 				</div>
 			</div>
 		</div>
@@ -177,35 +185,25 @@
 
 			<div style="z-index: 3;">
 
-				<h1 class="primary nomargin poppins panel-header" style="font-size: 3.5vw;">
-					Get to know me
-				</h1>
+				<h1 class="primary nomargin poppins panel-header" style="font-size: 3.5vw;">Get to know me</h1>
 
 				<div style="padding: 10px 0;">
 					<p class="whitesmoke nomargin montserrat about-text">I graduated BSIT with specialization in Web and Mobile Applications at FEU - Institute of Technology. Now a web developer with 2 years of working experience. Eager to learn more about my chosen profession and apply my skills. Adaptable, committed, and highly motivated. Makes sure to be articulate and precise. Able to work under pressure, multi-task, and juggle multiple projects while meeting deadlines and requirements.</p>
 				</div>
-				
-				
-				<div class="about-text row-flex" style="padding: 10px 0;">
-					<h4 class="nomargin montserrat secondary about-label" style="width: 100%; opacity: 1;">Feb 2020 - Present</h4>
-					<p class="whitesmoke nomargin montserrat" style="width: 100%; ">Web Developer at Viva Communications Inc.</p>
+
+				<div class="about-text row-flex">
+					<h4 class="about-label">Feb 2020 - Present</h4>
+					<p class="about-info">Web Developer at Viva Communications Inc.</p>
 				</div>
-
-				<div class="about-text row-flex" style="padding: 10px 0;">
-					<h4 class="nomargin montserrat secondary about-label" style="width: 100%; opacity: 1;">Sep 2017 - Feb 2020</h4>
-					<p class="whitesmoke nomargin montserrat" style="width: 100%; ">Web Developer at eLearning Systems Inc.</p>
+				<div class="about-text row-flex">
+					<h4 class="about-label">Sep 2017 - Feb 2020</h4>
+					<p class="about-info">Web Developer at eLearning Systems Inc.</p>
 				</div>
-
-				<div class="about-text row-flex" style="padding: 10px 0;">
-					<h4 class="nomargin montserrat secondary about-label" style="width: 100%; opacity: 1;">Jun 2016 - Feb 2017</h4>
-					<p class="whitesmoke nomargin montserrat" style="width: 100%; ">Intern at UCPB GEN</p>
-					<!-- <div class="whitesmoke nomargin montserrat about-text" style="width: 100%;">				
-						<p class="nomargin"></p>
-					</div> -->
+				<div class="about-text row-flex">
+					<h4 class="about-label">Jun 2016 - Feb 2017</h4>
+					<p class="about-info">Intern at UCPB GEN</p>
 				</div>
-
 				
-
 				<div class="about-text secondary about-separator"></div>
 				<div class="about-text whitesmoke">
 					<h3 class="montserrat" style="font-weight: bold;">Technical Skills</h3>
@@ -246,7 +244,7 @@
 				</div>
 
 				<div class="about-text whitesmoke montserrat" style="margin-top: 2em; text-align: right;">
-					<a class="action-btn secondary" style="font-weight: bold;" href="RESUME.pdf" download="LOUIS CUETO RESUME">
+					<a class="action-btn secondary" style="font-weight: bold;" href="RESUME.pdf" download="LOUIS CUETO RESUME" rel="noreferrer">
 						<i class="large file pdf outline icon"></i>Download my resum&eacute;
 					</a>
 				</div>
@@ -365,13 +363,13 @@
 			<span class="footer-icon" style="margin: 0 20px !important;">
 				&nbsp;
 			</span>
-			<a class="footer-icon" href="https://www.facebook.com" target="_blank">
+			<a class="footer-icon" href="https://www.facebook.com" target="_blank" rel="noreferrer">
 				<i class="secondary facebook icon"></i></a>
-			<a class="footer-icon" href="https://www.instagram.com" target="_blank">
+			<a class="footer-icon" href="https://www.instagram.com" target="_blank" rel="noreferrer">
 				<i class="secondary instagram icon"></i></a>
-			<a class="footer-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank">
+			<a class="footer-icon" href="https://www.linkedin.com/in/louiscueto" target="_blank" rel="noreferrer">
 				<i class="secondary linkedin icon"></i></a>
-			<a class="footer-icon" href="https://www.github.com/louiscueto" target="_blank">
+			<a class="footer-icon" href="https://www.github.com/louiscueto" target="_blank" rel="noreferrer">
 				<i class="secondary github icon"></i></a>
 
 		</span>
