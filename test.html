@@ -1,0 +1,12 @@
+<script>
+    fetch("https://api.apollo.io/v1/users/search?api_key=1juBS9vpkPDUCZJCoBNPIw", {
+        headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache",
+        }
+    }).then(response => {
+        response.json();
+    }).then(data => {
+        console.log("data", data);
+    })
+</script>
