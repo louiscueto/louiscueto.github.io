@@ -110,6 +110,7 @@ $(document).ready(function() {
 		}
 	});
 
+	console.log("images", images);
 	totalimages = Object.keys(images).length;
 
 	if (totalimages) { // no images
