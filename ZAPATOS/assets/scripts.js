@@ -134,7 +134,6 @@ $(document).ready(function() {
 					imaj.src = i;
 					console.log("[" + i + "] is cached?", imaj.complete);
 					console.log(obj.type);
-
 					console.log("-----");
 			
 					for (var a = 0; a < obj.elem.length; a++) {
