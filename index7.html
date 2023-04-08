@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.css" integrity="sha512-5StPzJo8hFyTvXfJ31FMB37EXRMVeUg+J3yvUNOJcL83MEMr7VrhZSNsoL3GDmUDBGBBhoTjnJx0Ql7cH9LY7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.js" integrity="sha512-MCuLP92THkMwq8xkT2cQg5YpF30l3qzJuBRf/KsbQP1czFkRYkr2dSkCHmdJETqVmvIq5Y4AOVE//Su+cH+8QA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/_style.css">
 	<script type="text/javascript" src="assets/scripts.js"></script>
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/textures@1.2.3/dist/textures.js"></script>
@@ -34,50 +34,29 @@
 
 </head>
 <body class="blackbg">
-
 	<div class="ui active dimmer" id="loader" style="text-align: center;">
 		<div class="ui massive text loader poppins" id="loader-text"></div>
 	</div>
-
 	<div id="palette">
 		<div class="primary"></div>
 		<div class="secondary"></div>
 		<div class="tertiary"></div>
 		<!-- <div class="teal"></div> -->
 	</div>
-
 	<a class="raleway togglemenu" id="showmenu" rel="noreferrer">
 		<i class="fitted bars icon"></i>
 	</a>
-
 	<div id="mobile-sidebar" class="col-flex-3">
 		<a class="raleway sidebar-nav active" data-panel="home" id="home-nav-mobile" rel="noreferrer">
-			<!-- <i class="fitted home icon"></i> -->
 			HOME
 		</a>
 		<a class="raleway sidebar-nav" data-panel="about" id="about-nav-mobile" rel="noreferrer">
-			<!-- <i class="fitted user icon"></i> -->
 			ABOUT
 		</a>
 		<a class="raleway sidebar-nav" data-panel="contact" id="contact-nav-mobile" rel="noreferrer">
-			<!-- <i class="fitted envelope outline icon"></i> -->
 			CONTACT
 		</a>
 	</div>
-
-	<!-- <div class="fullscreen blackbg col-flex-2" style="opacity: 1; position: absolute; top: 0; left: 0; z-index: 100; color: white;">
-		<div style="padding: 50px; font-size: 100%;">HOME</div>
-		<div style="padding: 50px; font-size: 100%;">ABOUT</div>
-		<div style="padding: 50px; font-size: 100%;">PORTFOLIO</div>
-		<div style="padding: 50px; font-size: 100%;">CONTACT</div>
-	</div> -->
-
-	<!-- <div class="blackbg row-flex-2" style="width: 100%; opacity: 1; position: absolute; top: 0; left: 0; z-index: 100; color: white;">
-		<div style="padding: 50px; font-size: 100%;">HOME</div>
-		<div style="padding: 50px; font-size: 100%;">ABOUT</div>
-		<div style="padding: 50px; font-size: 100%;">PORTFOLIO</div>
-		<div style="padding: 50px; font-size: 100%;">CONTACT</div>
-	</div> -->
 
 	<div class="blackbg-2" id="sidebar">
 		<div class="sidebar-item">
@@ -109,50 +88,31 @@
 
 
 	<div class="panel blackbg fullscreen row-flex" id="home">
-		
-
 		<div class="fullscreen col-flex-3 relative" style="text-align: left; padding: 0 11%;">
-
 			<div class="pattern" style="
 				top: 17%;
-				/*width: 120px; height: 200px; left: 7%;*/
 				width: 160px; height: 300px; left: 25%;				 
 				z-index: 2;
 			"></div>
-
 			<div style="z-index: 3; text-align: center;">
-				<h1 class="whitesmoke nomargin poppins panel-header crawler" style="line-height: 0.7; letter-spacing: 2.5px;">
-					<!-- Hola,<br>
-					mi nombre es
-					<br> -->
+				<h1 class="whitesmoke nomargin poppins panel-header crawler" id="home-header">
 					Hello,<br>
 					my name is
 					<br>
 					<span class="primary">Louis Cueto</span>
 				</h1>
-				<h1 class="whitesmoke poppins nomargin panel-sub-header crawler"><span class="secondary">Web developer</span> @ Viva Communications Inc.</h1>
+				<h1 class="whitesmoke poppins nomargin panel-sub-header crawler"><span class="secondary">Web developer</span></h1>
 				<div style="padding-top: 3em;">
-					<a id="cta" class="poppins" onclick="$('#contact-nav').trigger('click');" rel="noreferrer"><span>I want a website too!</span></a>
+					<a id="cta" class="poppins" onclick="$('#contact-nav').trigger('click');" rel="noreferrer">I want a website too</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class="panel blackbg fullscreen row-flex" id="about">
-
-		<div class="fullscreen col-flex-3 relative" style="padding: 50px; text-align: left;">
-
-			<div class="pattern" style="
-				width: 100px;
-				height: 200px;
-				top: 12%; right: 5%;
-				z-index: 2;
-			"></div>
-
-			<div style="z-index: 3;">
-
-				<h1 class="primary nomargin poppins panel-header" style="font-size: 3.5vw;">Get to know me</h1>
-
+		<div class="fullscreen col-flex-3 relative" style="padding: 50px 20px 50px; text-align: left;" >
+			<div class="pattern" id="about-me-pattern"></div>
+			<div class="custom-scrollbar-1" style="z-index: 3; overflow-y: auto; padding: 20px 40px 50px;" id="about-me">
+				<h1 class="primary nomargin poppins panel-header" id="about-header">Get to know me</h1>
 				<div style="padding: 10px 0;">
 					<p class="whitesmoke nomargin montserrat about-text">I graduated BSIT with specialization in Web and Mobile Applications at FEU - Institute of Technology. Now a web developer with 4 years of working experience. Eager to learn more about my chosen profession and apply my skills. Adaptable, committed to tasks, and highly motivated. I like constantly improving my work.</p>
 				</div>
@@ -173,16 +133,15 @@
 					<p class="about-info">Intern at UCPB GEN</p>
 				</div>
 				
-				<div class="about-separator"></div>
-				<div class="about-text whitesmoke">
+				<!-- <div class="about-separator"></div> -->
+				<div class="about-text whitesmoke" style="padding-bottom: 10px;">
 					<h3 class="montserrat" style="font-weight: bold;">Technical Skills</h3>
 				</div>
-				<div class="about-text whitesmoke montserrat">
-					<p class="secondary" style="font-weight: bold;">HTML 5</p>
-					<p class="row-flex-2">
-						<span class="secondary" style="font-weight: bold; width: 1%; white-space: nowrap;">CSS 3</span>
-						<span>
-							<span class="separator" style="font-size: 100%;">[</span>
+				<div class="about-text whitesmoke montserrat" id="technical-skills">
+					<div class="secondary skill-header" style="font-weight: bold;">HTML 5</div>
+					<div class="technical-skill-row">
+						<div class="secondary skill-header" style="font-weight: bold; white-space: nowrap;">CSS 3</div>
+						<div class="skill-description">
 							Semantic UI
 							<span class="separator">//</span>
 							Bulma
@@ -190,13 +149,11 @@
 							Bootstrap
 							<span class="separator">//</span>
 							Tailwind
-							<span class="separator" style="font-size: 100%;">]</span>
-						</span>
-					</p>
-					<p class="row-flex-2">
-						<span class="secondary" style="font-weight: bold; width: 1%;">JS</span>
-						<span>
-							<span class="separator" style="font-size: 100%;">[</span>
+						</div>
+					</div>
+					<div class="technical-skill-row">
+						<div class="secondary skill-header" style="font-weight: bold;">JS</div>
+						<div class="skill-description">
 							jQuery
 							<span class="separator">//</span>
 							React Native
@@ -204,28 +161,29 @@
 							ReactJS
 							<span class="separator">//</span>
 							NextJS
-							<span class="separator" style="font-size: 100%;">]</span>
-						</span>
-					</p>
-					<p class="row-flex-2">
-						<span class="secondary" style="font-weight: bold; width: 1%;">PHP</span>
-						<span>
-							<span class="separator" style="font-size: 100%;">[</span>
+						</div>
+					</div>
+					<div class="technical-skill-row">
+						<div class="secondary skill-header" style="font-weight: bold;">PHP</div>
+						<div class="skill-description">
 							CodeIgniter 3
-							<span class="separator" style="font-size: 100%;">]</span>
-						</span>
-					</p>
-					<p><span class="secondary" style="font-weight: bold;">MySQL</span></p>
+						</div>
+					</div>
+                    <div class="technical-skill-row">
+						<div class="secondary skill-header" style="font-weight: bold;">DB</div>
+						<div class="skill-description">
+							MySQL
+							<span class="separator">//</span>
+							PostgreSQL
+						</div>
+					</div>
 				</div>
-
 				<div class="about-text whitesmoke montserrat" style="margin-top: 2em; text-align: right;">
 					<a class="action-btn secondary" style="font-weight: bold;" href="RESUME.pdf" download="LOUIS CUETO RESUME" rel="noreferrer">
 						<i class="large file pdf outline icon"></i>Download my resum&eacute;
 					</a>
 				</div>
 			</div>
-			
-
 		</div>
 		<div class="fullscreen col-flex-3" id="about-image">
 			<!-- <div class="fullscreen" style="background-color: black; opacity: 0.7"></div> -->
@@ -233,17 +191,13 @@
 		</div>
 
 	</div>
-
-
 	<div class="panel blackbg fullscreen col-flex-3" id="portfolio">
-
 		<div id="portfoliomenu" class="fullscreen grid" style="position: relative; background-color: blue;">
 			<div class="fullscreen grid">1</div>
 			<div class="fullscreen grid">2</div>
 			<div class="fullscreen grid">3</div>
 			<div class="fullscreen grid">4</div>
 		</div>
-
 		<!-- <div class="portfolio-item">
 			<h1>HELLO 1</h1>
 		</div>
@@ -259,7 +213,6 @@
 		<div class="portfolio-item">
 			<h1>HELLO 5</h1>
 		</div> -->
-
 		<!-- <div id="portfoliogrid" class="fullscreen grid">
 			<div class="column">
 				<div class="content" data-bg="assets/placeholder.png">
@@ -297,9 +250,7 @@
 				</div>
 			</div>
 		</div> -->
-
 	</div>
-
 	<div class="panel blackbg fullscreen row-flex" id="contact">
 		<div class="fullscreen col-flex-3" id="contact-header-panel">
 			<h1 class="primary poppins panel-header" id="contact-header">
@@ -307,37 +258,32 @@
 			</h1>
 		</div>
 		<div class="fullscreen blackbg-2" style="padding: 50px; border: 1px solid transparent;">
-			<div class="whitesmoke fullscreen row-flex relative"4>
-				
+			<div class="whitesmoke fullscreen row-flex relative">
 				<div class="pattern" style="
 					width: 140px;
 					height: 240px;
 					top: 20%; left: 5%;
 					z-index: 2;
 				"></div>
-
 				<div id="contact-details" class="col-flex-3">
-					<p class="whitesmoke poppins">
-						<i class="map alternate marker secondary icon"></i> &nbsp; &nbsp; Tondo, Manila, Philippines</p>				
-					<p class="whitesmoke poppins">
+					<div class="whitesmoke poppins contact-detail">
+						<i class="map alternate marker secondary icon"></i> <span class="detail">Tondo, Manila, Philippines</span></div>				
+					<div class="whitesmoke poppins contact-detail">
 						<i class="mail outline secondary icon"></i>
-						&nbsp; &nbsp;
-						<span>cuetolouis</span>@<span class="secondary">yahoo.com</span>
-						<span class="separator">//</span>
-						<span>cuetolouis322</span>@<span class="secondary">gmail.com</span>
-					</p>
+                        <div class="poppins detail" id="contact-emails">
+                            <div><span>cuetolouis</span>@<span class="secondary">yahoo.com</span></div>
+                            <span class="separator">//</span>
+                            <div><span>cuetolouis322</span>@<span class="secondary">gmail.com</span></div>
+                        </div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class="whitesmoke poppins" id="footer">
 		<span class="footer-item" id="louis">
-			<span>&copy; 2019 Louis Cueto</span>
-			<span class="footer-icon" style="margin: 0 20px !important;">
-				&nbsp;
-			</span>
-			<div style="display: flex; gap: 1em;">
+			<span style="margin: 1em auto;">&copy; 2019 Louis Cueto</span>
+			<div id="footer-icons">
 				<a class="footer-icon" href="https://www.facebook.com" target="_blank" rel="noreferrer">
 					<i class="secondary facebook icon"></i></a>
 				<a class="footer-icon" href="https://www.instagram.com" target="_blank" rel="noreferrer">
@@ -357,7 +303,7 @@
 			bg = "https://placeholder.pics/svg/300x300";
 			$this.css({"background-image": 'url(' + bg + ')'});
 			console.log("img set");
-		})
+		});     
 	</script>
 </body>
 </html>
