@@ -150,23 +150,16 @@ $(window).on("load", function () {
 $(window).on("resize", function () {
   $(".panel").height($(window).height());
   console.log("test");
-  var weed = $(window).width();
-  if (weed < 999) {
-    $("#showmenu").addClass("visible");
-  } else {
-    $("#showmenu").removeClass("visible");
-  }
-
+  const weed = $(window).width();
   const $aboutme = $("#about-me");
   const $footer = $("#footer");
-  console.log("$aboutme", $aboutme.height());
-  console.log("$footer", $footer.height());
-
-  $aboutme.height($aboutme.parent().height() - ($footer.height() + 120));
-  //   $("#about-me").on("resize", (e) => {
-  //     let $this = $(this);
-  //     console.log($this.height());
-  //   });
+  if (weed < 999) {
+    $aboutme.height($aboutme.parent().height() - ($footer.height() + 120));
+    $("#showmenu").addClass("visible");
+  } else {
+    $aboutme.height($aboutme.parent().height() - ($footer.height() + 0));
+    $("#showmenu").removeClass("visible");
+  }
 });
 
 var grid_interval = 0;
